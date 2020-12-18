@@ -29,13 +29,9 @@ const productSchema = Mongoose.Schema({
     type: String,
     required: false,
   },
-  brand: {
-    type: String,
-    required: true,
-  },
   category:{
     type: String,
-    enum: ["Electronics", "jacket", "jeans", "gloves", "sticker", "patch"],
+    enum: ["Jacket", "Pants", "Gloves", "Sticker", "Patch", "Accessories"],
     required: true,
   },
   description:{
