@@ -1,7 +1,7 @@
 const products = [
   {
     name: 'Jacket 1',
-    image: '/images/jackets/Jacket1.jpg',
+    image: '/images/Jackets/Jacket1.jpg',
     description:
       'Kushiban daala maul sabé whill. Bane yuzzum ishi amanin. Greedo jerec wicket karrde bane vor. Sarn ysanne mustafar tusken raider nar cornelius ken ig-88. Draethos charal soontir adi. Hapan mothma sith hutt qu. Zuggs mon taung tc-14 aqualish nelvaanian. Talortai trioculus rahm ig-88 massassi.',
     category: 'Jacket',
@@ -12,7 +12,7 @@ const products = [
   },
   {
     name: 'Jacket 2',
-    image: '/images/jackets/Jacket2.jpg',
+    image: '/images/Jackets/Jacket2.jpg',
     description:
       'Kushiban daala maul sabé whill. Bane yuzzum ishi amanin. Greedo jerec wicket karrde bane vor. Sarn ysanne mustafar tusken raider nar cornelius ken ig-88. Draethos charal soontir adi. Hapan mothma sith hutt qu. Zuggs mon taung tc-14 aqualish nelvaanian. Talortai trioculus rahm ig-88 massassi.',
     category: 'Jacket',
@@ -23,7 +23,7 @@ const products = [
   },
   {
     name: 'Jacket 3',
-    image: '/images/jackets/Jacket3.jpg',
+    image: '/images/Jackets/Jacket3.jpg',
     description:
       'Kushiban daala maul sabé whill. Bane yuzzum ishi amanin. Greedo jerec wicket karrde bane vor. Sarn ysanne mustafar tusken raider nar cornelius ken ig-88. Draethos charal soontir adi. Hapan mothma sith hutt qu. Zuggs mon taung tc-14 aqualish nelvaanian. Talortai trioculus rahm ig-88 massassi.',
     category: 'Jacket',
@@ -34,7 +34,7 @@ const products = [
   },
   {
     name: 'Jacket 4',
-    image: '/images/jackets/Jacket4.jpg',
+    image: '/images/Jackets/Jacket4.jpg',
     description:
       'Kushiban daala maul sabé whill. Bane yuzzum ishi amanin. Greedo jerec wicket karrde bane vor. Sarn ysanne mustafar tusken raider nar cornelius ken ig-88. Draethos charal soontir adi. Hapan mothma sith hutt qu. Zuggs mon taung tc-14 aqualish nelvaanian. Talortai trioculus rahm ig-88 massassi.',
     category: 'Jacket',
@@ -45,7 +45,7 @@ const products = [
   },
   {
     name: 'Jacket 5',
-    image: '/images/jackets/Jacket5.jpg',
+    image: '/images/Jackets/Jacket5.jpg',
     description:
       'Kushiban daala maul sabé whill. Bane yuzzum ishi amanin. Greedo jerec wicket karrde bane vor. Sarn ysanne mustafar tusken raider nar cornelius ken ig-88. Draethos charal soontir adi. Hapan mothma sith hutt qu. Zuggs mon taung tc-14 aqualish nelvaanian. Talortai trioculus rahm ig-88 massassi. ',
     category: 'Jacket',
@@ -56,7 +56,7 @@ const products = [
   },
   {
     name: 'Gloves',
-    image: '/images/gloves/glovesyellow.jpg',
+    image: '/images/Gloves/glovesyellow.jpg',
     description:
       'Kushiban daala maul sabé whill. Bane yuzzum ishi amanin. Greedo jerec wicket karrde bane vor. Sarn ysanne mustafar tusken raider nar cornelius ken ig-88. Draethos charal soontir adi. Hapan mothma sith hutt qu. Zuggs mon taung tc-14 aqualish nelvaanian. Talortai trioculus rahm ig-88 massassi.',
     category: 'Gloves',
@@ -68,7 +68,7 @@ const products = [
 
   {
     name: 'Pants',
-    image: '/images/pants/Pantsblack.jpg',
+    image: '/images/Pants/Pantsblack.jpg',
     description:
       'Kushiban daala maul sabé whill. Bane yuzzum ishi amanin. Greedo jerec wicket karrde bane vor. Sarn ysanne mustafar tusken raider nar cornelius ken ig-88. Draethos charal soontir adi. Hapan mothma sith hutt qu. Zuggs mon taung tc-14 aqualish nelvaanian. Talortai trioculus rahm ig-88 massassi.',
     category: 'Pants',
@@ -80,7 +80,7 @@ const products = [
 
   {
     name: 'Bike Sticker/Patch',
-    image: '/images/accessories/Bike.png',
+    image: '/images/Accessories/Bike.png',
     description:
       'Kushiban daala maul sabé whill. Bane yuzzum ishi amanin. Greedo jerec wicket karrde bane vor. Sarn ysanne mustafar tusken raider nar cornelius ken ig-88. Draethos charal soontir adi. Hapan mothma sith hutt qu. Zuggs mon taung tc-14 aqualish nelvaanian. Talortai trioculus rahm ig-88 massassi.',
     category: 'Accessories',
@@ -92,7 +92,7 @@ const products = [
 
   {
     name: 'Blazing Wheel Sticker/Patch',
-    image: '/images/accessories/Blazing_wheel.png',
+    image: '/images/Accessories/Blazing_wheel.png',
     description:
       'Kushiban daala maul sabé whill. Bane yuzzum ishi amanin. Greedo jerec wicket karrde bane vor. Sarn ysanne mustafar tusken raider nar cornelius ken ig-88. Draethos charal soontir adi. Hapan mothma sith hutt qu. Zuggs mon taung tc-14 aqualish nelvaanian. Talortai trioculus rahm ig-88 massassi.',
     category: 'Accessories',
@@ -104,7 +104,7 @@ const products = [
 
   {
     name: 'Diagonal Bike Sticker/Patch',
-    image: '/images/accessories/Diagonal_bike.png',
+    image: '/images/Accessories/Diagonal_bike.png',
     description:
       'Kushiban daala maul sabé whill. Bane yuzzum ishi amanin. Greedo jerec wicket karrde bane vor. Sarn ysanne mustafar tusken raider nar cornelius ken ig-88. Draethos charal soontir adi. Hapan mothma sith hutt qu. Zuggs mon taung tc-14 aqualish nelvaanian. Talortai trioculus rahm ig-88 massassi.',
     category: 'Accessories',
@@ -116,7 +116,7 @@ const products = [
 
   {
     name: 'Blazing Heart Sticker/Patch',
-    image: '/images/accessories/Heart.png',
+    image: '/images/Accessories/Heart.png',
     description:
       'Kushiban daala maul sabé whill. Bane yuzzum ishi amanin. Greedo jerec wicket karrde bane vor. Sarn ysanne mustafar tusken raider nar cornelius ken ig-88. Draethos charal soontir adi. Hapan mothma sith hutt qu. Zuggs mon taung tc-14 aqualish nelvaanian. Talortai trioculus rahm ig-88 massassi.',
     category: 'Accessories',
@@ -127,7 +127,7 @@ const products = [
   },
   {
     name: 'Skull Sticker/Patch',
-    image: '/images/accessories/Skull_helmet.png',
+    image: '/images/Accessories/Skull_helmet.png',
     description:
       'Kushiban daala maul sabé whill. Bane yuzzum ishi amanin. Greedo jerec wicket karrde bane vor. Sarn ysanne mustafar tusken raider nar cornelius ken ig-88. Draethos charal soontir adi. Hapan mothma sith hutt qu. Zuggs mon taung tc-14 aqualish nelvaanian. Talortai trioculus rahm ig-88 massassi.',
     category: 'Accessories',
@@ -138,7 +138,7 @@ const products = [
   },
   {
     name: 'Wave Sticker/Patch',
-    image: '/images/accessories/Wave.png',
+    image: '/images/Accessories/Wave.png',
     description:
       'Kushiban daala maul sabé whill. Bane yuzzum ishi amanin. Greedo jerec wicket karrde bane vor. Sarn ysanne mustafar tusken raider nar cornelius ken ig-88. Draethos charal soontir adi. Hapan mothma sith hutt qu. Zuggs mon taung tc-14 aqualish nelvaanian. Talortai trioculus rahm ig-88 massassi.',
     category: 'Accessories',
