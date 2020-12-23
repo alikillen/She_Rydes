@@ -8,7 +8,7 @@ import {
   productDetailsReducer 
 } from "./reducers/productReducers.js"
 import { cartReducer } from "./reducers/cartReducers"
-import { userLoginReducer, userRegisterReducer } from "./reducers/userReducers"
+import { userDetailsReducer, userLoginReducer, userRegisterReducer, userUpdateProfileReducer } from "./reducers/userReducers"
 
 // quite a few reducers for clarity and ease of debugging
 // each time we create an action we create constants, create reducer switch cases,
@@ -19,6 +19,8 @@ const reducer = combineReducers({
   cart: cartReducer,
   userLogin: userLoginReducer,
   userRegister: userRegisterReducer,
+  userDetails: userDetailsReducer,
+  userUpdateProfile: userUpdateProfileReducer
 })
 
 const cartItemsFromStorage = localStorage.getItem("cartItems") 
