@@ -7,34 +7,44 @@ import Loader from "../components/Loader"
 import { listProducts } from "../actions/productActions.js"
 import Carousel from 'react-bootstrap/Carousel'
 
+
+
 const HomeScreen = () => {
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
 
-  const productList = useSelector(state => state.productList)
-  const { loading, error, products } = productList
-  // these are parts of the state that could be sent down
+  // const productList = useSelector(state => state.productList)
+  // const { loading, error, products } = productList
+  // // these are parts of the state that could be sent down
 
-  useEffect(() => {
-    dispatch(listProducts())
-  }, [dispatch])
-  // this calls listProducts and fills up our state by passing the payloads into the reducer
+  // useEffect(() => {
+  //   dispatch(listProducts())
+  // }, [dispatch])
+  // // this calls listProducts and fills up our state by passing the payloads into the reducer
 
 
 
   return (
     <>
-    {/* <img 
-      className="w-100 h-100"
-      src="/images/HomeScreenImg/home1.jpg"
-    /> */}
-  <Container className="landing-page">
+    
+    <div style={{ 
+      backgroundImage: "url(/images/HomeScreenImg/home1.jpg)",
+      backgroundRepeat: 'no-repeat',
+      width:'100vw',
+      height: '100vh',
+      
+
+      
+       }}>
+    <Container className="landing-page" >
     <p>Along the coastline</p>
     <p>into the outback</p>
     <p>among the mountains</p>
     <h1>She Rydes . . .</h1>
   </Container>
+    </div>
   
-  <Container>
+  
+  
   <Carousel>
     <Carousel.Item>
       <img
@@ -72,7 +82,7 @@ const HomeScreen = () => {
       </Carousel.Caption>
     </Carousel.Item>
   </Carousel>
-  </Container>
+
 
 
 
