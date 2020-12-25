@@ -26,23 +26,26 @@ const HomeScreen = () => {
   return (
     <>
     
-    <div style={{ 
+    <div className="home-background-img" style={{ 
       backgroundImage: "url(/images/HomeScreenImg/home1.jpg)",
       backgroundRepeat: 'no-repeat',
       width:'100vw',
       height: '100vh',
+      backgroundColor: 'rgba(255, 255, 255, 0.5)',
+      backgroundSize: 'cover',
+      opacity: '0.3',
       
-
       
        }}>
-    <Container className="landing-page" >
+    
+    <Container className="landing-page">
     <p>Along the coastline</p>
     <p>into the outback</p>
     <p>among the mountains</p>
     <h1>She Rydes . . .</h1>
   </Container>
-    </div>
-  
+    
+  </div>
   
   
   <Carousel>
