@@ -26,16 +26,12 @@ const HomeScreen = () => {
   return (
     <>
     
-    <div className="home-background-img" style={{ 
+    <div className='landing-page'
+    style={{ 
       backgroundImage: "url(/images/HomeScreenImg/home1.jpg)",
       backgroundRepeat: 'no-repeat',
       width:'100vw',
-      height: '100vh',
-      backgroundColor: 'rgba(255, 255, 255, 0.5)',
-      backgroundSize: 'cover',
-      opacity: '0.3',
-      
-      
+      height: '100vh'
        }}>
     
     <Container className="landing-page">

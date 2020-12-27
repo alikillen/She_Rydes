@@ -17,7 +17,7 @@ export default class Header extends Component {
          }
        }>
           <Row>
-            <Col><Image src="logo-desktop.png" className="my-auto" /></Col>
+            <Col><Image src="logo-desktop.png" className="custom-logo" /></Col>
           </Row>
 
       </Container> 

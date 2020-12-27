@@ -6,16 +6,16 @@ import Image from "react-bootstrap/Image";
 export default class Footer extends Component {
   render() {
     return (
-      <footer className="bg-dark">
+      <footer className='footer-custom-style'>
         <Container>
           <Row>
-            <Col><Image src="logo-desktop.png" className="my-auto" /></Col> 
+            <Col><Image src="/images/Logos/footer-logo.png" className="footer-logo" /></Col> 
           </Row>
 
           <Row>
 
             <Col>
-              <h3>Important Links</h3>
+              <h3 className='custom-heading'>Important Links</h3>
               <Row>Sign in/ Sign up</Row>
               <Row>Contact us</Row>
               <Row>Shipping and Returns</Row>
@@ -24,7 +24,7 @@ export default class Footer extends Component {
             </Col>
 
             <Col>
-              <h3>We are Social</h3>
+              <h3 className='custom-heading'>We are Social</h3>
                 <Row>
                 <a href="#">
                   <i class="fab fa-instagram fa-2x"></i>
@@ -44,7 +44,7 @@ export default class Footer extends Component {
           
             <Col> </Col>    
        
-            <Col><h3>Newsletter Subscription</h3></Col>
+            <Col><h3 className='custom-heading'>Newsletter Subscription</h3></Col>
 
           </Row>
          
