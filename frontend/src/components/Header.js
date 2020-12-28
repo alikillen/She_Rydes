@@ -1,29 +1,20 @@
 import React, { Component } from 'react'
 import { useDispatch, useSelector } from "react-redux"
 import { LinkContainer } from "react-router-bootstrap"
-import {Navbar, Nav, Container, NavDropdown } from "react-bootstrap"
-import { logout } from "../actions/userActions"
+          <Row>
+            <Col><Image src="logo-desktop.png" className="custom-logo" /></Col>
+          </Row>
 
-const Header = () => {
-  const dispatch = useDispatch()
-
-  const userLogin = useSelector((state) => state.userLogin)
-  const {userInfo } = userLogin
-
-  const logoutHandler = () => {
-    dispatch(logout())
-  }
-
-   return (
-      <header>
+      </Container> 
+        
+        
         <Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
-        <Container>
-        <LinkContainer to ="/">
-          <Navbar.Brand>She Rydes</Navbar.Brand>
-        </LinkContainer>
+        
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
+
             <Nav className="ml-auto">
+<<<<<<< HEAD
             
             <LinkContainer to ="/cart">
             <Nav.Link><i className="fas fa-shopping-cart"></i>
@@ -47,8 +38,32 @@ const Header = () => {
             </LinkContainer> }
             
             
+=======
+              <LinkContainer to ="/">
+              <Nav.Link>
+                Home</Nav.Link>
+              </LinkContainer>
+
+              <LinkContainer to ="/about">
+              <Nav.Link>
+                About</Nav.Link>
+              </LinkContainer>
+              <Nav className="justify-content-end ml-auto">
+              <LinkContainer to ="/login">
+                <Nav.Link><i className="fas fa-user"></i>
+                Sign in/Register</Nav.Link>
+              </LinkContainer>
+
+              <LinkContainer to ="/cart">
+              <Nav.Link><i className="fas fa-shopping-cart"></i>
+                Cart</Nav.Link>
+              </LinkContainer>
               
-            </Nav>         
+            </Nav>
+          
+>>>>>>> b2adb8d0caf604b630e9b69c258c42faf2d21cd3
+              
+            {/* </Nav>          */}
           </Navbar.Collapse>
           </Container>
         </Navbar>
