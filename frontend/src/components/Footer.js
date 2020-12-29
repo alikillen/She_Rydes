@@ -13,9 +13,8 @@ export default class Footer extends Component {
           </Row>
 
           <Row>
-
             <Col>
-              <h3 className='custom-heading'>Important Links</h3>
+              <h3 className='custom-footer-headers'>Important Links</h3>
               <Row>Sign in/ Sign up</Row>
               <Row>Contact us</Row>
               <Row>Shipping and Returns</Row>
@@ -24,16 +23,16 @@ export default class Footer extends Component {
             </Col>
 
             <Col>
-              <h3 className='custom-heading'>We are Social</h3>
+              <h3 className='custom-footer-headers'>We are Social</h3>
                 <Row>
                 <a href="#">
-                  <i class="fab fa-instagram fa-2x"></i>
+                  <i class="fab fa-instagram fa-3x"></i>
                 </a>
                 <a href="#">
-                  <i class="fab fa-facebook fa-2x"></i>
+                  <i class="fab fa-facebook-square fa-3x"></i>
                 </a>
                 <a href="#">
-                  <i class="fab fa-pinterest fa-2x"></i>
+                  <i class="fab fa-pinterest fa-3x"></i>
                 </a>
 
               </Row>
@@ -42,9 +41,11 @@ export default class Footer extends Component {
       
             
           
-            <Col> </Col>    
+            {/* <Col> </Col>     */}
        
-            <Col><h3 className='custom-heading'>Newsletter Subscription</h3></Col>
+            <Col>
+            <h3 className='custom-footer-headers'>Newsletter Subscription</h3>
+            </Col>
 
           </Row>
          
