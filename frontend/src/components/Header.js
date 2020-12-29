@@ -23,13 +23,13 @@ export default class Header extends Component {
       </Container> 
         
         
-        <Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
+        <Navbar variant="dark" expand="lg" collapseOnSelect className='custom-navbar'>
         <Container>
         
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
 
-            <Nav className="ml-auto">
+            <Nav className="custom-nav ml-auto">
               <LinkContainer to ="/">
               <Nav.Link>
                 Home</Nav.Link>

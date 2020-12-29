@@ -50,7 +50,7 @@ export default class Footer extends Component {
          
 
           <Row>
-            <Col className="text-center py-3">
+            <Col className="custom-copyright text-center PY-3">
               Copyright 2020 &copy; She Rydes | All Rights Reserved | Built by Alison Killen and Sevda Amini
             </Col>
           </Row>
