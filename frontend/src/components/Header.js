@@ -67,7 +67,7 @@ const Header = () => {
               </Nav>
 
 
-              <Nav>
+              <Nav className="custom-nav ml-auto">
                   <LinkContainer to ="/cart">
                 <Nav.Link><i className="fas fa-shopping-cart"></i>
                   Cart
