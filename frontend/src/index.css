@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Raleway&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Raleway&display=swap"); */
 
 /* Custom styling Header and Navbar */
 .custom-logo {
@@ -50,9 +50,21 @@ h2 {
   margin: 0.1rem;
 }
 
-/* CUSTOM STYLING "LANDING PAGE" */
+/* CUSTOM "LANDING PAGE" */
 
 
+
+/* CUSTOM STYLING ABOUT PAGE */
+
+.custom-about-page {
+  height: 100vh;
+  padding: 5%;
+  margin: auto;
+  font-size: 16px;
+}
+
+
+/* CUSTOM STYLING LOG IN PAGE*/
 
 /* Custom styling footer */
 .footer-logo {
@@ -80,7 +92,3 @@ h2 {
 }
 
 
-/* Styling about page */
-.custom-about-page {
-  height: 100vh;
-}

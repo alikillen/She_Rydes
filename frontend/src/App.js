@@ -34,7 +34,7 @@ function App() {
         <Route path = "/cart/:id?" component={CartScreen} />
         <Route path = "/" component={HomeScreen} exact />
         <Route path = "/About" component={AboutScreen} />
-        <Route component={NotFoundPage} exact />
+        <Route exact path = "/404" component={NotFoundPage} />
         <Redirect to="404" />
         </Switch>
         
