@@ -74,3 +74,9 @@ h2 {
   padding: 10px;
   margin: auto;
 }
+
+
+/* Styling about page */
+.custom-about-page {
+  height: 100vh;
+}
