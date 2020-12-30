@@ -34,7 +34,7 @@ const HomeScreen = () => {
       height: '100vh'
        }}>
     
-    <Container className="landing-page">
+    <Container className="landing-page-quote">
     <p>Along the coastline</p>
     <p>into the outback</p>
     <p>among the mountains</p>
@@ -43,7 +43,8 @@ const HomeScreen = () => {
     
   </div>
   
-  
+  {/* Carousel section */}
+
   <Carousel>
     <Carousel.Item>
       <img
@@ -82,14 +83,7 @@ const HomeScreen = () => {
     </Carousel.Item>
   </Carousel>
 
-
-
-
-
-
-
-
-
+{/* Latest Products */}
 
       {/* <h1>Latest Products</h1>
       {loading ? (

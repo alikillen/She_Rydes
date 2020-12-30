@@ -33,6 +33,8 @@ function App() {
         <Route path = "/cart/:id?" component={CartScreen} />
         <Route path = "/" component={HomeScreen} exact />
         <Route path = "/AboutScreen" component={AboutScreen} />
+        <Route path = "/404" component={NotFoundPage} />
+        <Redirect to "/404" />
         </Switch>
         
       <Footer />
