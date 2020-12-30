@@ -13,16 +13,18 @@ export default class Footer extends Component {
           </Row>
 
           <Row>
-            <Col>
+            <Col sm>
               <h3 className='custom-footer-headers'>Important Links</h3>
+              <div className='important-links'>
               <Row>Sign in/ Sign up</Row>
               <Row>Contact us</Row>
               <Row>Shipping and Returns</Row>
               <Row>Terms and Condtions</Row>
               <Row>Privacy and Policy</Row>
+              </div>
             </Col>
 
-            <Col>
+            <Col sm>
               <h3 className='custom-footer-headers'>We are Social</h3>
                 <Row>
                 <a href="#">
@@ -38,12 +40,9 @@ export default class Footer extends Component {
               </Row>
             </Col>
               
-      
-            
-          
-            {/* <Col> </Col>     */}
+    
        
-            <Col>
+            <Col sm>
             <h3 className='custom-footer-headers'>Newsletter Subscription</h3>
             </Col>
 
@@ -51,7 +50,7 @@ export default class Footer extends Component {
          
 
           <Row>
-            <Col className="custom-copyright text-center PY-3">
+            <Col sm className="custom-copyright text-center PY-3">
               Copyright 2020 &copy; She Rydes | All Rights Reserved | Built by Alison Killen and Sevda Amini
             </Col>
           </Row>

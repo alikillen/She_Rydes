@@ -28,8 +28,9 @@ const HomeScreen = () => {
     
     <div className='landing-page'
     style={{ 
-      backgroundImage: "url(/images/HomeScreenImg/home1.jpg)",
+      backgroundImage: "url(/images/Jackets/landing-img.png)",
       backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
       width:'100vw',
       height: '100vh'
        }}>

@@ -58,8 +58,9 @@ h2 {
 
 .custom-about-page {
   height: 100vh;
+  width: 100vh;
   padding: 5%;
-  margin: auto;
+  margin:5% auto;
   font-size: 16px;
 }
 
@@ -70,11 +71,14 @@ h2 {
 .footer-logo {
   padding-top: 20px;
   padding-bottom: 30px;
+
 }
 
 .footer-custom-style {
   color: #ffffff;
   background-color: #000;
+  margin: 5% auto;
+  padding: 2%;
 }
 
 .custom-copyright {
@@ -83,12 +87,20 @@ h2 {
 
 .custom-footer-headers {
   color: #ffffff;
+  margin: 0;
+  text-align: left;
+}
+
+.important-links {
+  padding-top: 20px;
+  margin-left: 1em;
 }
 
 .fab {
   color: #ffffff;
-  padding: 10px;
-  margin: auto;
+  padding: 20px;
+  
 }
 
 
+n: auto;

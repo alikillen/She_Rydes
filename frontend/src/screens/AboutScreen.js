@@ -6,8 +6,8 @@ const AboutScreen = () => {
 
     return (
     
-        <>
-        <div className="custom-about-page">
+
+        <Container className="custom-about-page">
         
             <Row>
                 <Col sm>
@@ -20,10 +20,10 @@ const AboutScreen = () => {
 
                         Sed a lobortis orci. Fusce vitae euismod elit. Aenean non elit placerat, pellentesque erat non, tristique dolor. Suspendisse bibendum massa tincidunt nunc consequat, vel accumsan risus auctor. Suspendisse ac euismod est, fringilla scelerisque sapien. Duis in ligula luctus, iaculis felis eu, pretium urna. Nullam rutrum sed libero ut finibus. Mauris non leo aliquam, finibus ex ac, venenatis nibh.</p>
                 </Col>
-            </Row>       
+            </Row> 
+            </Container>      
         
-        </div>
-        </>
+
     )
 }
 
