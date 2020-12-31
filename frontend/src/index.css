@@ -51,7 +51,12 @@ h2 {
 }
 
 /* CUSTOM "LANDING PAGE" */
-
+.custom-carousel-caption {
+position: relative;
+top: 10%;
+height: 100%;
+width: 75%;
+}
 
 
 /* CUSTOM STYLING ABOUT PAGE */
@@ -101,6 +106,3 @@ h2 {
   padding: 20px;
   
 }
-
-
-n: auto;
