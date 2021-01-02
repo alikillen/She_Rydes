@@ -1,0 +1,20 @@
+@media screen and (max-width: 500px) {
+
+    .custom-logo {
+        width: 200px;
+        height: 90px;
+    }
+
+    .footer-logo {
+        width: 200px;
+        height: 100px;
+    }
+
+    .custom-footer-headers {
+        font-size: 18px;
+    }
+
+    .fab {
+        padding: 10px;
+    }
+}
