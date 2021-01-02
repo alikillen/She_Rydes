@@ -94,7 +94,7 @@ const HomeScreen = () => {
       />
     </a>
     </Col>
-
+    <Col>
     <a href='#'>
     <img
         // add link to the related gear
@@ -103,6 +103,8 @@ const HomeScreen = () => {
         alt="Shop the look second image"
       />
     </a>
+    </Col>
+ 
   
 
     <Col sm>
