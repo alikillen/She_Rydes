@@ -1,4 +1,4 @@
-import { rainbow } from 'colors';
+// import { rainbow } from 'colors';
 import React, { Component } from 'react'
 import {Container, Row, Col } from "react-bootstrap"
 import Image from "react-bootstrap/Image";
