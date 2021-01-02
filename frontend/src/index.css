@@ -51,11 +51,21 @@ h2 {
 }
 
 /* CUSTOM "LANDING PAGE" */
+
+.custom-carousel {
+  
+}
 .custom-carousel-caption {
 position: relative;
 top: 10%;
 height: 100%;
 width: 75%;
+}
+
+.shop-the-look {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 
@@ -82,18 +92,20 @@ width: 75%;
 .footer-custom-style {
   color: #ffffff;
   background-color: #000;
-  margin: 5% auto;
+  margin: 0 auto;
   padding: 2%;
 }
 
 .custom-copyright {
   margin-top: 30px;
+  font-size: 10px;
 }
 
 .custom-footer-headers {
   color: #ffffff;
   margin: 0;
   text-align: left;
+  padding-top: 20px;
 }
 
 .important-links {

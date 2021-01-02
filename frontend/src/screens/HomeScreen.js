@@ -34,7 +34,7 @@ const HomeScreen = () => {
       height: '100vh'
        }} */}
 
-    <Carousel>
+    <Carousel className='custom-carousel'>
     <Carousel.Item>
       <img
         className="d-block w-100"
@@ -79,7 +79,8 @@ const HomeScreen = () => {
     
   
  {/* SHOP THE LOOK SECTION */}
-
+ 
+<div className='shop-the-look'>
   <h3>Shop The Look</h3>
   <Container>
   <Row>
@@ -88,6 +89,7 @@ const HomeScreen = () => {
     <Col sm>Image three comes here</Col>
   </Row>
 </Container>
+</div>
 
 {/* Latest Products */}
 
