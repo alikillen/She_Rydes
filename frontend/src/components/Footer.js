@@ -13,44 +13,44 @@ export default class Footer extends Component {
           </Row>
 
           <Row>
-
-            <Col>
-              <h3 className='custom-heading'>Important Links</h3>
+            <Col sm>
+              <h3 className='custom-footer-headers'>Important Links</h3>
+              <div className='important-links'>
               <Row>Sign in/ Sign up</Row>
               <Row>Contact us</Row>
               <Row>Shipping and Returns</Row>
               <Row>Terms and Condtions</Row>
               <Row>Privacy and Policy</Row>
+              </div>
             </Col>
 
-            <Col>
-              <h3 className='custom-heading'>We are Social</h3>
+            <Col sm>
+              <h3 className='custom-footer-headers'>We are Social</h3>
                 <Row>
                 <a href="#">
-                  <i class="fab fa-instagram fa-2x"></i>
+                  <i class="fab fa-instagram fa-3x"></i>
                 </a>
                 <a href="#">
-                  <i class="fab fa-facebook fa-2x"></i>
+                  <i class="fab fa-facebook-square fa-3x"></i>
                 </a>
                 <a href="#">
-                  <i class="fab fa-pinterest fa-2x"></i>
+                  <i class="fab fa-pinterest fa-3x"></i>
                 </a>
 
               </Row>
             </Col>
               
-      
-            
-          
-            <Col> </Col>    
+    
        
-            <Col><h3 className='custom-heading'>Newsletter Subscription</h3></Col>
+            <Col sm>
+            <h3 className='custom-footer-headers'>Newsletter Subscription</h3>
+            </Col>
 
           </Row>
          
 
           <Row>
-            <Col className="text-center py-3">
+            <Col sm className="custom-copyright text-center PY-3">
               Copyright 2020 &copy; She Rydes | All Rights Reserved | Built by Alison Killen and Sevda Amini
             </Col>
           </Row>
