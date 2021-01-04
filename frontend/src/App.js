@@ -33,11 +33,15 @@ function App() {
         <Route path = "/product/:id" component={ProductScreen} />
         <Route path = "/cart/:id?" component={CartScreen} />
         <Route path = "/" component={HomeScreen} exact />
-<<<<<<< HEAD
-      </Container>        
-      </main>
-=======
         <Route path = "/About" component={AboutScreen} />
+        <Route exact path = "/404" component={NotFoundPage} />
+        <Redirect to="404" />
+        </Switch>
+        
+      <Footer />
+     
+    </Router>
   );
+}
 
 export default App;

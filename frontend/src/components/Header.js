@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { useDispatch, useSelector } from "react-redux"
 import { LinkContainer } from "react-router-bootstrap"
 import {Navbar, Nav, Container,Row, Col, Image, NavDropdown } from "react-bootstrap"
 import { logout } from "../actions/userActions"
@@ -100,4 +101,4 @@ const Header = () => {
     )
 }
 
-// using class component here not arrow func w variable
+export default Header
