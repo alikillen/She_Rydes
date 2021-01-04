@@ -17,6 +17,12 @@ import LoginScreen from "./screens/LoginScreen"
 import RegisterScreen from "./screens/RegisterScreen"
 import ProfileScreen from "./screens/ProfileScreen"
 import NotFoundPage from './screens/404'
+import AllProductsScreen from "./screens/AllProductsScreen";
+import JacketsScreen from "./screens/JacketsScreen";
+import JeansScreen from "./screens/JeansScreen";
+import GlovesScreen from "./screens/GlovesScreen";
+import StickersandPatchesScreen from "./screens/StickersandPatchesScreen";
+import ContactScreen from "./screens/ContactScreen";
 
 
 
@@ -34,6 +40,13 @@ function App() {
         <Route path = "/cart/:id?" component={CartScreen} />
         <Route path = "/" component={HomeScreen} exact />
         <Route path = "/About" component={AboutScreen} />
+        <Route path = "/AllProducts" component={AllProductsScreen} />
+        <Route path = "/Jackets" component={JacketsScreen} />
+        <Route path = "/Jeans" component={JeansScreen} />
+        <Route path = "/Gloves" component={GlovesScreen} />
+        <Route path = "/StickersandPatches" component={StickersandPatchesScreen} />
+        <Route path = "/Contact" component={ContactScreen} />
+
         <Route exact path = "/404" component={NotFoundPage} />
         <Redirect to="404" />
         </Switch>

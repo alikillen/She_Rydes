@@ -44,10 +44,15 @@ const HomeScreen = () => {
     
     <Carousel.Caption className='custom-carousel-caption'>
         
-        <p>Along the coastline,
-          into the outback,
-          among the mountains,</p>
-        <h2>She Rydes . . .</h2>
+    <h3>
+        Along the coastline, 
+          <br></br>
+        into the outback, 
+          <br></br>
+        among the mountains 
+          <br></br>
+        She Rydes . . .
+    </h3>
        </Carousel.Caption>
     </Carousel.Item>
 
@@ -58,8 +63,15 @@ const HomeScreen = () => {
         alt="Third slide"
       />
       <Carousel.Caption className='custom-carousel-caption'>
-        <h3>Second slide label</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3>
+        Along the coastline, 
+          <br></br>
+        into the outback, 
+          <br></br>
+        among the mountains 
+          <br></br>
+        She Rydes . . .
+      </h3>
       </Carousel.Caption>
 
     </Carousel.Item>
@@ -71,8 +83,15 @@ const HomeScreen = () => {
       />
 
       <Carousel.Caption className='custom-carousel-caption'>
-        <h3>Third slide label</h3>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      <h3>
+        Along the coastline, 
+          <br></br>
+        into the outback, 
+          <br></br>
+        among the mountains 
+          <br></br>
+        She Rydes . . .
+      </h3>
       </Carousel.Caption>
     </Carousel.Item>
   </Carousel>
