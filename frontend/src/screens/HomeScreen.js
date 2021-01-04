@@ -84,9 +84,43 @@ const HomeScreen = () => {
   <h3>Shop The Look</h3>
   <Container>
   <Row>
-    <Col sm>Image one comes here</Col>
-    <Col sm>Image two comes here</Col>
-    <Col sm>Image three comes here</Col>
+    <Col sm>
+    <a href='#'>
+    <img
+        // add link to the related gear
+        className="custom-style-img"
+        src="/images/HomeScreenImg/Black-denim-front-lifestyle.png"
+        alt="shop the look image"
+      />
+    </a>
+    </Col>
+    <Col>
+    <a href='#'>
+    <img
+        // add link to the related gear
+        className="custom-style-img"
+        src="/images/HomeScreenImg/Black-glove-lifestyle.png"
+        alt="Shop the look second image"
+      />
+    </a>
+    </Col>
+ 
+  
+
+    <Col sm>
+    <a href='#'>
+    <img
+        // add link to the related gear
+        className="custom-style-img"
+        src="/images/HomeScreenImg/Pink-sunset-back-lifestyle.png"
+        alt="Shop the look third image"
+      />
+    </a>
+    
+        
+    </Col>
+
+
   </Row>
 </Container>
 </div>
