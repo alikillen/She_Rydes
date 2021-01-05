@@ -16,6 +16,7 @@ import CartScreen from "./screens/CartScreen"
 import LoginScreen from "./screens/LoginScreen"
 import RegisterScreen from "./screens/RegisterScreen"
 import ProfileScreen from "./screens/ProfileScreen"
+import AdminScreen from "./screens/AdminScreen"
 import NotFoundPage from './screens/404'
 
 
@@ -34,6 +35,8 @@ function App() {
         <Route path = "/cart/:id?" component={CartScreen} />
         <Route path = "/" component={HomeScreen} exact />
         <Route path = "/About" component={AboutScreen} />
+        <Route path = "/AdminScreen" component={AdminScreen} />
+        
         <Route exact path = "/404" component={NotFoundPage} />
         <Redirect to="404" />
         </Switch>
