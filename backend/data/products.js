@@ -1,9 +1,9 @@
 const products = [
   {
-    name: 'Jacket 1',
-    image: '/images/Jackets/Jacket1.jpg',
+    name: 'Outback Outfitter',
+    image: '/images/Jackets/outback-outfitter-tan-front.jpg',
     description:
-      'Kushiban daala maul sabé whill. Bane yuzzum ishi amanin. Greedo jerec wicket karrde bane vor. Sarn ysanne mustafar tusken raider nar cornelius ken ig-88. Draethos charal soontir adi. Hapan mothma sith hutt qu. Zuggs mon taung tc-14 aqualish nelvaanian. Talortai trioculus rahm ig-88 massassi.',
+      'For the rough and tumble ryder.',
     category: 'Jacket',
     price: 189.95,
     countInStock: 10,
@@ -11,10 +11,10 @@ const products = [
     numReviews: 12,
   },
   {
-    name: 'Jacket 2',
-    image: '/images/Jackets/Jacket2.jpg',
+    name: 'Night Ryder Leather Jacket',
+    image: '/images/Jackets/night-ryder-front.jpg',
     description:
-      'Kushiban daala maul sabé whill. Bane yuzzum ishi amanin. Greedo jerec wicket karrde bane vor. Sarn ysanne mustafar tusken raider nar cornelius ken ig-88. Draethos charal soontir adi. Hapan mothma sith hutt qu. Zuggs mon taung tc-14 aqualish nelvaanian. Talortai trioculus rahm ig-88 massassi.',
+      'You own the night.',
     category: 'Jacket',
     price: 239.50,
     countInStock: 7,
@@ -22,10 +22,10 @@ const products = [
     numReviews: 8,
   },
   {
-    name: 'Jacket 3',
-    image: '/images/Jackets/Jacket3.jpg',
+    name: 'Blue Bird Leather Jacket',
+    image: '/images/Jackets/blue-bird-front.jpg',
     description:
-      'Kushiban daala maul sabé whill. Bane yuzzum ishi amanin. Greedo jerec wicket karrde bane vor. Sarn ysanne mustafar tusken raider nar cornelius ken ig-88. Draethos charal soontir adi. Hapan mothma sith hutt qu. Zuggs mon taung tc-14 aqualish nelvaanian. Talortai trioculus rahm ig-88 massassi.',
+      'Fly free little birdie.',
     category: 'Jacket',
     price: 99.95,
     countInStock: 5,
@@ -33,10 +33,10 @@ const products = [
     numReviews: 12,
   },
   {
-    name: 'Jacket 4',
-    image: '/images/Jackets/Jacket4.jpg',
+    name: 'In the Hood Denim',
+    image: '/images/Jackets/in-the-hood-denim-stock.jpg',
     description:
-      'Kushiban daala maul sabé whill. Bane yuzzum ishi amanin. Greedo jerec wicket karrde bane vor. Sarn ysanne mustafar tusken raider nar cornelius ken ig-88. Draethos charal soontir adi. Hapan mothma sith hutt qu. Zuggs mon taung tc-14 aqualish nelvaanian. Talortai trioculus rahm ig-88 massassi.',
+      'Casual, comfy and crushing it.',
     category: 'Jacket',
     price: 199.95,
     countInStock: 11,
@@ -44,10 +44,10 @@ const products = [
     numReviews: 12,
   },
   {
-    name: 'Jacket 5',
-    image: '/images/Jackets/Jacket5.jpg',
+    name: 'Fur De Denim',
+    image: '/images/Jackets/fur-de-denim-front.jpg',
     description:
-      'Kushiban daala maul sabé whill. Bane yuzzum ishi amanin. Greedo jerec wicket karrde bane vor. Sarn ysanne mustafar tusken raider nar cornelius ken ig-88. Draethos charal soontir adi. Hapan mothma sith hutt qu. Zuggs mon taung tc-14 aqualish nelvaanian. Talortai trioculus rahm ig-88 massassi. ',
+      'For the badass within.',
     category: 'Jacket',
     price: 149.99,
     countInStock: 7,
@@ -55,10 +55,10 @@ const products = [
     numReviews: 10,
   },
   {
-    name: 'Gloves',
-    image: '/images/Gloves/glovesyellow.jpg',
+    name: 'For the Love of Gloves',
+    image: '/images/Gloves/tan-gloves-2.jpg',
     description:
-      'Kushiban daala maul sabé whill. Bane yuzzum ishi amanin. Greedo jerec wicket karrde bane vor. Sarn ysanne mustafar tusken raider nar cornelius ken ig-88. Draethos charal soontir adi. Hapan mothma sith hutt qu. Zuggs mon taung tc-14 aqualish nelvaanian. Talortai trioculus rahm ig-88 massassi.',
+      'Throttle up and roll out.',
     category: 'Gloves',
     price: 49.95,
     countInStock: 0,
@@ -70,7 +70,7 @@ const products = [
     name: 'Pants',
     image: '/images/Pants/Pantsblack.jpg',
     description:
-      'Kushiban daala maul sabé whill. Bane yuzzum ishi amanin. Greedo jerec wicket karrde bane vor. Sarn ysanne mustafar tusken raider nar cornelius ken ig-88. Draethos charal soontir adi. Hapan mothma sith hutt qu. Zuggs mon taung tc-14 aqualish nelvaanian. Talortai trioculus rahm ig-88 massassi.',
+      'Stylish and safe for the ride and the slide.',
     category: 'Pants',
     price: 89.95,
     countInStock: 10,
@@ -79,10 +79,10 @@ const products = [
   },
 
   {
-    name: 'Bike Sticker/Patch',
-    image: '/images/Accessories/Bike.png',
+    name: 'She Rydes Sticker/Patch',
+    image: '/images/Accessories/she-rydes-sticker.jpg',
     description:
-      'Kushiban daala maul sabé whill. Bane yuzzum ishi amanin. Greedo jerec wicket karrde bane vor. Sarn ysanne mustafar tusken raider nar cornelius ken ig-88. Draethos charal soontir adi. Hapan mothma sith hutt qu. Zuggs mon taung tc-14 aqualish nelvaanian. Talortai trioculus rahm ig-88 massassi.',
+      'She Rydes Sticker/Patch.',
     category: 'Accessories',
     price: 9.95,
     countInStock: 20,
@@ -92,9 +92,9 @@ const products = [
 
   {
     name: 'Blazing Wheel Sticker/Patch',
-    image: '/images/Accessories/Blazing_wheel.png',
+    image: '/images/Accessories/blazing-wheel-patch.jpg',
     description:
-      'Kushiban daala maul sabé whill. Bane yuzzum ishi amanin. Greedo jerec wicket karrde bane vor. Sarn ysanne mustafar tusken raider nar cornelius ken ig-88. Draethos charal soontir adi. Hapan mothma sith hutt qu. Zuggs mon taung tc-14 aqualish nelvaanian. Talortai trioculus rahm ig-88 massassi.',
+      'Blazing wheel design.',
     category: 'Accessories',
     price: 9.95,
     countInStock: 20,
@@ -103,10 +103,10 @@ const products = [
   },
 
   {
-    name: 'Diagonal Bike Sticker/Patch',
-    image: '/images/Accessories/Diagonal_bike.png',
+    name: 'Sporty Side Sticker/Patch',
+    image: '/images/Accessories/sporty-side-patch.jpg',
     description:
-      'Kushiban daala maul sabé whill. Bane yuzzum ishi amanin. Greedo jerec wicket karrde bane vor. Sarn ysanne mustafar tusken raider nar cornelius ken ig-88. Draethos charal soontir adi. Hapan mothma sith hutt qu. Zuggs mon taung tc-14 aqualish nelvaanian. Talortai trioculus rahm ig-88 massassi.',
+      'Show off your sporty side with this design.',
     category: 'Accessories',
     price: 9.95,
     countInStock: 20,
@@ -115,10 +115,10 @@ const products = [
   },
 
   {
-    name: 'Blazing Heart Sticker/Patch',
-    image: '/images/Accessories/Heart.png',
+    name: 'Ignited Heart Sticker/Patch',
+    image: '/images/Accessories/ignited-heart-sticker.jpg',
     description:
-      'Kushiban daala maul sabé whill. Bane yuzzum ishi amanin. Greedo jerec wicket karrde bane vor. Sarn ysanne mustafar tusken raider nar cornelius ken ig-88. Draethos charal soontir adi. Hapan mothma sith hutt qu. Zuggs mon taung tc-14 aqualish nelvaanian. Talortai trioculus rahm ig-88 massassi.',
+      'Set your heart ablaze with this design.',
     category: 'Accessories',
     price: 9.95,
     countInStock: 20,
@@ -126,10 +126,10 @@ const products = [
     numReviews: 12,
   },
   {
-    name: 'Skull Sticker/Patch',
-    image: '/images/Accessories/Skull_helmet.png',
+    name: 'Ryde or Dye Sticker/Patch',
+    image: '/images/Accessories/ryde-or-dye-patch.jpg',
     description:
-      'Kushiban daala maul sabé whill. Bane yuzzum ishi amanin. Greedo jerec wicket karrde bane vor. Sarn ysanne mustafar tusken raider nar cornelius ken ig-88. Draethos charal soontir adi. Hapan mothma sith hutt qu. Zuggs mon taung tc-14 aqualish nelvaanian. Talortai trioculus rahm ig-88 massassi.',
+      'Let this sticker or patch be your ryde or dye.',
     category: 'Accessories',
     price: 9.95,
     countInStock: 20,
@@ -137,10 +137,10 @@ const products = [
     numReviews: 12,
   },
   {
-    name: 'Wave Sticker/Patch',
-    image: '/images/Accessories/Wave.png',
+    name: 'Coastal Cruiser Sticker/Patch',
+    image: '/images/Accessories/coastal-cruiser-patch.jpg',
     description:
-      'Kushiban daala maul sabé whill. Bane yuzzum ishi amanin. Greedo jerec wicket karrde bane vor. Sarn ysanne mustafar tusken raider nar cornelius ken ig-88. Draethos charal soontir adi. Hapan mothma sith hutt qu. Zuggs mon taung tc-14 aqualish nelvaanian. Talortai trioculus rahm ig-88 massassi.',
+      'A design for the coastally inclined.',
     category: 'Accessories',
     price: 9.95,
     countInStock: 0,

@@ -25,7 +25,7 @@ const Header = () => {
               }
             }>
             <Row>
-              <Col><Image src="logo-desktop.png" className="custom-logo" /></Col>
+              <Col><Image src="../public/images/logos/logo-desktop.png" className="custom-logo" /></Col>
             </Row>
           </Container> 
           
