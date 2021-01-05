@@ -1,10 +1,13 @@
 import React, { Component, useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux"
 import {Row, Col} from "react-bootstrap"
-import Product from "../components/Product"
+import Product from "../components/Product" 
 import Message from "../components/Message"
 import Loader from "../components/Loader"
-import { listProducts } from "../actions/productActions.js"
+import { listProductsByCategory } from "../actions/productActions.js"
+
+
+// this page needs edits to render products that match jacket category and nothing else, error handling etc
 
 const JacketsScreen = () => {
   const dispatch = useDispatch()
@@ -14,9 +17,9 @@ const JacketsScreen = () => {
   // these are parts of the state that could be sent down
 
   useEffect(() => {
-    dispatch(listProducts())
+    dispatch(listProductsByCategory())
   }, [dispatch])
-  // this calls listProducts and fills up our state by passing the payloads into the reducer
+  // this calls listProductsbycategory and fills up our state by passing the payloads into the reducer
 
 
 
