@@ -25,7 +25,7 @@ const Header = () => {
               }
             }>
             <Row>
-              <Col><Image src="../public/images/logos/logo-desktop.png" className="custom-logo" /></Col>
+              <Col><Image src="/images/logos/logo-desktop.png" className="custom-logo" /></Col>
             </Row>
           </Container> 
           
@@ -99,10 +99,10 @@ const Header = () => {
                       </Nav.Link>
                     </LinkContainer>
 
-              {/* </Nav>
+              </Nav>
 
 
-                <Nav className="custom-nav ml-auto"> */}
+                <Nav className="custom-nav ml-auto">
                     <LinkContainer to ="/cart">
                   <Nav.Link><i className="fas fa-shopping-cart"></i>
                     Cart
