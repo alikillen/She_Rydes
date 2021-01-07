@@ -5,10 +5,20 @@ import thunk from "redux-thunk"
 import { composeWithDevTools } from "redux-devtools-extension"
 import {
   productListReducer, 
-  productDetailsReducer 
+  productDetailsReducer,
+  productDeleteReducer,
+  productCreateReducer
 } from "./reducers/productReducers.js"
 import { cartReducer } from "./reducers/cartReducers"
-import { userDetailsReducer, userLoginReducer, userRegisterReducer, userUpdateProfileReducer } from "./reducers/userReducers"
+import { 
+  userDetailsReducer, 
+  userLoginReducer, 
+  userRegisterReducer, 
+  userUpdateProfileReducer, 
+  userListReducer,
+  userDeleteReducer,
+  userUpdateReducer
+} from "./reducers/userReducers"
 
 // quite a few reducers for clarity and ease of debugging
 // each time we create an action we create constants, create reducer switch cases,
@@ -16,11 +26,17 @@ import { userDetailsReducer, userLoginReducer, userRegisterReducer, userUpdatePr
 const reducer = combineReducers({
   productList: productListReducer,
   productDetails: productDetailsReducer,
+  productDelete: productDeleteReducer,
+  productCreate: productCreateReducer,
   cart: cartReducer,
   userLogin: userLoginReducer,
   userRegister: userRegisterReducer,
   userDetails: userDetailsReducer,
-  userUpdateProfile: userUpdateProfileReducer
+  userUpdateProfile: userUpdateProfileReducer,
+  userList: userListReducer,
+  userDelete: userDeleteReducer,
+  userUpdate: userUpdateReducer
+
 })
 
 const cartItemsFromStorage = localStorage.getItem("cartItems") 
