@@ -12,17 +12,25 @@ import { listProductsByCategory } from "../actions/productActions.js"
 const JacketsScreen = () => {
   const dispatch = useDispatch()
 
+  console.log("useDispatch done")
+
   const productList = useSelector(state => state.productList)
   const { loading, error, products } = productList
+
+  console.log("useSelector done with state")
   // these are parts of the state that could be sent down
 
   useEffect(() => {
     dispatch(listProductsByCategory())
+    // this is where dispatch is erroring
+    console.log("useEffect dispatched")
   }, [dispatch])
   // this calls listProductsbycategory and fills up our state by passing the payloads into the reducer
+  // do we need to change this specifying that jackets must match category params???
 
+console.log("should return products on page here")
 
-
+try {
   return (
     <>
       <h1>Jackets</h1>
@@ -36,12 +44,19 @@ const JacketsScreen = () => {
             <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
               <Product product={product} />
             </Col>
-          )}
+            )}
         </Row>) 
       }
         
     </>
   )
+  
+} catch (error) {
+  console.log("jackets screen page wont return products")
+  
+}
+
+
 }
 
 export default JacketsScreen

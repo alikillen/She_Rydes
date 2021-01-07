@@ -4,9 +4,9 @@ import {Row, Col} from "react-bootstrap"
 import Product from "../components/Product"
 import Message from "../components/Message"
 import Loader from "../components/Loader"
-import { listProducts } from "../actions/productActions.js"
+import { listProducts, listProductsByCategory } from "../actions/productActions.js"
 
-const JeansScreen = () => {
+const PantsScreen = () => {
   const dispatch = useDispatch()
 
   const productList = useSelector(state => state.productList)
@@ -14,7 +14,7 @@ const JeansScreen = () => {
   // these are parts of the state that could be sent down
 
   useEffect(() => {
-    dispatch(listProducts())
+    dispatch(listProductsByCategory())
   }, [dispatch])
   // this calls listProducts and fills up our state by passing the payloads into the reducer
 
@@ -22,7 +22,7 @@ const JeansScreen = () => {
 
   return (
     <>
-      <h1>Latest Products</h1>
+      <h1>Pants</h1>
       {loading ? (
         <Loader /> )
         : error ? (
@@ -41,4 +41,4 @@ const JeansScreen = () => {
   )
 }
 
-export default JeansScreen
+export default PantsScreen

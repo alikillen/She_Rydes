@@ -55,9 +55,11 @@ export const listProductDetails = (id) => async (dispatch) => {
 }
 
 export const listProductsByCategory = (category) => async (dispatch) => {
+  // let category = req.params.id
   try {
     dispatch({ type: PRODUCT_CATEGORY_REQUEST })
-    const { data } = await axios.get(`/api/products/${category}`)
+    const { data } = await axios.get(`api/products/category/${category}`)
+    // this is where dispatch is erroring - category is undefined
 
     dispatch({
       type: PRODUCT_CATEGORY_SUCCESS,

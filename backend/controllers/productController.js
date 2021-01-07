@@ -33,17 +33,43 @@ const getProductById = asyncHandler(async (req, res) => {
   }
  })
 
- const getProductsbyCategory = asyncHandler(async(req,res) => {
-   const products = await Product.find({category: req.params.category})
-  //  should this be find by id?
+//  const getProductsbyCategory = asyncHandler(async(req,res) => {
+//    const products = await Product.find({category: req.params.category})
+//   //  const products = await Product.find(req.params.category)
+//   //  should this be find by id?
 
-   if (products) {
-     res.json(products)
-   } else {
-     res.status(404)
-     throw new Error("Product not found")
-   }
- })
+//    if (products) {
+//      res.json(products)
+//    } else {
+//      res.status(404)
+//      throw new Error("Product not found")
+//    }
+//  })
+
+ const getProductsbyCategory = asyncHandler(async(req,res) => {
+  const products = await Product.find({category: req.params.id})
+  
+  // .exec()
+ //  const products = await Product.find(req.params.category)
+ //  should this be find by id?
+
+  if (products) {
+    res.json(products)
+  } else {
+    res.status(404)
+    throw new Error("Products in category not found")
+  }
+
+//   res.render('category', {
+//     products: products
+// });
+
+})
+
+
+
+  // let articles = await Article.findAll({tag: id}).exec();
+
 
 
  export {

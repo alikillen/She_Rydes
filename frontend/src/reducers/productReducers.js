@@ -38,10 +38,10 @@ export const productDetailsReducer = (state = { product: { reviews: [] } }, acti
   }
 }
 
-export const productCategoryReducer = (state = { product: { reviews: [] } }, action) => {
+export const productCategoryReducer = (state = { products: [] }, action) => {
   switch(action.type) {
     case PRODUCT_CATEGORY_REQUEST:
-      return { loading: true, ...state }
+      return { loading: true, products: [] }
     case PRODUCT_CATEGORY_SUCCESS:
       return {loading: false, product: action.payload}
     case PRODUCT_CATEGORY_FAIL:

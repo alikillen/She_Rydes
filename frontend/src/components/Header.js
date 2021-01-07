@@ -60,7 +60,7 @@ const Header = () => {
                       </NavDropdown.Item>
 
                       <NavDropdown.Item>
-                        <LinkContainer to ="/Jackets">
+                        <LinkContainer to ="/Jacket">
                           <Nav.Link>
                             Jackets
                           </Nav.Link>
@@ -68,9 +68,9 @@ const Header = () => {
                       </NavDropdown.Item>
 
                       <NavDropdown.Item>
-                        <LinkContainer to ="/Jeans">
+                        <LinkContainer to ="/Pants">
                           <Nav.Link>
-                            Jeans
+                            Pants
                           </Nav.Link>
                         </LinkContainer>
                       </NavDropdown.Item>
@@ -92,12 +92,6 @@ const Header = () => {
                       </NavDropdown.Item>
                     
                     </NavDropdown>
-
-                    <LinkContainer to ="/Contact">
-                      <Nav.Link>
-                        Contact us
-                      </Nav.Link>
-                    </LinkContainer>
 
               </Nav>
 

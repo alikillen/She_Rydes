@@ -8,7 +8,7 @@ import {
 
 router.route("/").get(getProducts)
 router.route("/:id").get(getProductById)
-router.route(`/category/:category`).get(getProductsbyCategory)
+router.route("/category/:id").get(getProductsbyCategory)
 // this is currently returning an empty array when numbers are put in the req params?
 
 // router.route("/:category").get(getProductsbyCategory)

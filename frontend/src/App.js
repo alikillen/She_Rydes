@@ -19,7 +19,7 @@ import ProfileScreen from "./screens/ProfileScreen"
 import NotFoundPage from './screens/404'
 import AllProductsScreen from "./screens/AllProductsScreen";
 import JacketsScreen from "./screens/JacketsScreen";
-import JeansScreen from "./screens/JeansScreen";
+import PantsScreen from "./screens/PantsScreen";
 import GlovesScreen from "./screens/GlovesScreen";
 import StickersandPatchesScreen from "./screens/StickersandPatchesScreen";
 import ContactScreen from "./screens/ContactScreen";
@@ -41,8 +41,8 @@ function App() {
         <Route path = "/" component={HomeScreen} exact />
         <Route path = "/About" component={AboutScreen} />
         <Route path = "/AllProducts" component={AllProductsScreen} />
-        <Route path = "/Jackets" component={JacketsScreen} />
-        <Route path = "/Jeans" component={JeansScreen} />
+        <Route path = "/Jacket" component={JacketsScreen} />
+        <Route path = "/Pants" component={PantsScreen} />
         <Route path = "/Gloves" component={GlovesScreen} />
         <Route path = "/StickersandPatches" component={StickersandPatchesScreen} />
         <Route path = "/Contact" component={ContactScreen} />
