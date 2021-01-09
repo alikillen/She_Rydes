@@ -21,6 +21,12 @@ import AdminScreen from "./screens/AdminScreen"
 import UserListScreen from './screens/UserListScreen'
 import UserEditScreen from './screens/UserEditScreen'
 import NotFoundPage from './screens/404'
+import AllProductsScreen from "./screens/AllProductsScreen";
+import JacketsScreen from "./screens/JacketsScreen";
+import PantsScreen from "./screens/PantsScreen";
+import GlovesScreen from "./screens/GlovesScreen";
+import StickersandPatchesScreen from "./screens/StickersandPatchesScreen";
+import ContactScreen from "./screens/ContactScreen";
 import ProductListScreen from "./screens/ProductListScreen"
 import ProductEditScreen from "./screens/ProductEditScreen"
 
@@ -41,6 +47,12 @@ function App() {
         <Route path = "/cart/:id?" component={CartScreen} />
         <Route path = "/" component={HomeScreen} exact />
         <Route path = "/About" component={AboutScreen} />
+        <Route path = "/AllProducts" component={AllProductsScreen} />
+        <Route path = "/Jacket" component={JacketsScreen} />
+        <Route path = "/Pants" component={PantsScreen} />
+        <Route path = "/Gloves" component={GlovesScreen} />
+        <Route path = "/StickersandPatches" component={StickersandPatchesScreen} />
+        <Route path = "/Contact" component={ContactScreen} />
         <Route path = "/AdminScreen" component={AdminScreen} />
         <Route path = "/admin/userlist" component={UserListScreen} />
         <Route path = "/admin/user/:id/edit" component={UserEditScreen} />

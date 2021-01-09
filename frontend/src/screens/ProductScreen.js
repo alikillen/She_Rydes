@@ -21,10 +21,10 @@ const ProductScreen = ({ history, match }) => {
   }, [dispatch, match])
 
   // this is executed when we add things to our cart using button on product page
+  // change addtocarthandler to include size and color
   const addToCartHandler = () => {
     history.push(`/cart/${match.params.id}?qty=${qty}`)
   }
-
 
   
   return (
@@ -86,6 +86,59 @@ const ProductScreen = ({ history, match }) => {
                 </Row>
               </ListGroup.Item>
 
+                 {/* render size and color dropdowns- (error messages if colour or size not in stock?)
+                  make setColour and setSize methods, set dropdowns to correct sizes/colors for jackets, pants and gloves -disable in dropdown if out of stock?? inventory? */}
+
+                 {product.countInStock > 0 && (
+                <ListGroup.Item>
+                  <Row>
+                    <Col>Size</Col>
+                    <Col>
+                      <Form.Control 
+                      as="select" 
+                      value={qty}
+                      onChange={(e) => setQty(e.target.value)}
+                      >
+                        {[...Array(product.countInStock).keys()].map(
+                          (x) => (
+                          <option key={x + 1} value={x + 1}>
+                            {x + 1}
+                          </option>
+                        )
+                        )}
+
+                      </Form.Control>
+                    </Col>
+                  </Row>
+                </ListGroup.Item>
+              )}
+
+              {product.countInStock > 0 && (
+                <ListGroup.Item>
+                  <Row>
+                    <Col>Colour</Col>
+                    <Col>
+                      <Form.Control 
+                      as="select" 
+                      value={qty}
+                      onChange={(e) => setQty(e.target.value)}
+                      >
+                        {[...Array(product.countInStock).keys()].map(
+                          (x) => (
+                          <option key={x + 1} value={x + 1}>
+                            {x + 1}
+                          </option>
+                        )
+                        )}
+
+                      </Form.Control>
+                    </Col>
+                  </Row>
+                </ListGroup.Item>
+              )}
+
+
+
               {product.countInStock > 0 && (
                 <ListGroup.Item>
                   <Row>
@@ -119,6 +172,13 @@ const ProductScreen = ({ history, match }) => {
                   Add to Cart
                 </Button>
               </ListGroup.Item>
+
+           
+              
+    
+
+
+
             </ListGroup>
           </Card>
         </Col>
