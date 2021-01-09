@@ -12,6 +12,7 @@ import {
   productCreateReducer,
   productUpdateReducer,
 } from "./reducers/productReducers.js"
+
 import { cartReducer } from "./reducers/cartReducers"
 import { 
   userDetailsReducer, 
@@ -22,6 +23,8 @@ import {
   userDeleteReducer,
   userUpdateReducer
 } from "./reducers/userReducers"
+
+import { orderCreateReducer } from './reducers/orderReducers'
 
 // quite a few reducers for clarity and ease of debugging
 // each time we create an action we create constants, create reducer switch cases,
@@ -41,7 +44,8 @@ const reducer = combineReducers({
   userUpdateProfile: userUpdateProfileReducer,
   userList: userListReducer,
   userDelete: userDeleteReducer,
-  userUpdate: userUpdateReducer
+  userUpdate: userUpdateReducer,
+  orderCreate: orderCreateReducer,
 
 })
 
