@@ -16,18 +16,18 @@ const Header = () => {
 
     return (
         <header>
-        <Container style={
-          {
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center"
-          }
-        }>
+          <Container 
+            style={
+              {
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center"
+              }
+            }>
             <Row>
-              <Col><Image src="logo-desktop.png" className="custom-logo" /></Col>
+              <Col><Image src="/images/logos/logo-desktop.png" className="custom-logo" /></Col>
             </Row>
-
-        </Container> 
+          </Container> 
           
           
           <Navbar variant="dark" expand="lg" collapseOnSelect className='custom-navbar'  sticky="top"> 
@@ -38,33 +38,62 @@ const Header = () => {
 
               <Nav className="custom-nav ml-auto">
                     <LinkContainer to ="/">
-                    <Nav.Link>
-                      Home</Nav.Link>
+                      <Nav.Link>
+                        Home
+                      </Nav.Link>
                     </LinkContainer>
 
                     <LinkContainer to ="/about">
-                    <Nav.Link>
-                      About</Nav.Link>
+                      <Nav.Link>
+                        About
+                      </Nav.Link>
                     </LinkContainer>
 
                     <NavDropdown title="Products" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="#action/3.1">Gloves</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.2">Jackets</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.3">Jeans</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.4">Stickers/Patches</NavDropdown.Item>
+
+                      <NavDropdown.Item>
+                        <LinkContainer to ="/AllProducts">
+                          <Nav.Link>
+                            All Products
+                          </Nav.Link>
+                        </LinkContainer>
+                      </NavDropdown.Item>
+
+                      <NavDropdown.Item>
+                        <LinkContainer to ="/Jacket">
+                          <Nav.Link>
+                            Jackets
+                          </Nav.Link>
+                        </LinkContainer>
+                      </NavDropdown.Item>
+
+                      <NavDropdown.Item>
+                        <LinkContainer to ="/Pants">
+                          <Nav.Link>
+                            Pants
+                          </Nav.Link>
+                        </LinkContainer>
+                      </NavDropdown.Item>
+
+                      <NavDropdown.Item>
+                        <LinkContainer to ="/Gloves">
+                          <Nav.Link>
+                            Gloves
+                          </Nav.Link>
+                        </LinkContainer>
+                      </NavDropdown.Item>
+
+                      <NavDropdown.Item>
+                        <LinkContainer to ="/StickersandPatches">
+                          <Nav.Link>
+                            Stickers and Patches
+                          </Nav.Link>
+                        </LinkContainer>
+                      </NavDropdown.Item>
+                    
                     </NavDropdown>
 
-                    {/* <LinkContainer to ="#">
-                    <Nav.Link>
-                      Products</Nav.Link>
-                    </LinkContainer> */}
-
-                    {/* <LinkContainer to ="#">
-                    <Nav.Link>
-                      Contact us</Nav.Link>
-                    </LinkContainer> */}
-
-                </Nav>
+              </Nav>
 
 
                 <Nav className="custom-nav ml-auto">
@@ -106,10 +135,8 @@ const Header = () => {
                     </NavDropdown>
                   )}
                 
-              </Nav>
-            
-                
-              {/* </Nav>          */}
+              </Nav>       
+              
             </Navbar.Collapse>
             </Container>
           </Navbar>
@@ -119,5 +146,3 @@ const Header = () => {
 }
 
 export default Header
-
-

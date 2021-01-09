@@ -3,6 +3,8 @@ import { Link } from "react-router-dom"
 import { Card } from 'react-bootstrap'
 import Rating from "./Rating"
 
+// need to change this to also list product color variations? and then options on productscreen to change color
+
 const Product = ({product}) => {
   return (
     <Card className="my-3 p-3 rounded">
