@@ -3,16 +3,17 @@ const router = express.Router()
 import { 
   getProducts, 
   getProductById, 
-  getProductsbyCategory
+  getProductsbyCategory,
+  getTopProducts
 } from "../controllers/productController.js"
 
 router.route("/").get(getProducts)
-router.route("/:id").get(getProductById)
 router.route("/category/:id").get(getProductsbyCategory)
-// this is currently returning an empty array when numbers are put in the req params?
+router.get("/top", getTopProducts)
 
-// router.route("/:category").get(getProductsbyCategory)
-// does this need colon?
+router
+  .route('/:id')
+  .get(getProductById)
 
 
 export default router

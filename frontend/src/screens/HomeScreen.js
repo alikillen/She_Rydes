@@ -34,6 +34,8 @@ const HomeScreen = () => {
       height: '100vh'
        }} */}
 
+  
+
     <Carousel className='custom-carousel'>
     <Carousel.Item>
       <img
@@ -141,6 +143,8 @@ const HomeScreen = () => {
 
 
   </Row>
+
+
 </Container>
 </div>
 
@@ -160,6 +164,8 @@ const HomeScreen = () => {
           )}
         </Row>) 
       } */}
+
+      
         
     </>
   )

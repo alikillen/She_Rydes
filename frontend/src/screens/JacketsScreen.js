@@ -20,17 +20,17 @@ const JacketsScreen = () => {
   console.log("useSelector done with state")
   // these are parts of the state that could be sent down
 
-  useEffect(() => {
-    dispatch(listProductsByCategory())
-    // this is where dispatch is erroring
-    console.log("useEffect dispatched")
-  }, [dispatch])
-  // this calls listProductsbycategory and fills up our state by passing the payloads into the reducer
-  // do we need to change this specifying that jackets must match category params???
+  try {
+    useEffect(() => {
+      dispatch(listProductsByCategory())
+      // this is where dispatch is erroring
+      console.log("useEffect dispatched")
+    }, [dispatch])
+    // this calls listProductsbycategory and fills up our state by passing the payloads into the reducer
+    // do we need to change this specifying that jackets must match category params???
+  
+  console.log("should return products on page here")
 
-console.log("should return products on page here")
-
-try {
   return (
     <>
       <h1>Jackets</h1>
@@ -50,13 +50,16 @@ try {
         
     </>
   )
-  
-} catch (error) {
-  console.log("jackets screen page wont return products")
-  
-}
+    
+  } catch (error) {
+    console.log("something wrong with useEffect, useDispatch or listproductsbycat method?")    
+  }  
 
 
+
 }
+
+// try catch isnt getting anything - no errors, just not returning products by cat as it should
+// need a new jackets component??
 
 export default JacketsScreen

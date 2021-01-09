@@ -7,7 +7,10 @@ import {
   PRODUCT_DETAILS_FAIL,
   PRODUCT_CATEGORY_REQUEST,
   PRODUCT_CATEGORY_SUCCESS,
-  PRODUCT_CATEGORY_FAIL
+  PRODUCT_CATEGORY_FAIL,
+  PRODUCT_TOP_REQUEST,
+  PRODUCT_TOP_SUCCESS,
+  PRODUCT_TOP_FAIL
  } from "../constants/productConstants.js"
 
 //  action payload is determined in productactions
@@ -43,8 +46,21 @@ export const productCategoryReducer = (state = { products: [] }, action) => {
     case PRODUCT_CATEGORY_REQUEST:
       return { loading: true, products: [] }
     case PRODUCT_CATEGORY_SUCCESS:
-      return {loading: false, product: action.payload}
+      return {loading: false, products: action.payload}
     case PRODUCT_CATEGORY_FAIL:
+      return { loading: false, error: action.payload}
+    default:
+      return state
+  }
+}
+
+export const productTopRatedReducer = (state = { products: [] }, action) => {
+  switch(action.type) {
+    case PRODUCT_TOP_REQUEST:
+      return { loading: true, products: [] }
+    case PRODUCT_TOP_SUCCESS:
+      return {loading: false, products: action.payload}
+    case PRODUCT_TOP_FAIL:
       return { loading: false, error: action.payload}
     default:
       return state
