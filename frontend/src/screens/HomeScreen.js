@@ -34,6 +34,8 @@ const HomeScreen = () => {
       height: '100vh'
        }} */}
 
+  
+
     <Carousel className='custom-carousel'>
     <Carousel.Item>
       <img
@@ -44,10 +46,15 @@ const HomeScreen = () => {
     
     <Carousel.Caption className='custom-carousel-caption'>
         
-        <p>Along the coastline,
-          into the outback,
-          among the mountains,</p>
-        <h2>She Rydes . . .</h2>
+    <h3>
+        Along the coastline, 
+          <br></br>
+        into the outback, 
+          <br></br>
+        among the mountains 
+          <br></br>
+        She Rydes . . .
+    </h3>
        </Carousel.Caption>
     </Carousel.Item>
 
@@ -58,8 +65,15 @@ const HomeScreen = () => {
         alt="Third slide"
       />
       <Carousel.Caption className='custom-carousel-caption'>
-        <h3>Second slide label</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3>
+        Along the coastline, 
+          <br></br>
+        into the outback, 
+          <br></br>
+        among the mountains 
+          <br></br>
+        She Rydes . . .
+      </h3>
       </Carousel.Caption>
 
     </Carousel.Item>
@@ -71,8 +85,15 @@ const HomeScreen = () => {
       />
 
       <Carousel.Caption className='custom-carousel-caption'>
-        <h3>Third slide label</h3>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      <h3>
+        Along the coastline, 
+          <br></br>
+        into the outback, 
+          <br></br>
+        among the mountains 
+          <br></br>
+        She Rydes . . .
+      </h3>
       </Carousel.Caption>
     </Carousel.Item>
   </Carousel>
@@ -84,10 +105,46 @@ const HomeScreen = () => {
   <h3>Shop The Look</h3>
   <Container>
   <Row>
-    <Col sm>Image one comes here</Col>
-    <Col sm>Image two comes here</Col>
-    <Col sm>Image three comes here</Col>
+    <Col sm>
+    <a href='#'>
+    <img
+        // add link to the related gear
+        className="custom-style-img"
+        src="/images/HomeScreenImg/Black-denim-front-lifestyle.png"
+        alt="shop the look image"
+      />
+    </a>
+    </Col>
+    <Col>
+    <a href='#'>
+    <img
+        // add link to the related gear
+        className="custom-style-img"
+        src="/images/HomeScreenImg/Black-glove-lifestyle.png"
+        alt="Shop the look second image"
+      />
+    </a>
+    </Col>
+ 
+  
+
+    <Col sm>
+    <a href='#'>
+    <img
+        // add link to the related gear
+        className="custom-style-img"
+        src="/images/HomeScreenImg/Pink-sunset-back-lifestyle.png"
+        alt="Shop the look third image"
+      />
+    </a>
+    
+        
+    </Col>
+
+
   </Row>
+
+
 </Container>
 </div>
 
@@ -107,6 +164,8 @@ const HomeScreen = () => {
           )}
         </Row>) 
       } */}
+
+      
         
     </>
   )

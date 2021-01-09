@@ -33,7 +33,56 @@ const getProductById = asyncHandler(async (req, res) => {
   }
  })
 
+//  const getProductsbyCategory = asyncHandler(async(req,res) => {
+//    const products = await Product.find({category: req.params.category})
+//   //  const products = await Product.find(req.params.category)
+//   //  should this be find by id?
+
+//    if (products) {
+//      res.json(products)
+//    } else {
+//      res.status(404)
+//      throw new Error("Product not found")
+//    }
+//  })
+
+// get products by category
+// route - Get /api/products/category
+// access - public
+ const getProductsbyCategory = asyncHandler(async(req,res) => {
+  const products = await Product.find({category: req.params.id})
+
+  if (products) {
+    res.json(products)
+  } else {
+    res.status(404)
+    throw new Error("Products in category not found")
+  }
+
+})
+
+
+// get top rated products
+// route GET api/products/top
+// public access
+
+const getTopProducts = asyncHandler(async(req, res) => {
+  const products = await Product.find({}).sort({ rating: -1 }).limit(3)
+
+  if (products) {
+    res.json(products)
+  } else {
+    res.status(404)
+    throw new Error("Products in top 3 not found")
+  }
+
+})
+
+
+
  export {
    getProducts,
-   getProductById
+   getProductById,
+   getProductsbyCategory,
+   getTopProducts
  }
