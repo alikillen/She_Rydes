@@ -16,11 +16,13 @@ import CartScreen from "./screens/CartScreen"
 import LoginScreen from "./screens/LoginScreen"
 import RegisterScreen from "./screens/RegisterScreen"
 import ProfileScreen from "./screens/ProfileScreen"
+import ShippingScreen from './screens/ShippingScreen'
 import AdminScreen from "./screens/AdminScreen"
 import UserListScreen from './screens/UserListScreen'
 import UserEditScreen from './screens/UserEditScreen'
 import NotFoundPage from './screens/404'
-import ProductListScreen from "./screens/ProductListScreen";
+import ProductListScreen from "./screens/ProductListScreen"
+import ProductEditScreen from "./screens/ProductEditScreen"
 
 
 
@@ -31,6 +33,7 @@ function App() {
       <Header />
 
         <Switch>
+        <Route path='/shipping' component={ShippingScreen} />
         <Route path = "/login" component={LoginScreen} />
         <Route path = "/register" component={RegisterScreen} />
         <Route path = "/profile" component={ProfileScreen} />
@@ -42,6 +45,7 @@ function App() {
         <Route path = "/admin/userlist" component={UserListScreen} />
         <Route path = "/admin/user/:id/edit" component={UserEditScreen} />
         <Route path = "/admin/productlist" component={ProductListScreen} />
+        <Route path = "/admin/product/:id/edit" component={ProductEditScreen} />
 
         <Route exact path = "/404" component={NotFoundPage} />
         <Redirect to="404" />
