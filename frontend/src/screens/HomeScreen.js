@@ -152,7 +152,7 @@ const HomeScreen = () => {
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="/images/Jackets/P1010253.JPG"
+      src="/images/Jackets/blue-bird-front.jpg"
       alt="First slide"
     />
     {/* <Carousel.Caption>
@@ -163,7 +163,7 @@ const HomeScreen = () => {
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="/images/Gloves/black-gloves-3.JPG"
+      src="/images/Gloves/black-gloves-3.jpg"
       alt="Third slide"
     />
 
@@ -175,7 +175,7 @@ const HomeScreen = () => {
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="/images/Jackets/P1010243.JPG"
+      src="/images/Jackets/outback-outfitter-tan-front.jpg"
       alt="Third slide"
     />
 
@@ -188,7 +188,7 @@ const HomeScreen = () => {
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="/images/Accessories/P1010204.JPG"
+      src="/images/Accessories/coastal-cruiser-patch.jpg"
       alt="Third slide"
     />
 
