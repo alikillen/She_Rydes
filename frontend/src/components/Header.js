@@ -30,7 +30,7 @@ const Header = () => {
           </Container> 
           
           
-          <Navbar variant="dark" expand="lg" collapseOnSelect className='custom-navbar'>
+          <Navbar variant="dark" expand="lg" collapseOnSelect className='custom-navbar'  sticky="top"> 
           <Container>
           
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -117,6 +117,23 @@ const Header = () => {
                     Login
                     </Nav.Link>
                   </LinkContainer> }
+
+                  {userInfo && userInfo.isAdmin && (
+                    <NavDropdown title='admin' id="adminmenu">
+                      <LinkContainer to="/admin/userlist">
+                        <NavDropdown.Item>Users</NavDropdown.Item>
+                      </LinkContainer>
+                     
+                      <LinkContainer to="admin/productlist">
+                        <NavDropdown.Item>Products</NavDropdown.Item>
+                      </LinkContainer>
+
+                      <LinkContainer to="/admin/orderlist">
+                        <NavDropdown.Item>Orders</NavDropdown.Item>
+                      </LinkContainer>
+
+                    </NavDropdown>
+                  )}
                 
               </Nav>       
               

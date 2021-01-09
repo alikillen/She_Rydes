@@ -144,29 +144,65 @@ const HomeScreen = () => {
 
   </Row>
 
+  {/* NEW ARRIVALS */}
+
+
+  <div><h3>NEW Arrivals</h3></div>
+  <Carousel>
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src="/images/Jackets/P1010253.JPG"
+      alt="First slide"
+    />
+    {/* <Carousel.Caption>
+      <h3>First slide label</h3>
+      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+    </Carousel.Caption> */}
+  </Carousel.Item>
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src="/images/Gloves/black-gloves-3.JPG"
+      alt="Third slide"
+    />
+
+    {/* <Carousel.Caption>
+      <h3>Second slide label</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </Carousel.Caption> */}
+  </Carousel.Item>
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src="/images/Jackets/P1010243.JPG"
+      alt="Third slide"
+    />
+
+    {/* <Carousel.Caption>
+      <h3>Third slide label</h3>
+      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+    </Carousel.Caption> */}
+  </Carousel.Item>
+
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src="/images/Accessories/P1010204.JPG"
+      alt="Third slide"
+    />
+
+    {/* <Carousel.Caption>
+      <h3>Third slide label</h3>
+      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+    </Carousel.Caption> */}
+  </Carousel.Item>
+</Carousel>
+
+
 
 </Container>
-</div>
-
-{/* Latest Products */}
-
-      {/* <h1>Latest Products</h1>
-      {loading ? (
-        <Loader /> )
-        : error ? (
-          <Message variant="danger">{error}</Message>
-        ) : (
-      <Row>
-          {products.map(product=>
-            <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
-              <Product product={product} />
-            </Col>
-          )}
-        </Row>) 
-      } */}
-
-      
-        
+</div>  
     </>
   )
 }
