@@ -33,7 +33,80 @@ const getProductById = asyncHandler(async (req, res) => {
   }
  })
 
+ //@desc    dELETE a product
+// @route   DELETE/api/products/:id
+// @access  Private/Admin
+const deleteProduct = asyncHandler(async (req, res) => {
+  const product = await Product.findById(req.params.id)
+  
+  if (product) {
+    await product.remove()
+    res.json({ message: 'Product removed'})
+  } else {
+    res.status(404)
+    throw new Error("Product not found")
+    // when we want to throw an error with a response, we can set the status 
+    // and throw a new error - no need for res.json and it will all be formattted same
+  }
+ })
+
+  //@desc    CREATE a product
+// @route   POST/api/products
+// @access  Private/Admin
+const createProduct = asyncHandler(async (req, res) => {
+  const product = new Product({
+    name: 'Sample name',
+    price: '0',
+    user: req.user._id,
+    image: '/images/sample.jpg',
+    category: 'Sample category',
+    countInStock: 0,
+    description: 'Sample description'
+  })
+
+  const createdProduct = await product.save()
+  res.status(201).json(createdProduct)
+ })
+
+
+  //@desc    UPDATE a product
+// @route   PUT/api/products/:id
+// @access  Private/Admin
+const updateProduct = asyncHandler(async (req, res) => {
+  const {name,
+         price,
+         description,
+         image,
+         category,
+         size, 
+         countInStock } = req.body
+
+  const product = await Product.findById(req.params.id)
+
+  if(product) {
+
+    product.name = name
+    product.price = price
+    product.description = description
+    product.image = image
+    product.size = size
+    product.category = category
+    product.countInStock = countInStock
+
+    const updatedProduct = await product.save()
+    res.json(updatedProduct)
+  } else {
+    res.status(404)
+    throw new Error('Product not found')
+  }
+ 
+  
+ })
+
  export {
    getProducts,
-   getProductById
+   getProductById,
+   deleteProduct,
+   createProduct,
+   updateProduct
  }
