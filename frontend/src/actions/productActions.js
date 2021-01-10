@@ -26,6 +26,8 @@ import {
 } from "../constants/productConstants.js"
 import { logout } from './userActions'
 
+import { logout } from './userActions'
+
 // list products action
 // depending on request, we dispatch diff success/fail messages to the reducer
 // we determine the payload (either data or an error) to be passed to the reducer
