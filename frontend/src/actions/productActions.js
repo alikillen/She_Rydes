@@ -24,6 +24,7 @@ import {
   PRODUCT_UPDATE_FAIL,
 
 } from "../constants/productConstants.js"
+import { logout } from './userActions'
 
 // list products action
 // depending on request, we dispatch diff success/fail messages to the reducer

@@ -4,6 +4,8 @@ import {
   getProducts, 
   getProductById, 
   deleteProduct,
+  createProduct,
+  updateProduct,
   getProductsbyCategory,
   getTopProducts
 } from "../controllers/productController.js"
