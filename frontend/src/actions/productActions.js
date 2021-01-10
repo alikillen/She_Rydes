@@ -24,6 +24,7 @@ import {
   PRODUCT_UPDATE_FAIL,
 
 } from "../constants/productConstants.js"
+import { logout } from './userActions'
 
 import { logout } from './userActions'
 
