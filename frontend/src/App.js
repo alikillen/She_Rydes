@@ -31,6 +31,7 @@ import StickersandPatchesScreen from "./screens/StickersandPatchesScreen";
 import ContactScreen from "./screens/ContactScreen";
 import ProductListScreen from "./screens/ProductListScreen"
 import ProductEditScreen from "./screens/ProductEditScreen"
+import OrderScreen from "./screens/OrderScreen"
 
 
 
@@ -41,6 +42,7 @@ function App() {
       <Header />
 
         <Switch>
+        <Route path = "/order/:id" component={OrderScreen} />
         <Route path='/shipping' component={ShippingScreen} />
         <Route path='/payment' component={PaymentScreen} />
         <Route path='/placeorder' component={PlaceOrderScreen} />
