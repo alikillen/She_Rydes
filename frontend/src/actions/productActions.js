@@ -7,6 +7,12 @@ import {
   PRODUCT_DETAILS_REQUEST,
   PRODUCT_DETAILS_SUCCESS,
   PRODUCT_DETAILS_FAIL,
+  PRODUCT_CATEGORY_REQUEST,
+  PRODUCT_CATEGORY_SUCCESS,
+  PRODUCT_CATEGORY_FAIL,
+  PRODUCT_TOP_REQUEST,
+  PRODUCT_TOP_SUCCESS,
+  PRODUCT_TOP_FAIL,
   PRODUCT_DELETE_SUCCESS,
   PRODUCT_DELETE_FAIL,
   PRODUCT_DELETE_REQUEST,
@@ -18,6 +24,8 @@ import {
   PRODUCT_UPDATE_FAIL,
 
 } from "../constants/productConstants.js"
+
+import { logout } from './userActions'
 
 // list products action
 // depending on request, we dispatch diff success/fail messages to the reducer
@@ -61,6 +69,47 @@ export const listProductDetails = (id) => async (dispatch) => {
   }
 }
 
+export const listProductsByCategory = (category) => async (dispatch) => {
+  // let category = req.params.id
+  try {
+    dispatch({ type: PRODUCT_CATEGORY_REQUEST })
+    const { data } = await axios.get(`api/products/category/${category}`)
+    // this is where dispatch is erroring - category is undefined
+
+    dispatch({
+      type: PRODUCT_CATEGORY_SUCCESS,
+      payload: data,
+    })
+  } catch (error) {
+     dispatch({
+       type: PRODUCT_CATEGORY_FAIL,
+       payload: error.response && error.response.data.message 
+       ? error.response.data.message 
+       : error.message
+     })
+  }
+
+}
+// changes made - not passing in category and interpolating string
+
+export const listTopProducts = () => async (dispatch) => {
+  try {
+    dispatch({ type: PRODUCT_TOP_REQUEST })
+    const { data } = await axios.get(`/api/products/top`)
+
+    dispatch({
+      type: PRODUCT_TOP_SUCCESS,
+      payload: data,
+    })
+  } catch (error) {
+     dispatch({
+       type: PRODUCT_TOP_FAIL,
+       payload: error.response && error.response.data.message 
+       ? error.response.data.message 
+       : error.message
+     })
+  }
+}
 
 // Delete Product Action
 

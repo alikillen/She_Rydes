@@ -1,6 +1,6 @@
 import React, { Component, useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux"
-import {Row, Col, Container} from "react-bootstrap"
+import {Row, Col, Container, Form} from "react-bootstrap"
 import Product from "../components/Product"
 import Message from "../components/Message"
 import Loader from "../components/Loader"
@@ -25,16 +25,49 @@ const HomeScreen = () => {
 
   return (
     <>
+    {/* <div className="Container">
+    <div>
+    <img style={{ 
+      backgroundImage: "url(/images/HomeScreenImg/bg.png)",
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+      width:'100vw',
+      height: '100vh'
+       }}/>
+    </div>
+ 
+       <div>
+       <h3>
+        Along the coastline, 
+          <br></br>
+        into the outback, 
+          <br></br>
+        among the mountains 
+          <br></br>
+        She Rydes . . .
+    </h3>
+       </div>
+     
+    </div> */}
     
+
+  
+
+   
+    
+
+
+
     {/* style={{ 
-      backgroundImage: "url(/images/Jackets/landing-img.png)",
+      backgroundImage: "url(/images/Jackets/bg.png)",
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
       width:'100vw',
       height: '100vh'
        }} */}
 
-    <Carousel className='custom-carousel'>
+  
+ <Carousel className='custom-carousel'>
     <Carousel.Item>
       <img
         className="d-block w-100"
@@ -44,10 +77,15 @@ const HomeScreen = () => {
     
     <Carousel.Caption className='custom-carousel-caption'>
         
-        <p>Along the coastline,
-          into the outback,
-          among the mountains,</p>
-        <h2>She Rydes . . .</h2>
+    <h3>
+        Along the coastline, 
+          <br></br>
+        into the outback, 
+          <br></br>
+        among the mountains 
+          <br></br>
+        She Rydes . . .
+    </h3>
        </Carousel.Caption>
     </Carousel.Item>
 
@@ -58,8 +96,15 @@ const HomeScreen = () => {
         alt="Third slide"
       />
       <Carousel.Caption className='custom-carousel-caption'>
-        <h3>Second slide label</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3>
+        Along the coastline, 
+          <br></br>
+        into the outback, 
+          <br></br>
+        among the mountains 
+          <br></br>
+        She Rydes . . .
+      </h3>
       </Carousel.Caption>
 
     </Carousel.Item>
@@ -71,12 +116,18 @@ const HomeScreen = () => {
       />
 
       <Carousel.Caption className='custom-carousel-caption'>
-        <h3>Third slide label</h3>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      <h3>
+        Along the coastline, 
+          <br></br>
+        into the outback, 
+          <br></br>
+        among the mountains 
+          <br></br>
+        She Rydes . . .
+      </h3>
       </Carousel.Caption>
     </Carousel.Item>
   </Carousel>
-    
   
  {/* SHOP THE LOOK SECTION */}
  
@@ -131,7 +182,7 @@ const HomeScreen = () => {
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="/images/Jackets/P1010253.JPG"
+      src="/images/Jackets/blue-bird-front.jpg"
       alt="First slide"
     />
     {/* <Carousel.Caption>
@@ -142,7 +193,7 @@ const HomeScreen = () => {
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="/images/Gloves/black-gloves-3.JPG"
+      src="/images/Gloves/black-gloves-3.jpg"
       alt="Third slide"
     />
 
@@ -154,7 +205,7 @@ const HomeScreen = () => {
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="/images/Jackets/P1010243.JPG"
+      src="/images/Jackets/outback-outfitter-tan-front.jpg"
       alt="Third slide"
     />
 
@@ -167,7 +218,7 @@ const HomeScreen = () => {
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="/images/Accessories/P1010204.JPG"
+      src="/images/Accessories/coastal-cruiser-patch.jpg"
       alt="Third slide"
     />
 

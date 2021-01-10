@@ -6,10 +6,13 @@ import { composeWithDevTools } from "redux-devtools-extension"
 import {
   productListReducer, 
   productDetailsReducer,
+  productCategoryReducer,
+  productTopRatedReducer,
   productDeleteReducer,
   productCreateReducer,
   productUpdateReducer,
 } from "./reducers/productReducers.js"
+
 import { cartReducer } from "./reducers/cartReducers"
 import { 
   userDetailsReducer, 
@@ -21,12 +24,22 @@ import {
   userUpdateReducer
 } from "./reducers/userReducers"
 
+import { orderCreateReducer,
+          orderDetailsReducer,
+          orderPayReducer,
+          orderDeliverReducer,
+          orderListMyReducer,
+          orderListReducer,
+         } from './reducers/orderReducers'
+
 // quite a few reducers for clarity and ease of debugging
 // each time we create an action we create constants, create reducer switch cases,
 // add it to store, and then add actions
 const reducer = combineReducers({
   productList: productListReducer,
   productDetails: productDetailsReducer,
+  productCategory: productCategoryReducer,
+  productTopRated: productTopRatedReducer,
   productDelete: productDeleteReducer,
   productCreate: productCreateReducer,
   productUpdate: productUpdateReducer,
@@ -37,7 +50,14 @@ const reducer = combineReducers({
   userUpdateProfile: userUpdateProfileReducer,
   userList: userListReducer,
   userDelete: userDeleteReducer,
-  userUpdate: userUpdateReducer
+  userUpdate: userUpdateReducer,
+  orderCreate: orderCreateReducer,
+  orderDetails: orderDetailsReducer,
+  orderPay: orderPayReducer,
+  orderDeliver: orderDeliverReducer,
+  orderListMy: orderListMyReducer,
+  orderList: orderListReducer,
+
 
 })
 
