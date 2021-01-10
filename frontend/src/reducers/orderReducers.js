@@ -42,8 +42,6 @@ export const orderCreateReducer = (state = {}, action) => {
         }
       // case ORDER_CREATE_RESET:
       //   return {}
-<<<<<<< HEAD
-=======
       default:
         return state
     }
@@ -118,7 +116,6 @@ export const orderCreateReducer = (state = {}, action) => {
         }
       case ORDER_DELIVER_RESET:
         return {}
->>>>>>> 1c1b19e5b8cbb40ebd1167b126a0f36999073fbb
       default:
         return state
     }
