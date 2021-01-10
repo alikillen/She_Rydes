@@ -31,6 +31,8 @@ import StickersandPatchesScreen from "./screens/StickersandPatchesScreen";
 import ContactScreen from "./screens/ContactScreen";
 import ProductListScreen from "./screens/ProductListScreen"
 import ProductEditScreen from "./screens/ProductEditScreen"
+import OrderScreen from "./screens/OrderScreen"
+import OrderListScreen from "./screens/OrderListScreen"
 
 
 
@@ -41,6 +43,7 @@ function App() {
       <Header />
 
         <Switch>
+        <Route path = "/order/:id" component={OrderScreen} />
         <Route path='/shipping' component={ShippingScreen} />
         <Route path='/payment' component={PaymentScreen} />
         <Route path='/placeorder' component={PlaceOrderScreen} />
@@ -62,6 +65,7 @@ function App() {
         <Route path = "/admin/user/:id/edit" component={UserEditScreen} />
         <Route path = "/admin/productlist" component={ProductListScreen} />
         <Route path = "/admin/product/:id/edit" component={ProductEditScreen} />
+        <Route path = "/admin/orderList" component={OrderListScreen} />
 
         <Route exact path = "/404" component={NotFoundPage} />
         <Redirect to="404" />
