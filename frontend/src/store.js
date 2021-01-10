@@ -24,7 +24,9 @@ import {
   userUpdateReducer
 } from "./reducers/userReducers"
 
-import { orderCreateReducer } from './reducers/orderReducers'
+import { orderCreateReducer,
+          orderDetailsReducer,
+         } from './reducers/orderReducers'
 
 // quite a few reducers for clarity and ease of debugging
 // each time we create an action we create constants, create reducer switch cases,
@@ -46,6 +48,7 @@ const reducer = combineReducers({
   userDelete: userDeleteReducer,
   userUpdate: userUpdateReducer,
   orderCreate: orderCreateReducer,
+  orderDetails: orderDetailsReducer,
 
 })
 
