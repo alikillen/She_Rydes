@@ -1,6 +1,6 @@
 import React, { Component, useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux"
-import {Row, Col, Container} from "react-bootstrap"
+import {Row, Col, Container, Form} from "react-bootstrap"
 import Product from "../components/Product"
 import Message from "../components/Message"
 import Loader from "../components/Loader"
@@ -25,9 +25,41 @@ const HomeScreen = () => {
 
   return (
     <>
+    {/* <div className="Container">
+    <div>
+    <img style={{ 
+      backgroundImage: "url(/images/HomeScreenImg/bg.png)",
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+      width:'100vw',
+      height: '100vh'
+       }}/>
+    </div>
+ 
+       <div>
+       <h3>
+        Along the coastline, 
+          <br></br>
+        into the outback, 
+          <br></br>
+        among the mountains 
+          <br></br>
+        She Rydes . . .
+    </h3>
+       </div>
+     
+    </div> */}
     
+
+  
+
+   
+    
+
+
+
     {/* style={{ 
-      backgroundImage: "url(/images/Jackets/landing-img.png)",
+      backgroundImage: "url(/images/Jackets/bg.png)",
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
       width:'100vw',
@@ -35,8 +67,7 @@ const HomeScreen = () => {
        }} */}
 
   
-
-    <Carousel className='custom-carousel'>
+ <Carousel className='custom-carousel'>
     <Carousel.Item>
       <img
         className="d-block w-100"
@@ -97,7 +128,6 @@ const HomeScreen = () => {
       </Carousel.Caption>
     </Carousel.Item>
   </Carousel>
-    
   
  {/* SHOP THE LOOK SECTION */}
  
@@ -144,29 +174,65 @@ const HomeScreen = () => {
 
   </Row>
 
+  {/* NEW ARRIVALS */}
+
+
+  <div><h3>NEW Arrivals</h3></div>
+  <Carousel>
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src="/images/Jackets/blue-bird-front.jpg"
+      alt="First slide"
+    />
+    {/* <Carousel.Caption>
+      <h3>First slide label</h3>
+      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+    </Carousel.Caption> */}
+  </Carousel.Item>
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src="/images/Gloves/black-gloves-3.jpg"
+      alt="Third slide"
+    />
+
+    {/* <Carousel.Caption>
+      <h3>Second slide label</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </Carousel.Caption> */}
+  </Carousel.Item>
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src="/images/Jackets/outback-outfitter-tan-front.jpg"
+      alt="Third slide"
+    />
+
+    {/* <Carousel.Caption>
+      <h3>Third slide label</h3>
+      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+    </Carousel.Caption> */}
+  </Carousel.Item>
+
+  <Carousel.Item>
+    <img
+      className="d-block w-100"
+      src="/images/Accessories/coastal-cruiser-patch.jpg"
+      alt="Third slide"
+    />
+
+    {/* <Carousel.Caption>
+      <h3>Third slide label</h3>
+      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+    </Carousel.Caption> */}
+  </Carousel.Item>
+</Carousel>
+
+
 
 </Container>
-</div>
-
-{/* Latest Products */}
-
-      {/* <h1>Latest Products</h1>
-      {loading ? (
-        <Loader /> )
-        : error ? (
-          <Message variant="danger">{error}</Message>
-        ) : (
-      <Row>
-          {products.map(product=>
-            <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
-              <Product product={product} />
-            </Col>
-          )}
-        </Row>) 
-      } */}
-
-      
-        
+</div>  
     </>
   )
 }

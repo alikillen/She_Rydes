@@ -16,6 +16,12 @@ import CartScreen from "./screens/CartScreen"
 import LoginScreen from "./screens/LoginScreen"
 import RegisterScreen from "./screens/RegisterScreen"
 import ProfileScreen from "./screens/ProfileScreen"
+import ShippingScreen from './screens/ShippingScreen'
+import PaymentScreen from './screens/PaymentScreen'
+import PlaceOrderScreen from './screens/PlaceOrderScreen'
+import AdminScreen from "./screens/AdminScreen"
+import UserListScreen from './screens/UserListScreen'
+import UserEditScreen from './screens/UserEditScreen'
 import NotFoundPage from './screens/404'
 import AllProductsScreen from "./screens/AllProductsScreen";
 import JacketsScreen from "./screens/JacketsScreen";
@@ -23,6 +29,10 @@ import PantsScreen from "./screens/PantsScreen";
 import GlovesScreen from "./screens/GlovesScreen";
 import StickersandPatchesScreen from "./screens/StickersandPatchesScreen";
 import ContactScreen from "./screens/ContactScreen";
+import ProductListScreen from "./screens/ProductListScreen"
+import ProductEditScreen from "./screens/ProductEditScreen"
+import OrderScreen from "./screens/OrderScreen"
+import OrderListScreen from "./screens/OrderListScreen"
 
 
 
@@ -33,6 +43,10 @@ function App() {
       <Header />
 
         <Switch>
+        <Route path = "/order/:id" component={OrderScreen} />
+        <Route path='/shipping' component={ShippingScreen} />
+        <Route path='/payment' component={PaymentScreen} />
+        <Route path='/placeorder' component={PlaceOrderScreen} />
         <Route path = "/login" component={LoginScreen} />
         <Route path = "/register" component={RegisterScreen} />
         <Route path = "/profile" component={ProfileScreen} />
@@ -46,6 +60,12 @@ function App() {
         <Route path = "/Gloves" component={GlovesScreen} />
         <Route path = "/StickersandPatches" component={StickersandPatchesScreen} />
         <Route path = "/Contact" component={ContactScreen} />
+        <Route path = "/AdminScreen" component={AdminScreen} />
+        <Route path = "/admin/userlist" component={UserListScreen} />
+        <Route path = "/admin/user/:id/edit" component={UserEditScreen} />
+        <Route path = "/admin/productlist" component={ProductListScreen} />
+        <Route path = "/admin/product/:id/edit" component={ProductEditScreen} />
+        <Route path = "/admin/orderList" component={OrderListScreen} />
 
         <Route exact path = "/404" component={NotFoundPage} />
         <Redirect to="404" />
