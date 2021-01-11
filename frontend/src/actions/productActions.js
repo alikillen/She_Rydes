@@ -1,5 +1,6 @@
 import axios from "axios"
 
+
 import { 
   PRODUCT_LIST_REQUEST,
   PRODUCT_LIST_SUCCESS,
@@ -24,6 +25,8 @@ import {
   PRODUCT_UPDATE_FAIL,
 
 } from "../constants/productConstants.js"
+
+import { logout } from './userActions'
 
 // list products action
 // depending on request, we dispatch diff success/fail messages to the reducer
