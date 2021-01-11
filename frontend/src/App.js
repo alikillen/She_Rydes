@@ -33,6 +33,11 @@ import ProductListScreen from "./screens/ProductListScreen"
 import ProductEditScreen from "./screens/ProductEditScreen"
 import OrderScreen from "./screens/OrderScreen"
 import OrderListScreen from "./screens/OrderListScreen"
+import PrivacyPolicyScreen from "./screens/PrivacyPolicyScreen"
+import ShippingandReturnsScreen from "./screens/ShippingandReturnsScreen"
+import TermsandConditionsScreen from "./screens/TermsandConditionsScreen"
+import SizingChartsScreen from "./screens/SizingChartsScreen"
+
 
 
 
@@ -47,7 +52,7 @@ function App() {
         <Route path='/shipping' component={ShippingScreen} />
         <Route path='/payment' component={PaymentScreen} />
         <Route path='/placeorder' component={PlaceOrderScreen} />
-        <Route path = "/login" component={LoginScreen} />
+        <Route path = "/login" component={LoginScreen} /> 
         <Route path = "/register" component={RegisterScreen} />
         <Route path = "/profile" component={ProfileScreen} />
         <Route path = "/product/:id" component={ProductScreen} />
@@ -66,6 +71,12 @@ function App() {
         <Route path = "/admin/productlist" component={ProductListScreen} />
         <Route path = "/admin/product/:id/edit" component={ProductEditScreen} />
         <Route path = "/admin/orderList" component={OrderListScreen} />
+
+        <Route path = "/TermsandConditions" component={TermsandConditionsScreen} />
+        <Route path = "/PrivacyPolicy" component={PrivacyPolicyScreen} />
+        <Route path = "/ShippingandReturns" component={ShippingandReturnsScreen} />
+        <Route path = "/SizingCharts" component={SizingChartsScreen} />
+
 
         <Route exact path = "/404" component={NotFoundPage} />
         <Redirect to="404" />
