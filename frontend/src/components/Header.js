@@ -16,7 +16,7 @@ const Header = () => {
 
     return (
         <header>
-          <Container 
+          <div 
             style={
               {
                 display: "flex",
@@ -27,7 +27,7 @@ const Header = () => {
             <Row>
               <Col><Image src="/images/Logos/logo-desktop.png" className="custom-logo" /></Col>
             </Row>
-          </Container> 
+          </div> 
           
           
           <Navbar variant="dark" expand="lg" collapseOnSelect className='custom-navbar'> 
