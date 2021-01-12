@@ -1,7 +1,9 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Raleway&display=swap"); */
-
-
-
+.custom-body {
+  margin: 0%;
+  font-family: 'Bodoni Moda', serif;
+  letter-spacing: 1px;
+}
 /* Custom styling Header and Navbar */
 .custom-logo {
   padding-top: 20px;
@@ -10,68 +12,143 @@
 
 .custom-navbar {
   background-color: #000;
+  border-top: #fca103 solid 5px;
 }
 
 .custom-nav {
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 600;
 }
 
-main {
-  min-height: 100vh;
-}
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-family: "Lora", serif;
-  font-weight: bold;
-  font-style: italic;
-}
-
-p {
-  font-family: "Raleway", sans-serif;
-}
-
-/* h3 {
-  padding: 1rem 0;
-} */
-
-h1 {
-  font-size: 1.8rem;
-  padding: 1rem 0;
-}
-
-h2 {
-  font-size: 1.4rem;
-  padding: 0.5rem 0;
-}
-
-.rating span {
-  margin: 0.1rem;
-}
 
 /* CUSTOM "LANDING PAGE" */
 
-.custom-carousel-caption {
-position: relative;
-top: 10%;
-height: 100%;
-width: 75%;
+.video-section {
+  width: 100vw;
 }
 
+#video {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  object-fit: cover;
+  transform: (translate(-50%, -50%));
+  top: "50%";
+  left: "50%";
+  
+}
+
+.video-text {
+  text-align: center;
+  padding-top:10%;
+  padding-bottom: 5%;
+  font-size: 30px;
+  font-weight: 500;
+  color: #fff;
+  line-height: 40px;
+}
+
+#sherydes-bold {
+
+  /* background-color: #edde9c; */
+  color:#fca103;
+  text-shadow:
+    0 1px 0px #0c0c0c,
+    1px 0 0px #050500,
+    1px 2px 1px #181817,
+    2px 1px 1px #111314,
+    2px 3px 2px #0d1214,
+    3px 2px 2px #091114,
+    3px 4px 2px #0f0f0f,
+    4px 3px 3px #010d13,
+    4px 5px 3px #111111,
+    5px 4px 2px #011118,
+    5px 6px 2px #050505,
+    6px 5px 2px #0e0f0f,
+    6px 7px 1px #0e0f0f,
+    7px 6px 1px #03151d,
+    7px 8px 0px #191a18,
+    8px 7px 0px #070707;
+
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.explore-range-text {
+  text-align: center;
+  padding-bottom: 10%;
+  font-size: 30px;
+  color: #fff;
+  font-weight: bold;
+ 
+}
+
+#explore-range-button {
+  border: solid 1px;
+  border-radius: 25px;
+  color: #fca103;
+  font-size: 24px;
+  font-weight: bold;
+  box-shadow: #fca103;
+  animation-delay: 2s;
+
+
+}
+
+.poem {
+  width: 100vw;
+  padding-top: 10%;
+ padding-left: 10%;
+  font-size: 35px;
+  font-weight: 500;
+  font-style: italic;
+  color: #120c01;
+
+  text-shadow: 0 1px 0 rgb(163, 161, 161),
+               0 2px 0 #818080,
+               0 3px 0 rgb(54, 53, 53),
+               0 4px 0 #646161,
+               0 5px 0 rgb(82, 81, 81),
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+  
+}
+
+.line-four {
+ 
+  font-weight: bold;
+  font-size: 45px; 
+}
+
+/* Styling Carousel Section */
 .shop-the-look {
   text-align: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
+  margin-bottom: 2%;
 }
 
-.custom-style-img {
-width: 300px;
-height: 200px;
-padding-top: 10px;
-margin: 0 auto;
+
+
+#shop-the-look-div {
+  background-color:#120c01;
+  padding-top: 10px;
+  margin-bottom: 2%;
+  border-top: #fca103 solid 1px;
+  border-bottom: #fca103 solid 2px;
+  
+  
+}
+
+#shop-the-look-header {
+  color: #fca103;
+  font-size: 45px;
 }
 
 
@@ -107,6 +184,7 @@ margin: 0 auto;
   background-color: #000;
   margin: 0 auto;
   padding: 2%;
+  border-top: #fca103 solid 5px;
 }
 
 .custom-copyright {

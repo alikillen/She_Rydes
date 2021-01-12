@@ -1,6 +1,5 @@
-import React, { Component, useEffect } from 'react'
-import {Row, Col, Container, Image} from "react-bootstrap"
-
+import React, { Component, useEffect } from "react";
+import { Row, Col, Container, Image } from "react-bootstrap";
 
 const AboutScreen = () => {
 
@@ -48,19 +47,8 @@ At She Rydes we aim to embody the freedom of the open road. Our collection allow
                         Mauris et erat arcu. Curabitur eu convallis purus. </p>
                 </Col>
             </Row>  */}
-            </Container>    
-          
-        
+    </Container>
+  );
+};
 
-    )
-}
-
-
-
-export default AboutScreen
-
-
-
-
-
-
+export default AboutScreen;
