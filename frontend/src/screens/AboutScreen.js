@@ -17,7 +17,7 @@ const AboutScreen = () => {
        
          <h1 style={{
              color: '#eb8934',
-         }}>About us. . .</h1>
+         }}>About She Rydes. . .</h1>
          <Row >
              <Col sm className='about-content'>
              <p>She Rydes is an Australian owned, Gold Coast based company dedicated to providing women riders with quality protective gear. Our vision is to empower your ride with gear that is affordable and effortlessly stylish.
