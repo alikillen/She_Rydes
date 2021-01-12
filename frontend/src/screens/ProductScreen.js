@@ -5,8 +5,12 @@ import { Row, Col, Image, ListGroup, Card, Button, Form } from "react-bootstrap"
 import Message from "../components/Message.js"
 import Loader from "../components/Loader"
 import Rating from "../components/Rating"
-import { listProductDetails, createProductReview } from "../actions/productActions.js"
-import { PRODUCT_CREATE_REVIEW_RESET } from "../constants/productConstants"
+// import Meta from '../components/Meta'
+import {
+  listProductDetails,
+  createProductReview,
+} from '../actions/productActions'
+import { PRODUCT_CREATE_REVIEW_RESET } from '../constants/productConstants'
 
 const ProductScreen = ({ history, match }) => {
   // using useState to setup quantity of items on product page
@@ -27,11 +31,22 @@ const ProductScreen = ({ history, match }) => {
   const { userInfo } = userLogin
 
   const productReviewCreate = useSelector((state) => state.productReviewCreate)
-  const { success: successProductReview, error: errorProductReview } = productReviewCreate
-
+  const {
+    success: successProductReview,
+    loading: loadingProductReview,
+    error: errorProductReview,
+  } = productReviewCreate
+  
   useEffect(() => {
-    dispatch(listProductDetails(match.params.id))
-  }, [dispatch, match])
+    if (successProductReview) {
+      setRating(0)
+      setComment('')
+    }
+    if (!product._id || product._id !== match.params.id) {
+      dispatch(listProductDetails(match.params.id))
+      dispatch({ type: PRODUCT_CREATE_REVIEW_RESET })
+    }
+  }, [dispatch, match, successProductReview])
 
   // this is executed when we add things to our cart using button on product page
   // change addtocarthandler to include size and color
@@ -198,7 +213,7 @@ const ProductScreen = ({ history, match }) => {
         </Col>
       </Row>
 
-      <Row>
+      {/* <Row>
         <Col md={6}>
           <h2>Reviews</h2>
           {product.reviews.length === 0 && <Message>No reviews yet for this product</Message>}
@@ -210,7 +225,6 @@ const ProductScreen = ({ history, match }) => {
                 <p>{review.createdAt.substring(0, 10)}</p>
                 <p>{review.comment}</p>
               </ListGroup.Item>
-
             ))}
               <ListGroup.item>
                 <h2>Write a Customer Review</h2>
@@ -227,7 +241,7 @@ const ProductScreen = ({ history, match }) => {
           </ListGroup>                
 
         </Col>
-      </Row>
+      </Row> */}
       </>
       )}
      
