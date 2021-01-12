@@ -25,18 +25,17 @@ const AboutScreen = () => {
       <Row>
         <Col sm className="about-content">
           <p>
-            We are a generation of freedom. We can speak, love and create our
-            own idyllic world for ourselves and our community. Gone are the days
-            where we sit on the back of a motorcycle wearing singlets and short,
-            shorts - looking like a groupie. We ride our own bikes, we care
-            about the protection of our bodies and we push the boundaries to
-            explore new roads, avenues and ways of living. She Rydes is a brand
-            that has been inspired by the new wave of empowered female riders.
-            The ones that want to embrace individuality and liberty. To wear
-            clothing that isn’t made by men or Chinese factories. Founded in
-            Australia and being brought to the wider world. We hope you find
-            some quality pieces for your biker wardrobe. A girl can never have
-            too many clothes.
+            She Rydes is an Australian owned, Gold Coast based company dedicated
+            to providing women riders with quality protective gear. Our vision
+            is to empower your ride with gear that is affordable and
+            effortlessly stylish. She Rydes is inspired by the new wave of
+            independent women riders embracing individuality and liberty. We
+            ride our own bikes, care about the protection of our bodies, and we
+            push the boundaries to explore new roads and ways of living. At She
+            Rydes we aim to embody the freedom of the open road. Our collection
+            allows women to feel safe and stylish whether they’re riding into
+            the great unknown or into the urban jungle. We hope you find some
+            quality pieces for your biker wardrobe..
           </p>
         </Col>
         <Col></Col>
