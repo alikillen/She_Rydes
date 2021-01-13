@@ -45,9 +45,10 @@
   padding-top:10%;
   padding-bottom: 5%;
   font-size: 30px;
-  font-weight: 500;
+  font-weight: 400;
   color: #fff;
   line-height: 40px;
+  letter-spacing: px;
 }
 
 #sherydes-bold {
@@ -72,7 +73,7 @@
     7px 8px 0px #191a18,
     8px 7px 0px #070707;
 
-  font-weight: bold;
+    font-weight: bold;
   font-size: 40px;
 }
 
@@ -103,7 +104,7 @@
  padding-left: 10%;
   font-size: 35px;
   font-weight: 500;
-  font-style: italic;
+  /* font-style: italic; */
   color: #120c01;
 
   text-shadow: 0 1px 0 rgb(163, 161, 161),
@@ -154,21 +155,44 @@
 
 /* CUSTOM STYLING ABOUT PAGE */
 
-.custom-about-page {
-  width: 100vw;
-  padding: 5%;
-  margin:0;
-  font-size: 14px;
+#about-header {
+  padding: 15%;
+  color:#000;
+  text-align: center;
+  font-weight: 900;
 }
 
 .about-content {
-  background-color: rgba(227, 228, 221, 0.603);
-  padding: 20px;
+  padding: 10%;
+  margin-bottom: 2%;
   text-align: left;
-  color: #000;
-  
+  align-content: center;
+  color:#000;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 40px;
 }
 
+#about-button-container {
+  text-align: center;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+#about-button {
+  border: solid 1px;
+  border-radius: 25px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  transition-duration: 0.4s;
+  background-color: #191a18;
+
+}
+
+#about-button:hover {
+background-color: #fca103;
+color: black;
+}
 
 /* CUSTOM STYLING LOG IN PAGE*/
 
