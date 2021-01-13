@@ -156,7 +156,7 @@
 /* CUSTOM STYLING ABOUT PAGE */
 
 #about-header {
-  padding: 10%;
+  padding: 15%;
   color:#000;
   text-align: center;
   font-weight: 900;
@@ -176,6 +176,22 @@
 #about-button-container {
   text-align: center;
   align-items: center;
+  padding-bottom: 20px;
+}
+
+#about-button {
+  border: solid 1px;
+  border-radius: 25px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  transition-duration: 0.4s;
+  background-color: #191a18;
+
+}
+
+#about-button:hover {
+background-color: #fca103;
+color: black;
 }
 
 /* CUSTOM STYLING LOG IN PAGE*/
