@@ -58,8 +58,7 @@ const OrderScreen = ({ match, history }) => {
       script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}`
       script.async = true
       script.onload = () => {
-        setSdkReady(true)
-      }
+        setSdkReady(true)      }      
       document.body.appendChild(script)
     }
 
