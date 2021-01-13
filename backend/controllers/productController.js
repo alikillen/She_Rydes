@@ -98,7 +98,6 @@ const createProduct = asyncHandler(async (req, res) => {
     SKU: '1234',
     countInStock: 0,
     description: 'Sample description',
-    SKU: "1234"
   })
 
   const createdProduct = await product.save()
@@ -129,9 +128,9 @@ const updateProduct = asyncHandler(async (req, res) => {
     product.image = image
     product.size = size
     product.category = category
-    product.SKU = SKU
+    product.sku = SKU
     product.countInStock = countInStock
-    product.SKU = SKU
+    
 
     const updatedProduct = await product.save()
     res.json(updatedProduct)

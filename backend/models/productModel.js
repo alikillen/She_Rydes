@@ -66,6 +66,7 @@ const productSchema = Mongoose.Schema({
     required: true,
     default: 0
   },
+  
   SKU: {
     type: String,
     required: true,
