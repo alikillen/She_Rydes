@@ -52,6 +52,7 @@ const HomeScreen = () => {
     <div style={{
       backgroundImage: `url(${process.env.PUBLIC_URL + '/images/Jackets/static-bg.png'})`,
       backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
       width: '100vw',
       height: '100vh',
       
