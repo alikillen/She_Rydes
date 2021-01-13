@@ -107,7 +107,7 @@ const OrderScreen = ({ match, history }) => {
               <p>
                 <strong>Address:</strong>
                 {order.shippingAddress.address}, {order.shippingAddress.city}{' '}
-                {order.shippingAddress.postalCode},{' '}
+                {order.shippingAddress.postCode},{' '}
                 {order.shippingAddress.country}
               </p>
               {order.isDelivered ? (
