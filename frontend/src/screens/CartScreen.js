@@ -29,9 +29,17 @@ const CartScreen = ({ match, location, history }) => {
     dispatch(removeFromCart(id))
   }
 
+  // this is causing issues with proceed to checkout button - redirrects to /api/products/login which causes 500
+  // its supposed to check if logged in, but is redirecting incorrectly
+  // because of history.push - we have previously been in /api/products, so it pushes /login onto /api/products
+  // need to change it to redirect to shipping IF the user is logged in
+  // might not be an issue if we have a fresh login everytime - if history is correct
+  // i think the repair is to logout of all accounts before you stop your server - seems to only happen when left logged in and sever restarted
+
   const checkoutHandler = () => {
     history.push("./login?redirect=shipping")
   }
+
   
   return (
     <Row>

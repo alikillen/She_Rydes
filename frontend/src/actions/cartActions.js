@@ -24,6 +24,7 @@ export const addToCart = (id, qty) => async (dispatch, getState) => {
     },
   })
 
+  // this is why cart items are still there when we logout
   localStorage.setItem("cartItems", JSON.stringify(getState().cart.cartItems))
     
   } catch (error) {
