@@ -1,4 +1,5 @@
 import express from "express"
+import mongoose from "mongoose"
 const router = express.Router()
 import { 
   getProducts, 
@@ -7,14 +8,22 @@ import {
   createProduct,
   updateProduct,
   getProductsbyCategory,
-  getTopProducts
+  getTopProducts,
+  createProductReview
 } from "../controllers/productController.js"
 import { protect, admin } from "../middleware/authMiddleware.js"
 
 router.route("/").get(getProducts).post(protect, admin, createProduct)
 router.route("/category/:id").get(getProductsbyCategory)
+
+// console.log(mongoose.Types.ObjectId.isValid('5ffc38e7fcc8860188ff1cd7'));
+router.route("/:id/reviews").post(protect, createProductReview)
 router.get("/top", getTopProducts)
-router.route("/:id").get(getProductById).delete(protect, admin, deleteProduct).put(protect, admin, updateProduct)
+router
+  .route("/:id")
+  .get(getProductById)
+  .delete(protect, admin, deleteProduct)
+  .put(protect, admin, updateProduct)
 
 
 export default router

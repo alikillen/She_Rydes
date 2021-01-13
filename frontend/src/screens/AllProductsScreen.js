@@ -27,7 +27,7 @@ const AllProductsScreen = () => {
     <TopProducts />
 
 
-      <h1>Latest Products</h1>
+      <h1>All Products</h1>
       {loading ? (
         <Loader /> )
         : error ? (

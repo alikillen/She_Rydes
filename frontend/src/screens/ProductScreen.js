@@ -5,20 +5,48 @@ import { Row, Col, Image, ListGroup, Card, Button, Form } from "react-bootstrap"
 import Message from "../components/Message.js"
 import Loader from "../components/Loader"
 import Rating from "../components/Rating"
-import { listProductDetails } from "../actions/productActions.js"
+// import Meta from '../components/Meta'
+import {
+  listProductDetails,
+  createProductReview,
+} from '../actions/productActions'
+import { PRODUCT_CREATE_REVIEW_RESET } from '../constants/productConstants'
 
 const ProductScreen = ({ history, match }) => {
   // using useState to setup quantity of items on product page
   const [qty, setQty] = useState(1)
+  const [rating, setRating] = useState(0)
+  const [comment, setComment] = useState("")
+
+  // const [color, setColor] = useState()
+  // const [size, setSize ] = useState()
+
   const dispatch = useDispatch()
 
   // getting product data from the state using useSelector
   const productDetails = useSelector((state) => state.productDetails)
   const { loading, error, product } = productDetails
 
+  const userLogin = useSelector((state) => state.userLogin)
+  const { userInfo } = userLogin
+
+  const productReviewCreate = useSelector((state) => state.productReviewCreate)
+  const {
+    success: successProductReview,
+    loading: loadingProductReview,
+    error: errorProductReview,
+  } = productReviewCreate
+  
   useEffect(() => {
-    dispatch(listProductDetails(match.params.id))
-  }, [dispatch, match])
+    if (successProductReview) {
+      setRating(0)
+      setComment('')
+    }
+    if (!product._id || product._id !== match.params.id) {
+      dispatch(listProductDetails(match.params.id))
+      dispatch({ type: PRODUCT_CREATE_REVIEW_RESET })
+    }
+  }, [dispatch, match, successProductReview])
 
   // this is executed when we add things to our cart using button on product page
   // change addtocarthandler to include size and color
@@ -37,6 +65,7 @@ const ProductScreen = ({ history, match }) => {
       : error
       ? <Message variant="danger">{error}</Message>
       : (
+        <>
         <Row>
         <Col md={6}>
           <Image src={product.image} alt={product.name} fluid />
@@ -183,6 +212,37 @@ const ProductScreen = ({ history, match }) => {
           </Card>
         </Col>
       </Row>
+
+      {/* <Row>
+        <Col md={6}>
+          <h2>Reviews</h2>
+          {product.reviews.length === 0 && <Message>No reviews yet for this product</Message>}
+          <ListGroup variant="flush">
+            {product.reviews.map(review => (
+              <ListGroup.Item key={review._id}>
+                <strong>{review.name}</strong>
+                <Rating value={review.rating} />
+                <p>{review.createdAt.substring(0, 10)}</p>
+                <p>{review.comment}</p>
+              </ListGroup.Item>
+            ))}
+              <ListGroup.item>
+                <h2>Write a Customer Review</h2>
+                {userInfo ? (
+                  <h1></h1>
+                  ) : (
+                    <Message> 
+                    Please <Link to="/login">login</Link> to write a review. 
+                      {' '}
+                    </Message>
+                    )}
+              </ListGroup.item>
+
+          </ListGroup>                
+
+        </Col>
+      </Row> */}
+      </>
       )}
      
     </>

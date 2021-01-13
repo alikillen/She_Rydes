@@ -7,7 +7,7 @@ const products = [
     category: 'Jacket',
     price: 189.95,
     countInStock: 10,
-    rating: 4.5,
+    rating: 0,
     numReviews: 12,
     SKU: "OBOF"
   },
@@ -19,7 +19,7 @@ const products = [
     category: 'Jacket',
     price: 239.50,
     countInStock: 7,
-    rating: 4.0,
+    rating: 0,
     numReviews: 8,
     SKU: "NRLJ"
   },
@@ -31,7 +31,7 @@ const products = [
     category: 'Jacket',
     price: 99.95,
     countInStock: 5,
-    rating: 3,
+    rating: 0,
     numReviews: 12,
     SKU: "BBLJ"
   },
@@ -43,7 +43,7 @@ const products = [
     category: 'Jacket',
     price: 199.95,
     countInStock: 11,
-    rating: 5,
+    rating: 0,
     numReviews: 12,
     SKU: "ITHD"
   },
@@ -55,7 +55,7 @@ const products = [
     category: 'Jacket',
     price: 149.99,
     countInStock: 7,
-    rating: 3.5,
+    rating: 0,
     numReviews: 10,
     SKU: "FDD"
   },
@@ -67,7 +67,7 @@ const products = [
     category: 'Gloves',
     price: 49.95,
     countInStock: 10,
-    rating: 4,
+    rating: 0,
     numReviews: 12,
     SKU: "FTLOG"
   },
@@ -80,7 +80,7 @@ const products = [
     category: 'Pants',
     price: 89.95,
     countInStock: 10,
-    rating: 4,
+    rating: 0,
     numReviews: 12,
     SKU: "PANTS"
   },
@@ -93,7 +93,7 @@ const products = [
     category: 'Accessories',
     price: 9.95,
     countInStock: 20,
-    rating: 4,
+    rating: 0,
     numReviews: 12,
     SKU: "SRPS"
   },
@@ -106,7 +106,7 @@ const products = [
     category: 'Accessories',
     price: 9.95,
     countInStock: 20,
-    rating: 4,
+    rating: 0,
     numReviews: 12,
     SKU: "BWPS"
   },
@@ -119,7 +119,7 @@ const products = [
     category: 'Accessories',
     price: 9.95,
     countInStock: 20,
-    rating: 4,
+    rating: 0,
     numReviews: 12,
     SKU: "SSPS"
   },
@@ -132,7 +132,7 @@ const products = [
     category: 'Accessories',
     price: 9.95,
     countInStock: 20,
-    rating: 4,
+    rating: 0,
     numReviews: 12,
     SKU: "IHPS"
   },
@@ -144,7 +144,7 @@ const products = [
     category: 'Accessories',
     price: 9.95,
     countInStock: 20,
-    rating: 4,
+    rating: 0,
     numReviews: 12,
     SKU: "RDPS"
   },
@@ -156,7 +156,7 @@ const products = [
     category: 'Accessories',
     price: 9.95,
     countInStock: 0,
-    rating: 4,
+    rating: 0,
     numReviews: 12,
     SKU: "CCPS"
   },

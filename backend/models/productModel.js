@@ -1,18 +1,20 @@
 import Mongoose from "mongoose"
+
 const reviewSchema = Mongoose.Schema(
   {
-  name: {type: String, required: true},
-  rating: {type: Number, required: true},
-  comment: {type: String, required: true},
-  user: {
-    type: Mongoose.Schema.Types.ObjectId,
-    required: true,
-    ref: 'User',
+    name: { type: String },
+    rating: { type: Number, required: true },
+    comment: { type: String, required: true },
+    user: {
+      type: Mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: 'User',
+    },
   },
-}, 
   {
-  timestamps: true
-  })
+    timestamps: true,
+  }
+)
 
   const productOptions = {
     discriminatorKey: 'productType', // our discriminator key, could be anything

@@ -30,7 +30,7 @@ const HomeScreen = () => {
         with quality protective gear. <br />
         Our vision is to empower your ride with gear that is
         <br />
-        affordable and effortlessly stylish
+        affordable and effortlessly stylish.
         </p>
         </div>
 
@@ -38,7 +38,7 @@ const HomeScreen = () => {
           <p className="animate__animated animate__fadeInLeft">Explore the range now...</p>
           <div>
             <Button size="lg" id="explore-range-button" className="animate__animated animate__fadeInLeft">
-              Check our Products
+              Shop Products
             </Button>{' '}
           </div>
         </div>
