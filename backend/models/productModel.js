@@ -112,6 +112,11 @@ export { Jacket }
 export { Pants }
 export { Gloves }
 export { Accessories }
+
+var sampleJacket = new Jacket({ name: 'sample jacket', image: 'jacket', category: 'Jacket', description: 'good jacket', rating: 5, numReviews: 1, price: 100, countInStock: 5, SKU: "sample", size: 12, color:"brown"});
+// sampleJacket.save();
+console.log(sampleJacket)
+
 // module.exports = mongoose.model(Jacket);
 // module.exports = mongoose.model(Pants);
 // module.exports = mongoose.model(Gloves);
