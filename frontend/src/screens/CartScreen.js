@@ -10,6 +10,16 @@ const CartScreen = ({ match, location, history }) => {
 
   const qty = location.search ? Number(location.search.split("=")[1]) : 1
   // this will be the query params
+
+//   let search = new URLSearchParams(this.props.location.search);
+//   console.log(search)
+
+// const color = search.get("color");
+// console.log(color)
+
+  // const color =
+
+  // const size = 
   
   const dispatch = useDispatch()
 
@@ -19,6 +29,8 @@ const CartScreen = ({ match, location, history }) => {
   console.log(cartItems)
 
   // we only want to add to cart if there is a product ID
+
+  // we need to add size and color here too for users to add those attributes to cart?
   useEffect(() => {
     if(productId) {
       dispatch(addToCart(productId, qty))
@@ -29,7 +41,7 @@ const CartScreen = ({ match, location, history }) => {
     dispatch(removeFromCart(id))
   }
 
-  // this is causing issues with proceed to checkout button - redirrects to /api/products/login which causes 500
+  // this checkoutHandler is causing issues with proceed to checkout button - redirrects to /api/products/login which causes 500
   // its supposed to check if logged in, but is redirecting incorrectly
   // because of history.push - we have previously been in /api/products, so it pushes /login onto /api/products
   // need to change it to redirect to shipping IF the user is logged in
@@ -61,9 +73,33 @@ const CartScreen = ({ match, location, history }) => {
               </Col>
               <Col md={2}>${item.price}</Col>
               <Col md={2}>
+
+              <br></br>
+
+              {/* add color and size selection here, and accessory type if neccessary */}
+
+              <p>Quantity</p>
               <Form.Control 
+                  as="select" 
+                  value={item.qty}
+                  onChange={(e) => dispatch(addToCart(item.product, 
+                  Number(e.target.value)))}
+                  >
+                    {[...Array(item.countInStock).keys()].map(
+                      (x) => (
+                        <option key={x + 1} value={x + 1}>
+                          {x + 1}
+                        </option>
+                        )
+                        )}
+                      
+              </Form.Control>
+
+{/* COLOR - if color*/}
+<p>Colour</p>
+                      <Form.Control 
                       as="select" 
-                      value={item.qty}
+                      value={item.color}
                       onChange={(e) => dispatch(addToCart(item.product, 
                       Number(e.target.value)))}
                       >
@@ -76,6 +112,28 @@ const CartScreen = ({ match, location, history }) => {
                         )}
 
                       </Form.Control>
+
+{/* SIZE  - if size*/}
+<p>Size</p>
+                      <Form.Control 
+                      as="select" 
+                      value={item.size}
+                      onChange={(e) => dispatch(addToCart(item.product, 
+                      Number(e.target.value)))}
+                      >
+                        {[...Array(item.countInStock).keys()].map(
+                          (x) => (
+                          <option key={x + 1} value={x + 1}>
+                            {x + 1}
+                          </option>
+                        )
+                        )}
+
+                      </Form.Control>
+
+                      {/* DO ACCESSORY TYPE CHOICE DROPDOWN IF ACCESSORYTYPE */}
+
+
               </Col>
               <Col md={2}>
                 <Button type="button" variant="light" onClick={() => 

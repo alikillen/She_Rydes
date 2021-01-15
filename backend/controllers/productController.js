@@ -95,9 +95,12 @@ const createProduct = asyncHandler(async (req, res) => {
     user: req.user._id,
     image: '/images/sample.jpg',
     category: 'Jacket',
-    SKU: '1234',
     countInStock: 0,
+    SKU: 'OBOF',
     description: 'Sample description',
+    size: 14,
+    color: "black",
+    accessoryType: "none"
   })
 
   const createdProduct = await product.save()
@@ -108,15 +111,20 @@ const createProduct = asyncHandler(async (req, res) => {
   //@desc    UPDATE a product
 // @route   PUT/api/products/:id
 // @access  Private/Admin
+
+// what about passing user in? is this just for admin user
 const updateProduct = asyncHandler(async (req, res) => {
   const {name,
          price,
          description,
          image,
          category,
-         size, 
+         countInStock,
          SKU,
-         countInStock } = req.body
+         size,
+         color,
+         accessoryType,
+        } = req.body
 
   const product = await Product.findById(req.params.id)
 
@@ -130,6 +138,9 @@ const updateProduct = asyncHandler(async (req, res) => {
     product.category = category
     product.sku = SKU
     product.countInStock = countInStock
+    product.size = size
+    product.color = color
+    product.accessoryType = accessoryType
 
     const updatedProduct = await product.save()
     res.json(updatedProduct)

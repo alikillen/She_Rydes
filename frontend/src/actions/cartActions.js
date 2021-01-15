@@ -21,8 +21,13 @@ export const addToCart = (id, qty) => async (dispatch, getState) => {
       price: data.price,
       countInStock: data.countInStock,
       qty,
+      size: data.size,
+      color: data.color,
+      accessoryType: data.accessoryType,
     },
   })
+  
+  console.log(data)
 
   // this is why cart items are still there when we logout
   localStorage.setItem("cartItems", JSON.stringify(getState().cart.cartItems))

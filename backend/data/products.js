@@ -93,7 +93,7 @@ const products = [
     category: 'Accessories',
     price: 9.95,
     countInStock: 20,
-    rating: 0,
+    rating: 0,``
     numReviews: 12,
     SKU: "SRPS"
   },

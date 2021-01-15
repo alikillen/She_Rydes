@@ -38,7 +38,7 @@ const productSchema = Mongoose.Schema({
   },
   category:{
     type: String,
-    enum: ["Jacket", "Pants", "Gloves", "Sticker", "Patch", "Accessories"],
+    enum: ["Jacket", "Pants", "Gloves", "Accessories"],
     required: true,
   },
   description:{
@@ -68,6 +68,7 @@ const productSchema = Mongoose.Schema({
   },
   SKU: {
     type: String,
+    enum: ["OBOF", "NRLJ", "BBLJ", "ITHD", "FDD", "FTLOG", "PANTS", "SRPS", "BWPS", "SSPS", "IHPS", "RDPS", "CCPS"],
     required: true,
   }
 }, productOptions,
@@ -90,13 +91,15 @@ const Pants = Product.discriminator('Pants', new Mongoose.Schema({
 );
 
 const Gloves = Product.discriminator('Gloves', new Mongoose.Schema({
-  size: { type: String, required: true },
+  size: { type: String, enum:["Small", "Medium", "Patch"], required: true },
   color: { type: String, required: true },
 }, productOptions),
 );
 
+// need to be either sticker or patch
 const Accessories = Product.discriminator("Accessories", new Mongoose.Schema({
-  size: { type: String, required: false }
+  size: { type: String, required: false },
+  accessorytype: { type: String, enum: ["Sticker", "Patch", "None"], required: true },
 }, productOptions))
 
 
@@ -113,14 +116,28 @@ export { Pants }
 export { Gloves }
 export { Accessories }
 
-var sampleJacket = new Jacket({ name: 'sample jacket', image: 'jacket', category: 'Jacket', description: 'good jacket', rating: 5, numReviews: 1, price: 100, countInStock: 5, SKU: "sample", size: 12, color:"brown"});
-// sampleJacket.save();
-console.log(sampleJacket)
+// const accessoryProduct = productType.discriminator(
+//   'accessoryProduct',
+//   new mongoose.Schema({
+//     availableSizes: {
+//       os: { type: Number, required: true, default: 0 },
+//     },
+//   })
+// )
+
+// const sampleJacket = Jacket.discriminator("Jacket", new Mongoose.Schema({ name: 'sample jacket', image: 'jacket', category: 'Jacket', description: 'good jacket', rating: 5, numReviews: 1, price: 100, countInStock: 5, SKU: "sample", size: 12, color:"brown"}));
+// // sampleJacket.save();
+// console.log(sampleJacket)
+
+// const sampleAcc = new Accessories({ name: 'sample sticker', image: 'sticker', category: 'Accessories', description: 'good sticker', rating: 5, numReviews: 1, price: 10, countInStock: 5, SKU: "sticker00", accessoryType:"Sticker"});
+// // sampleJacket.save();
+// console.log(sampleAcc)
+
 
 // module.exports = mongoose.model(Jacket);
 // module.exports = mongoose.model(Pants);
 // module.exports = mongoose.model(Gloves);
-// module.exports = mongoose.model(Accessories)
+// module.exports = -+-+-+-+-+-+mongoose.model(Accessories)
 
 // maybe dont use discriminators - basically every product needs options for size, only gloves and 1 jacket need color options, lara wants different codes anyway
 
