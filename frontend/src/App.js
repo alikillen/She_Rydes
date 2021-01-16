@@ -37,6 +37,7 @@ import PrivacyPolicyScreen from "./screens/PrivacyPolicyScreen"
 import ShippingandReturnsScreen from "./screens/ShippingandReturnsScreen"
 import TermsandConditionsScreen from "./screens/TermsandConditionsScreen"
 import SizingChartsScreen from "./screens/SizingChartsScreen"
+import Upload from "./components/Upload"
 
 
 
@@ -76,6 +77,8 @@ function App() {
         <Route path = "/PrivacyPolicy" component={PrivacyPolicyScreen} />
         <Route path = "/ShippingandReturns" component={ShippingandReturnsScreen} />
         <Route path = "/SizingCharts" component={SizingChartsScreen} />
+
+        <Route path = "/Upload" component={Upload} />
 
 
         <Route exact path = "/404" component={NotFoundPage} />
