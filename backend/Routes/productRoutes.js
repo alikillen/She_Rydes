@@ -4,6 +4,7 @@ const router = express.Router()
 import { 
   getProducts, 
   getProductById, 
+  getProductsbySKU,
   deleteProduct,
   createProduct,
   updateProduct,
@@ -15,6 +16,8 @@ import { protect, admin } from "../middleware/authMiddleware.js"
 
 router.route("/").get(getProducts).post(protect, admin, createProduct)
 router.route("/category/:id").get(getProductsbyCategory)
+
+// router.route("/sku/:id").get(getProductsbySKU)
 
 // console.log(mongoose.Types.ObjectId.isValid('5ffc38e7fcc8860188ff1cd7'));
 router.route("/:id/reviews").post(protect, createProductReview)

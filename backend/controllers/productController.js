@@ -33,6 +33,22 @@ const getProductById = asyncHandler(async (req, res) => {
   }
  })
 
+ // get products by SKU
+// route - Get /api/products/SKU
+// access - public
+const getProductsbySKU = asyncHandler(async(req,res) => {
+  const products = await Product.find({sku: req.params.sku})
+
+  if (products) {
+    res.json(products)
+  } else {
+    res.status(404)
+    throw new Error("Products with SKU not found")
+  }
+
+})
+
+
 
 
 // get products by category
@@ -196,6 +212,7 @@ const createProductReview = asyncHandler(async (req, res) => {
  export {
    getProducts,
    getProductById,
+   getProductsbySKU,
    getProductsbyCategory,
    getTopProducts,
    deleteProduct,

@@ -21,6 +21,7 @@ const reviewSchema = Mongoose.Schema(
     collection: 'products', // the name of our collection
   };
 
+// enum all names to validate? when adding new product will need to edit db for size and color stuff
 
 const productSchema = Mongoose.Schema({
   user: {
@@ -79,30 +80,28 @@ const productSchema = Mongoose.Schema({
 const Product = Mongoose.model("Product", productSchema)
 
 const Jacket = Product.discriminator('Jacket', new Mongoose.Schema({
-  size: { type: Number, required: true },
-  color: { type: String, required: true },
+  size: { type: String, enum:["8", "10", "12", "14", "16"], required: true },
+  color: { type: String, enum:["Pink Sunset", "Camel Back Brown", "Default"], required: true },
 }, productOptions),
 );
 
 const Pants = Product.discriminator('Pants', new Mongoose.Schema({
-  size: { type: Number, required: true },
-  color: { type: String, required: true },
+  size: { type: String, enum:["8", "10", "12", "14", "16"], required: true },
+  color: { type: String, enum:["Default"], required: true },
 }, productOptions),
 );
 
 const Gloves = Product.discriminator('Gloves', new Mongoose.Schema({
-  size: { type: String, enum:["Small", "Medium", "Patch"], required: true },
-  color: { type: String, required: true },
+  size: { type: String, enum:["Small", "Medium", "Large"], required: true },
+  color: { type: String, enum:["Black", "Brown"], required: true },
 }, productOptions),
 );
 
 // need to be either sticker or patch
 const Accessories = Product.discriminator("Accessories", new Mongoose.Schema({
-  size: { type: String, required: false },
-  accessorytype: { type: String, enum: ["Sticker", "Patch", "None"], required: true },
+  size: { type: String, enum:["Default"], required: false },
+  accessorytype: { type: String, enum: ["Sticker", "Patch"], required: true },
 }, productOptions))
-
-
 
 
 export default Product

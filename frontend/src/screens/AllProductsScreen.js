@@ -20,6 +20,7 @@ const AllProductsScreen = () => {
   // this calls listProducts and fills up our state by passing the payloads into the reducer
 
 
+// need to render products by SKU and id not just id
 
   return (
     <>

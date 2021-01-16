@@ -2,6 +2,11 @@ export const PRODUCT_LIST_REQUEST = "PRODUCT_LIST_REQUEST"
 export const PRODUCT_LIST_SUCCESS = "PRODUCT_LIST_SUCCESS"
 export const PRODUCT_LIST_FAIL = "PRODUCT_LIST_FAIL"
 
+export const PRODUCT_LIST_SKU_REQUEST = "PRODUCT_LIST_SKU_REQUEST"
+export const PRODUCT_LIST_SKU_SUCCESS = "PRODUCT_LIST_SKU_SUCCESS"
+export const PRODUCT_LIST_SKU_FAIL = "PRODUCT_LIST_SKU_FAIL"
+
+
 
 // anytime we add functionality (new request etc), we start with adding new constants
 export const PRODUCT_DETAILS_REQUEST = "PRODUCT_DETAILS_REQUEST"

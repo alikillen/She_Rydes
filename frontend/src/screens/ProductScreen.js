@@ -124,7 +124,8 @@ const ProductScreen = ({ history, match }) => {
               {/* add attribute called sizeinstock and colorinstock? not needed cause diff ID's */}
               {/* need to also check if product size and color is in stock (of that particular SKU)?? */}
 
-                 {product.countInStock > 0 && (
+
+                 {product.countInStock > 0 && product.size && (
                 <ListGroup.Item>
                   <Row>
                     <Col>Size</Col>
@@ -148,7 +149,9 @@ const ProductScreen = ({ history, match }) => {
                 </ListGroup.Item>
               )}
 
-              {product.countInStock > 0 && (
+              {/* need to check color attribute exists in db before creating */}
+
+              {product.countInStock > 0 && product.color && (
                 <ListGroup.Item>
                   <Row>
                     <Col>Colour</Col>
@@ -207,9 +210,7 @@ const ProductScreen = ({ history, match }) => {
                 disabled={product.countInStock === 0}>
                   Add to Cart
                 </Button>
-              </ListGroup.Item>
-
-           
+              </ListGroup.Item> 
               
     
 

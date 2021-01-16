@@ -37,6 +37,43 @@ const CartScreen = ({ match, location, history }) => {
     }
   }, [dispatch, productId, qty])
 
+//   front end filtering products 
+// set up a dropdown with only those values that are enums, 
+// set the value to each option as one of those options, 
+// aka build the dropdown from an array of strings that matches the enum
+
+// and then -  when the user selects an option in the dropdown, 
+// set that into local state for that component, 
+// when they press submit, 
+// It will get the local state and inject it into the object I am going to send to the DB / local storage wherever
+
+
+//   const [attributesCartItems, setAtributesCartItems] = useState({
+//     color: [],
+//     size: [],
+//     accessoryType: [],
+// })
+
+// on change
+
+// function handleUserCustomizingAttributes(productArray, category) {
+//   setAttributesCartItems({
+//       ...attributesCartItems,
+//       [category]: productArray,
+//   })
+// }
+
+// on submit
+
+// let tempCartProducts = {
+//   ...cartItems,
+//   color: tempColor,
+//   size: tempSize,
+//   accessoryType: tempAccessoryType,
+// }
+// addToCart(tempCartProducts, dispatch)
+
+
   const removeFromCartHandler = (id) => {
     dispatch(removeFromCart(id))
   }
@@ -95,11 +132,14 @@ const CartScreen = ({ match, location, history }) => {
                       
               </Form.Control>
 
-{/* COLOR - if color*/}
+{/* COLOR - if item has color attribute as available/req in db*/}
 <p>Colour</p>
-                      <Form.Control 
+
+     
+          <Form.Control 
                       as="select" 
                       value={item.color}
+                      // get this color from options in db
                       onChange={(e) => dispatch(addToCart(item.product, 
                       Number(e.target.value)))}
                       >
@@ -111,7 +151,8 @@ const CartScreen = ({ match, location, history }) => {
                         )
                         )}
 
-                      </Form.Control>
+                      </Form.Control> 
+
 
 {/* SIZE  - if size*/}
 <p>Size</p>

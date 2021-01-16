@@ -5,6 +5,9 @@ import {
   PRODUCT_LIST_REQUEST,
   PRODUCT_LIST_SUCCESS,
   PRODUCT_LIST_FAIL,
+  PRODUCT_LIST_SKU_REQUEST,
+  PRODUCT_LIST_SKU_SUCCESS,
+  PRODUCT_LIST_SKU_FAIL,
   PRODUCT_DETAILS_REQUEST,
   PRODUCT_DETAILS_SUCCESS,
   PRODUCT_DETAILS_FAIL,
@@ -54,6 +57,28 @@ export const listProducts = () => async (dispatch) => {
        : error.message
      })
   }
+}
+
+export const listProductsbySKU = (sku) => async (dispatch) => {
+  // let category = req.params.id
+  try {
+    dispatch({ type: PRODUCT_LIST_SKU_REQUEST })
+    const { data } = await axios.get(`api/products/sku/${sku}`)
+    // this is where dispatch is erroring - category is undefined
+
+    dispatch({
+      type: PRODUCT_LIST_SKU_SUCCESS,
+      payload: data,
+    })
+  } catch (error) {
+     dispatch({
+       type: PRODUCT_LIST_SKU_FAIL,
+       payload: error.response && error.response.data.message 
+       ? error.response.data.message 
+       : error.message
+     })
+  }
+
 }
 
 export const listProductDetails = (id) => async (dispatch) => {
