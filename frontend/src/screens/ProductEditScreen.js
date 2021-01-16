@@ -1,111 +1,111 @@
-import axios from 'axios'
-import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { Form, Button } from 'react-bootstrap'
-import { useDispatch, useSelector } from 'react-redux'
-import Message from '../components/Message'
-import Loader from '../components/Loader'
-import FormContainer from '../components/FormContainer'
-import { listProductDetails, updateProduct } from '../actions/productActions'
-import { PRODUCT_UPDATE_RESET } from '../constants/productConstants'
+import axios from "axios";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { Form, Button } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+import Message from "../components/Message";
+import Loader from "../components/Loader";
+import FormContainer from "../components/FormContainer";
+import { listProductDetails, updateProduct } from "../actions/productActions";
+import { PRODUCT_UPDATE_RESET } from "../constants/productConstants";
+import Upload from "../components/Upload"
 
 const ProductEditScreen = ({ match, history }) => {
-    const productId = match.params.id
+  const productId = match.params.id;
 
-    // pass in different things in statre for color and size?
-  
-    const [name, setName] = useState('')
-    const [price, setPrice] = useState(0)
-    const [image, setImage] = useState('')
-    const [size, setSize] = useState('')
-    const [color, setColor] = useState("")
-    const [category, setCategory] = useState('')
-    const [SKU, setSKU] = useState("")
-    const [accessoryType, setaccessoryType] = useState('')
-    const [countInStock, setCountInStock] = useState(0)
-    const [description, setDescription] = useState('')
-    const [uploading, setUploading] = useState(false)
-  
-    const dispatch = useDispatch()
-  
-    const productDetails = useSelector((state) => state.productDetails)
-    const { loading, error, product } = productDetails
+  // pass in different things in statre for color and size?
 
-    const productUpdate = useSelector((state) => state.productUpdate)
-    const {
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState(0);
+  const [image, setImage] = useState("");
+  const [size, setSize] = useState("");
+  const [color, setColor] = useState("");
+  const [category, setCategory] = useState("");
+  const [SKU, setSKU] = useState("");
+  const [accessoryType, setaccessoryType] = useState("");
+  const [countInStock, setCountInStock] = useState(0);
+  const [description, setDescription] = useState("");
+  const [uploading, setUploading] = useState(false);
+
+  const dispatch = useDispatch();
+
+  const productDetails = useSelector((state) => state.productDetails);
+  const { loading, error, product } = productDetails;
+
+  const productUpdate = useSelector((state) => state.productUpdate);
+  const {
     loading: loadingUpdate,
     error: errorUpdate,
     success: successUpdate,
-     } = productUpdate
+  } = productUpdate;
 
-     useEffect(() => {
-        if (successUpdate) {
-          dispatch({ type: PRODUCT_UPDATE_RESET })
-          history.push('/admin/productlist')
-        } else {
-          if (!product.name || product._id !== productId) {
-            dispatch(listProductDetails(productId))
-          } else {
-            setName(product.name)
-            setPrice(product.price)
-            setImage(product.image)
-            setSize(product.size)
-            setCategory(product.category)
-            setSKU(product.SKU)
-            setCountInStock(product.countInStock)
-            setDescription(product.description)
-            setColor(product.color)
-            setaccessoryType(product.accessoryType)
-
-          }
-        }
-      }, [dispatch, history, productId, product, successUpdate])
-    
-      const uploadFileHandler = async (e) => {
-        const file = e.target.files[0]
-        const formData = new FormData()
-        formData.append('image', file)
-        setUploading(true)
-    
-        try {
-          const config = {
-            headers: {
-              'Content-Type': 'multipart/form-data',
-            },
-          }
-    
-          const { data } = await axios.post('/api/upload', formData, config)
-    
-          setImage(data)
-          setUploading(false)
-        } catch (error) {
-          console.error(error)
-          setUploading(false)
-        }
+  useEffect(() => {
+    if (successUpdate) {
+      dispatch({ type: PRODUCT_UPDATE_RESET });
+      history.push("/admin/productlist");
+    } else {
+      if (!product.name || product._id !== productId) {
+        dispatch(listProductDetails(productId));
+      } else {
+        setName(product.name);
+        setPrice(product.price);
+        setImage(product.image);
+        setSize(product.size);
+        setCategory(product.category);
+        setSKU(product.SKU);
+        setCountInStock(product.countInStock);
+        setDescription(product.description);
+        setColor(product.color);
+        setaccessoryType(product.accessoryType);
       }
-    
-      const submitHandler = (e) => {
-        e.preventDefault()
-        dispatch(
-          updateProduct({
-            _id: productId,
-            name,
-            price,
-            image,
-            category,
-            SKU,
-            size,
-            color,
-            accessoryType,
-            description,
-            countInStock,
-          })
-        )
-      }
+    }
+  }, [dispatch, history, productId, product, successUpdate]);
 
-    return (
-        <>
-        <Link to='/admin/productlist' className='btn btn-light my-3'>
+  const uploadFileHandler = async (e) => {
+    const file = e.target.files[0];
+    const formData = new FormData();
+    formData.append("image", file);
+    setUploading(true);
+
+    try {
+      const config = {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      };
+
+      const { data } = await axios.post("/api/upload", formData, config);
+
+      setImage(data);
+      setUploading(false);
+    } catch (error) {
+      console.error(error);
+      setUploading(false);
+    }
+  };
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    dispatch(
+      updateProduct({
+        _id: productId,
+        name,
+        price,
+        image,
+        category,
+        SKU,
+        size,
+        color,
+        accessoryType,
+        description,
+        countInStock,
+      })
+    );
+  };
+
+  return (
+    <>
+      <Link to='/admin/productlist' className='btn btn-light my-3'>
         Go Back
       </Link>
       <FormContainer>
@@ -118,7 +118,6 @@ const ProductEditScreen = ({ match, history }) => {
           <Message variant='danger'>{error}</Message>
         ) : (
           <Form onSubmit={submitHandler}>
-
             <Form.Group controlId='name'>
               <Form.Label>Name</Form.Label>
               <Form.Control
@@ -139,7 +138,7 @@ const ProductEditScreen = ({ match, history }) => {
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId='image'>
+            {/* <Form.Group controlId='image'>
               <Form.Label>Image</Form.Label>
               <Form.Control
                 type='text'
@@ -154,6 +153,13 @@ const ProductEditScreen = ({ match, history }) => {
                 onChange={uploadFileHandler}
               ></Form.File>
               {uploading && <Loader />}
+            </Form.Group> */}
+
+
+            <Form.Group controlId='image'>
+              <Form.Label>Image</Form.Label>
+            
+            <Upload />
             </Form.Group>
 
             <Form.Group controlId='countInStock'>
@@ -233,8 +239,7 @@ const ProductEditScreen = ({ match, history }) => {
         )}
       </FormContainer>
     </>
-    )
-  
-}
+  );
+};
 
-export default ProductEditScreen
+export default ProductEditScreen;
