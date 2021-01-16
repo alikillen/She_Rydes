@@ -125,7 +125,7 @@ const ProductScreen = ({ history, match }) => {
               {/* need to also check if product size and color is in stock (of that particular SKU)?? */}
 
 
-                 {product.countInStock > 0 && product.size && (
+                 {product.countInStock > 0 && (
                 <ListGroup.Item>
                   <Row>
                     <Col>Size</Col>
@@ -135,7 +135,7 @@ const ProductScreen = ({ history, match }) => {
                       value={size}
                       onChange={(e) => setSize(e.target.value)}
                       >
-                        {[...Array(product.countInStock).keys()].map(
+                        {[...Array(product.size).keys()].map(
                           (x) => (
                           <option key={x + 1} value={x + 1}>
                             {x + 1}
@@ -151,7 +151,9 @@ const ProductScreen = ({ history, match }) => {
 
               {/* need to check color attribute exists in db before creating */}
 
-              {product.countInStock > 0 && product.color && (
+              {/* && product.color */}
+
+              {product.countInStock > 0  && (
                 <ListGroup.Item>
                   <Row>
                     <Col>Colour</Col>

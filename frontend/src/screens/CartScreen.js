@@ -50,8 +50,8 @@ const CartScreen = ({ match, location, history }) => {
 
 //   const [attributesCartItems, setAtributesCartItems] = useState({
 //     color: [],
-//     size: [],
-//     accessoryType: [],
+//     size: [8, 10, 12, 14, 16],
+//     accessoryType: [None],
 // })
 
 // on change
