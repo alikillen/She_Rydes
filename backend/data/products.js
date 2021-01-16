@@ -8,7 +8,7 @@ const products = [
     price: 189.95,
     countInStock: 10,
     rating: 0,
-    numReviews: 12,
+    numReviews: 0,
     SKU: "OBOF"
   },
   {
@@ -30,10 +30,56 @@ const products = [
       'The biker jacket with a fresh face to lighten up the mood. Let out your creative flair and be noticed in traffic with this iconic deep blue accent. There are lots of deep pockets on this one and a removable waist belt to pull in your frame. The collar can be buttoned open or fastened high up the neck when the wind is pushing through. All jackets come with CE level 1 armour in the shoulders, elbows and back. This armour is removable too so you can look stylish on and off the bike!',
     category: 'Jacket',
     price: 99.95,
+    countInStock: 0,
+    rating: 0,
+    numReviews: 0,
+    SKU: "BBLJ",
+    size: "8",
+    color: "Default"
+  },
+  {
+    name: 'Blue Bird Leather Jacket',
+    image: '/images/Jackets/blue-bird-front.jpg',
+    description:
+      'The biker jacket with a fresh face to lighten up the mood. Let out your creative flair and be noticed in traffic with this iconic deep blue accent. There are lots of deep pockets on this one and a removable waist belt to pull in your frame. The collar can be buttoned open or fastened high up the neck when the wind is pushing through. All jackets come with CE level 1 armour in the shoulders, elbows and back. This armour is removable too so you can look stylish on and off the bike!',
+    category: 'Jacket',
+    price: 99.95,
     countInStock: 5,
     rating: 0,
-    numReviews: 12,
-    SKU: "BBLJ"
+    numReviews: 0,
+    SKU: "BBLJ",
+    size: "12",
+    color: "Default"
+  },
+  {
+    name: 'Blue Bird Leather Jacket',
+    image: '/images/Jackets/blue-bird-front.jpg',
+    description:
+      'The biker jacket with a fresh face to lighten up the mood. Let out your creative flair and be noticed in traffic with this iconic deep blue accent. There are lots of deep pockets on this one and a removable waist belt to pull in your frame. The collar can be buttoned open or fastened high up the neck when the wind is pushing through. All jackets come with CE level 1 armour in the shoulders, elbows and back. This armour is removable too so you can look stylish on and off the bike!',
+    category: 'Jacket',
+    price: 99.95,
+    countInStock: 5,
+    rating: 0,
+    numReviews: 0,
+    SKU: "BBLJ",
+    size: "14",
+    color: "Default"
+    
+  },
+  {
+    name: 'Blue Bird Leather Jacket',
+    image: '/images/Jackets/blue-bird-front.jpg',
+    description:
+      'The biker jacket with a fresh face to lighten up the mood. Let out your creative flair and be noticed in traffic with this iconic deep blue accent. There are lots of deep pockets on this one and a removable waist belt to pull in your frame. The collar can be buttoned open or fastened high up the neck when the wind is pushing through. All jackets come with CE level 1 armour in the shoulders, elbows and back. This armour is removable too so you can look stylish on and off the bike!',
+    category: 'Jacket',
+    price: 99.95,
+    countInStock: 5,
+    rating: 0,
+    numReviews: 0,
+    SKU: "BBLJ",
+    size: "16",
+    color: "Default"
+    
   },
   {
     name: 'In the Hood Denim',
@@ -44,7 +90,7 @@ const products = [
     price: 199.95,
     countInStock: 11,
     rating: 0,
-    numReviews: 12,
+    numReviews: 0,
     SKU: "ITHD"
   },
   {
@@ -56,7 +102,7 @@ const products = [
     price: 149.99,
     countInStock: 7,
     rating: 0,
-    numReviews: 10,
+    numReviews: 0,
     SKU: "FDD"
   },
   {
@@ -68,7 +114,7 @@ const products = [
     price: 49.95,
     countInStock: 10,
     rating: 0,
-    numReviews: 12,
+    numReviews: 0,
     SKU: "FTLOG"
   },
 
@@ -81,7 +127,7 @@ const products = [
     price: 89.95,
     countInStock: 10,
     rating: 0,
-    numReviews: 12,
+    numReviews: 0,
     SKU: "PANTS"
   },
 
@@ -94,7 +140,7 @@ const products = [
     price: 9.95,
     countInStock: 20,
     rating: 0,
-    numReviews: 12,
+    numReviews: 0,
     SKU: "SRPS"
   },
 
@@ -107,7 +153,7 @@ const products = [
     price: 9.95,
     countInStock: 20,
     rating: 0,
-    numReviews: 12,
+    numReviews: 0,
     SKU: "BWPS"
   },
 
@@ -120,7 +166,7 @@ const products = [
     price: 9.95,
     countInStock: 20,
     rating: 0,
-    numReviews: 12,
+    numReviews: 0,
     SKU: "SSPS"
   },
 
@@ -133,7 +179,7 @@ const products = [
     price: 9.95,
     countInStock: 20,
     rating: 0,
-    numReviews: 12,
+    numReviews: 0,
     SKU: "IHPS"
   },
   {
@@ -145,7 +191,7 @@ const products = [
     price: 9.95,
     countInStock: 20,
     rating: 0,
-    numReviews: 12,
+    numReviews: 0,
     SKU: "RDPS"
   },
   {
@@ -157,7 +203,7 @@ const products = [
     price: 9.95,
     countInStock: 0,
     rating: 0,
-    numReviews: 12,
+    numReviews: 0,
     SKU: "CCPS"
   },
 ]

@@ -25,9 +25,15 @@
   background-color: #000;
 }
 
-#basic-nav-dropdown:hover {
-  
+#basic-nav-dropdown {
+  background-color: #000;
+
 }
+
+#footer-text {
+  color: white
+}
+
 
 
 /* CUSTOM "LANDING PAGE" */

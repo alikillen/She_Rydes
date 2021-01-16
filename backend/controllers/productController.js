@@ -33,6 +33,22 @@ const getProductById = asyncHandler(async (req, res) => {
   }
  })
 
+ // get products by SKU
+// route - Get /api/products/SKU
+// access - public
+const getProductsbySKU = asyncHandler(async(req,res) => {
+  const products = await Product.find({sku: req.params.sku})
+
+  if (products) {
+    res.json(products)
+  } else {
+    res.status(404)
+    throw new Error("Products with SKU not found")
+  }
+
+})
+
+
 
 
 // get products by category
@@ -95,9 +111,12 @@ const createProduct = asyncHandler(async (req, res) => {
     user: req.user._id,
     image: '/images/sample.jpg',
     category: 'Jacket',
-    SKU: '1234',
     countInStock: 0,
+    SKU: 'OBOF',
     description: 'Sample description',
+    size: 14,
+    color: "black",
+    accessoryType: "none"
   })
 
   const createdProduct = await product.save()
@@ -108,15 +127,20 @@ const createProduct = asyncHandler(async (req, res) => {
   //@desc    UPDATE a product
 // @route   PUT/api/products/:id
 // @access  Private/Admin
+
+// what about passing user in? is this just for admin user
 const updateProduct = asyncHandler(async (req, res) => {
   const {name,
          price,
          description,
          image,
          category,
-         size, 
+         countInStock,
          SKU,
-         countInStock } = req.body
+         size,
+         color,
+         accessoryType,
+        } = req.body
 
   const product = await Product.findById(req.params.id)
 
@@ -130,7 +154,13 @@ const updateProduct = asyncHandler(async (req, res) => {
     product.category = category
     product.sku = SKU
     product.countInStock = countInStock
+<<<<<<< HEAD
     
+=======
+    product.size = size
+    product.color = color
+    product.accessoryType = accessoryType
+>>>>>>> 4197531030f2bb350c4324845a0721ba9e15a3d7
 
     const updatedProduct = await product.save()
     res.json(updatedProduct)
@@ -186,6 +216,7 @@ const createProductReview = asyncHandler(async (req, res) => {
  export {
    getProducts,
    getProductById,
+   getProductsbySKU,
    getProductsbyCategory,
    getTopProducts,
    deleteProduct,

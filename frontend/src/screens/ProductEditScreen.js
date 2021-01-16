@@ -11,12 +11,17 @@ import { PRODUCT_UPDATE_RESET } from '../constants/productConstants'
 
 const ProductEditScreen = ({ match, history }) => {
     const productId = match.params.id
+
+    // pass in different things in statre for color and size?
   
     const [name, setName] = useState('')
     const [price, setPrice] = useState(0)
     const [image, setImage] = useState('')
     const [size, setSize] = useState('')
+    const [color, setColor] = useState("")
     const [category, setCategory] = useState('')
+    const [SKU, setSKU] = useState("")
+    const [accessoryType, setaccessoryType] = useState('')
     const [countInStock, setCountInStock] = useState(0)
     const [description, setDescription] = useState('')
     const [uploading, setUploading] = useState(false)
@@ -46,8 +51,12 @@ const ProductEditScreen = ({ match, history }) => {
             setImage(product.image)
             setSize(product.size)
             setCategory(product.category)
+            setSKU(product.SKU)
             setCountInStock(product.countInStock)
             setDescription(product.description)
+            setColor(product.color)
+            setaccessoryType(product.accessoryType)
+
           }
         }
       }, [dispatch, history, productId, product, successUpdate])
@@ -83,8 +92,11 @@ const ProductEditScreen = ({ match, history }) => {
             name,
             price,
             image,
-            size,
             category,
+            SKU,
+            size,
+            color,
+            accessoryType,
             description,
             countInStock,
           })
@@ -106,6 +118,7 @@ const ProductEditScreen = ({ match, history }) => {
           <Message variant='danger'>{error}</Message>
         ) : (
           <Form onSubmit={submitHandler}>
+
             <Form.Group controlId='name'>
               <Form.Label>Name</Form.Label>
               <Form.Control
@@ -143,21 +156,11 @@ const ProductEditScreen = ({ match, history }) => {
               {uploading && <Loader />}
             </Form.Group>
 
-            <Form.Group controlId='size'>
-              <Form.Label>Size</Form.Label>
-              <Form.Control
-                type='text'
-                placeholder='Enter size'
-                value={size}
-                onChange={(e) => setSize(e.target.value)}
-              ></Form.Control>
-            </Form.Group>
-
             <Form.Group controlId='countInStock'>
               <Form.Label>Count In Stock</Form.Label>
               <Form.Control
                 type='number'
-                placeholder='Enter countInStock'
+                placeholder='Enter count in stock of specific product'
                 value={countInStock}
                 onChange={(e) => setCountInStock(e.target.value)}
               ></Form.Control>
@@ -167,7 +170,7 @@ const ProductEditScreen = ({ match, history }) => {
               <Form.Label>Category</Form.Label>
               <Form.Control
                 type='text'
-                placeholder='Enter category'
+                placeholder='Enter category from category list'
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
               ></Form.Control>
@@ -180,6 +183,46 @@ const ProductEditScreen = ({ match, history }) => {
                 placeholder='Enter description'
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
+
+            <Form.Group controlId='SKU'>
+              <Form.Label>SKU</Form.Label>
+              <Form.Control
+                type='text'
+                placeholder='Enter SKU from SKU list'
+                value={SKU}
+                onChange={(e) => setSKU(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
+
+            <Form.Group controlId='size'>
+              <Form.Label>Size</Form.Label>
+              <Form.Control
+                type='text'
+                placeholder='Enter size'
+                value={size}
+                onChange={(e) => setSize(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
+
+            <Form.Group controlId='color'>
+              <Form.Label>Colour</Form.Label>
+              <Form.Control
+                type='text'
+                placeholder='Enter colour'
+                value={color}
+                onChange={(e) => setColor(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
+
+            <Form.Group controlId='accessoryType'>
+              <Form.Label>Accessory Type(Sticker/Patch/None)</Form.Label>
+              <Form.Control
+                type='text'
+                placeholder='Enter accessory type if accessory'
+                value={accessoryType}
+                onChange={(e) => setaccessoryType(e.target.value)}
               ></Form.Control>
             </Form.Group>
 

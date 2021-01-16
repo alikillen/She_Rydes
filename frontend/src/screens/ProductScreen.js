@@ -18,8 +18,9 @@ const ProductScreen = ({ history, match }) => {
   const [rating, setRating] = useState(0)
   const [comment, setComment] = useState("")
 
-  // const [color, setColor] = useState()
-  // const [size, setSize ] = useState()
+  // set size and color as coming from product model??
+  const [size, setSize] = useState('')
+  const [color, setColor] = useState("")
 
   const dispatch = useDispatch()
 
@@ -115,8 +116,14 @@ const ProductScreen = ({ history, match }) => {
                 </Row>
               </ListGroup.Item>
 
-                 {/* render size and color dropdowns- (error messages if colour or size not in stock?)
-                  make setColour and setSize methods, set dropdowns to correct sizes/colors for jackets, pants and gloves -disable in dropdown if out of stock?? inventory? */}
+              {/* render size and color dropdowns- (error messages if colour or size not in stock?)
+              make setColour and setSize methods, set dropdowns to correct sizes/colors for jackets, pants and gloves -disable in dropdown if out of stock?? inventory? */}
+
+              {/* before rendering this dropdowns for size and color, check if product has size and color attributes */}
+
+              {/* add attribute called sizeinstock and colorinstock? not needed cause diff ID's */}
+              {/* need to also check if product size and color is in stock (of that particular SKU)?? */}
+
 
                  {product.countInStock > 0 && (
                 <ListGroup.Item>
@@ -125,10 +132,10 @@ const ProductScreen = ({ history, match }) => {
                     <Col>
                       <Form.Control 
                       as="select" 
-                      value={qty}
-                      onChange={(e) => setQty(e.target.value)}
+                      value={size}
+                      onChange={(e) => setSize(e.target.value)}
                       >
-                        {[...Array(product.countInStock).keys()].map(
+                        {[...Array(product.size).keys()].map(
                           (x) => (
                           <option key={x + 1} value={x + 1}>
                             {x + 1}
@@ -142,15 +149,19 @@ const ProductScreen = ({ history, match }) => {
                 </ListGroup.Item>
               )}
 
-              {product.countInStock > 0 && (
+              {/* need to check color attribute exists in db before creating */}
+
+              {/* && product.color */}
+
+              {product.countInStock > 0  && (
                 <ListGroup.Item>
                   <Row>
                     <Col>Colour</Col>
                     <Col>
                       <Form.Control 
                       as="select" 
-                      value={qty}
-                      onChange={(e) => setQty(e.target.value)}
+                      value={color}
+                      onChange={(e) => setColor(e.target.value)}
                       >
                         {[...Array(product.countInStock).keys()].map(
                           (x) => (
@@ -192,6 +203,7 @@ const ProductScreen = ({ history, match }) => {
                 </ListGroup.Item>
               )}
 
+          
               <ListGroup.Item>
                 <Button 
                 onClick={addToCartHandler}
@@ -200,9 +212,7 @@ const ProductScreen = ({ history, match }) => {
                 disabled={product.countInStock === 0}>
                   Add to Cart
                 </Button>
-              </ListGroup.Item>
-
-           
+              </ListGroup.Item> 
               
     
 

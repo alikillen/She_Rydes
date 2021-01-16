@@ -91,10 +91,13 @@ const ProductListScreen = ({ history, match }) => {
                         <th>ID</th>
                         <th>NAME</th>
                         <th>PRICE</th>
-                        <th>Category</th>
-                        <th>SIZE</th>
+                        <th>CATEGORY</th>
                         <th>SKU</th>
-                        <th></th>
+                        <th>SIZE</th>
+                        <th>COLOUR</th>                        
+                        {/* render this only if accessory - will dropdown to sticker/patch? */}
+                        <th>ACCESSORY TYPE</th>
+                        
                         
                     </tr>
                  </thead>
@@ -103,10 +106,12 @@ const ProductListScreen = ({ history, match }) => {
                          <tr key={product._id}>
                             <td>{product._id}</td>
                             <td>{product.name}</td>
-                            <td>{product.size}</td>
                             <td>${product.price}</td>
-                            <td>{product.SKU}</td>
                             <td>{product.category}</td>
+                            <td>{product.SKU}</td>                                
+                            <td>{product.size}</td>
+                            <td>{product.color}</td>
+                            <td>{product.accessoryType}</td>
                             
                           
                             <td>
