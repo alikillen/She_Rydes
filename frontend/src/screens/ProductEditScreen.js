@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef, handleClick } from "react";
 import { Link } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
@@ -8,6 +8,7 @@ import Loader from "../components/Loader";
 import FormContainer from "../components/FormContainer";
 import { listProductDetails, updateProduct } from "../actions/productActions";
 import { PRODUCT_UPDATE_RESET } from "../constants/productConstants";
+import S3 from "react-aws-s3";
 
 const ProductEditScreen = ({ match, history }) => {
   const productId = match.params.id;
@@ -24,7 +25,8 @@ const ProductEditScreen = ({ match, history }) => {
   const [accessoryType, setaccessoryType] = useState("");
   const [countInStock, setCountInStock] = useState(0);
   const [description, setDescription] = useState("");
-  const [uploading, setUploading] = useState(false);
+  // const [uploading, setUploading] = useState(false);
+  const fileInput = useRef();
 
   const dispatch = useDispatch();
 
@@ -60,27 +62,53 @@ const ProductEditScreen = ({ match, history }) => {
     }
   }, [dispatch, history, productId, product, successUpdate]);
 
-  const uploadFileHandler = async (e) => {
-    const file = e.target.files[0];
-    const formData = new FormData();
-    formData.append("image", file);
-    setUploading(true);
+  // const uploadFileHandler = async (e) => {
+  //   const file = e.target.files[0];
+  //   const formData = new FormData();
+  //   formData.append("image", file);
+  //   setUploading(true);
 
-    try {
+  //   try {
+  //     const config = {
+  //       headers: {
+  //         "Content-Type": "multipart/form-data",
+  //       },
+  //     };
+
+  //     const { data } = await axios.post("/api/upload", formData, config);
+
+  //     setImage(data);
+  //     setUploading(false);
+  //   } catch (error) {
+  //     console.error(error);
+  //     setUploading(false);
+  //   }
+  // };
+
+  const Upload = () => {
+    const fileInput = useRef();
+    const handleClick = event => {
+      event.preventDefault();
+      let file = fileInput.current.files[0];
+      let newFileName = fileInput.current.files[0].name;
+
       const config = {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
+        bucketName: process.env.REACT_APP_BUCKET_NAME,
+        region: process.env.REACT_APP_REGION,
+        accessKeyId: process.env.REACT_APP_ACCESS_ID,
+        secrectAccessKey: process.env.REACT_APP_ACCESS_KEY,
       };
 
-      const { data } = await axios.post("/api/upload", formData, config);
-
-      setImage(data);
-      setUploading(false);
-    } catch (error) {
-      console.error(error);
-      setUploading(false);
-    }
+      const ReactS3Client = new S3(config);
+      ReactS3Client.uploadFile(file, newFileName).then((data) => {
+        console.log(data);
+        if (data.status === 204) {
+          console.log("success");
+        } else {
+          console.log("fail");
+        }
+      });
+    };
   };
 
   const submitHandler = (e) => {
@@ -137,7 +165,16 @@ const ProductEditScreen = ({ match, history }) => {
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId="image">
+            <Form.Group className="upload-steps" onSubmit={ handleClick }>
+              <label>
+                Image Upload:
+                <input type="file" ref={ fileInput } />
+              </label>
+              <br />
+              <button type="submit">Upload</button>
+            </Form.Group>
+
+            {/* <Form.Group controlId="image">
               <Form.Label>Image</Form.Label>
               <Form.Control
                 type="text"
@@ -152,7 +189,7 @@ const ProductEditScreen = ({ match, history }) => {
                 onChange={uploadFileHandler}
               ></Form.File>
               {uploading && <Loader />}
-            </Form.Group>
+            </Form.Group> */}
 
             <Form.Group controlId="countInStock">
               <Form.Label>Count In Stock</Form.Label>
