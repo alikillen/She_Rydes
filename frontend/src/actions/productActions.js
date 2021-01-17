@@ -1,5 +1,4 @@
 import axios from "axios"
-import API from "../axiosConfig"
 
 
 import { 
@@ -44,9 +43,9 @@ import { logout } from './userActions'
 export const listProducts = () => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_LIST_REQUEST })
-    // const { data } = await axios.get("/api/products")
+    const { data } = await axios.get("/api/products")
 
-    const { data } = await API.get(`/produucts`);
+    // const { data } = await API.get(`/products`);
 
     dispatch({
       type: PRODUCT_LIST_SUCCESS,
