@@ -8,7 +8,7 @@ import Loader from "../components/Loader";
 import FormContainer from "../components/FormContainer";
 import { listProductDetails, updateProduct } from "../actions/productActions";
 import { PRODUCT_UPDATE_RESET } from "../constants/productConstants";
-import Upload from "../components/Upload"
+
 
 const ProductEditScreen = ({ match, history }) => {
   const productId = match.params.id;
@@ -138,7 +138,7 @@ const ProductEditScreen = ({ match, history }) => {
               ></Form.Control>
             </Form.Group>
 
-            {/* <Form.Group controlId='image'>
+            <Form.Group controlId='image'>
               <Form.Label>Image</Form.Label>
               <Form.Control
                 type='text'
@@ -153,14 +153,10 @@ const ProductEditScreen = ({ match, history }) => {
                 onChange={uploadFileHandler}
               ></Form.File>
               {uploading && <Loader />}
-            </Form.Group> */}
+            </Form.Group> 
 
 
-            <Form.Group controlId='image'>
-              <Form.Label>Image</Form.Label>
-            
-            <Upload />
-            </Form.Group>
+           
 
             <Form.Group controlId='countInStock'>
               <Form.Label>Count In Stock</Form.Label>

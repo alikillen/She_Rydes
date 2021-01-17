@@ -154,13 +154,9 @@ const updateProduct = asyncHandler(async (req, res) => {
     product.category = category
     product.sku = SKU
     product.countInStock = countInStock
-<<<<<<< HEAD
-    
-=======
     product.size = size
     product.color = color
     product.accessoryType = accessoryType
->>>>>>> 4197531030f2bb350c4324845a0721ba9e15a3d7
 
     const updatedProduct = await product.save()
     res.json(updatedProduct)
