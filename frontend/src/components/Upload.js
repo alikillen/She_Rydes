@@ -5,10 +5,10 @@ function Upload() {
   const fileInput = React.useRef();
 
   const config = {
-    bucketName: process.env.REACT_APP_SHERYDES_BUCKET_NAME,
-    region: process.env.REACT_APP_SHERYDES_REGION,
-    accessKeyId: process.env.REACT_APP_SHERYDES_ACCESS_ID,
-    secretAccessKey: process.env.REACT_APP_SHERYDES_ACCESS_KEY,
+    bucketName: process.env.REACT_APP_BUCKET_NAME,
+    region: process.env.REACT_APP_REGION,
+    accessKeyId: process.env.REACT_APP_ACCESS_ID,
+    secretAccessKey: process.env.REACT_APP_ACCESS_KEY,
   };
 
   const handleClick = (event) => {
