@@ -9,7 +9,6 @@ import FormContainer from "../components/FormContainer";
 import { listProductDetails, updateProduct } from "../actions/productActions";
 import { PRODUCT_UPDATE_RESET } from "../constants/productConstants";
 
-
 const ProductEditScreen = ({ match, history }) => {
   const productId = match.params.id;
 
@@ -105,130 +104,127 @@ const ProductEditScreen = ({ match, history }) => {
 
   return (
     <>
-      <Link to='/admin/productlist' className='btn btn-light my-3'>
+      <Link to="/admin/productlist" className="btn btn-light my-3">
         Go Back
       </Link>
       <FormContainer>
         <h1>Edit Product</h1>
         {loadingUpdate && <Loader />}
-        {errorUpdate && <Message variant='danger'>{errorUpdate}</Message>}
+        {errorUpdate && <Message variant="danger">{errorUpdate}</Message>}
         {loading ? (
           <Loader />
         ) : error ? (
-          <Message variant='danger'>{error}</Message>
+          <Message variant="danger">{error}</Message>
         ) : (
           <Form onSubmit={submitHandler}>
-            <Form.Group controlId='name'>
+            <Form.Group controlId="name">
               <Form.Label>Name</Form.Label>
               <Form.Control
-                type='name'
-                placeholder='Enter name'
+                type="name"
+                placeholder="Enter name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId='price'>
+            <Form.Group controlId="price">
               <Form.Label>Price</Form.Label>
               <Form.Control
-                type='number'
-                placeholder='Enter price'
+                type="number"
+                placeholder="Enter price"
                 value={price}
                 onChange={(e) => setPrice(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId='image'>
+            <Form.Group controlId="image">
               <Form.Label>Image</Form.Label>
               <Form.Control
-                type='text'
-                placeholder='Enter image url'
+                type="text"
+                placeholder="Enter image url"
                 value={image}
                 onChange={(e) => setImage(e.target.value)}
               ></Form.Control>
               <Form.File
-                id='image-file'
-                label='Choose File'
+                id="image-file"
+                label="Choose File"
                 custom
                 onChange={uploadFileHandler}
               ></Form.File>
               {uploading && <Loader />}
-            </Form.Group> 
+            </Form.Group>
 
-
-           
-
-            <Form.Group controlId='countInStock'>
+            <Form.Group controlId="countInStock">
               <Form.Label>Count In Stock</Form.Label>
               <Form.Control
-                type='number'
-                placeholder='Enter count in stock of specific product'
+                type="number"
+                placeholder="Enter count in stock of specific product"
                 value={countInStock}
                 onChange={(e) => setCountInStock(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId='category'>
+            <Form.Group controlId="category">
               <Form.Label>Category</Form.Label>
               <Form.Control
-                type='text'
-                placeholder='Enter category from category list'
+                type="text"
+                placeholder="Enter category from category list"
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId='description'>
+            <Form.Group controlId="description">
               <Form.Label>Description</Form.Label>
               <Form.Control
-                type='text'
-                placeholder='Enter description'
+                type="text"
+                placeholder="Enter description"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId='SKU'>
+            <Form.Group controlId="SKU">
               <Form.Label>SKU</Form.Label>
               <Form.Control
-                type='text'
-                placeholder='Enter SKU from SKU list'
+                type="text"
+                placeholder="Enter SKU from SKU list"
                 value={SKU}
                 onChange={(e) => setSKU(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId='size'>
+            <Form.Group controlId="size">
               <Form.Label>Size</Form.Label>
               <Form.Control
-                type='text'
-                placeholder='Enter size'
+                type="text"
+                placeholder="Enter size"
                 value={size}
                 onChange={(e) => setSize(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId='color'>
+            <Form.Group controlId="color">
               <Form.Label>Colour</Form.Label>
               <Form.Control
-                type='text'
-                placeholder='Enter colour'
+                type="text"
+                placeholder="Enter colour"
                 value={color}
                 onChange={(e) => setColor(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group controlId='accessoryType'>
+            <Form.Group controlId="accessoryType">
               <Form.Label>Accessory Type(Sticker/Patch/None)</Form.Label>
               <Form.Control
-                type='text'
-                placeholder='Enter accessory type if accessory'
+                type="text"
+                placeholder="Enter accessory type if accessory"
                 value={accessoryType}
                 onChange={(e) => setaccessoryType(e.target.value)}
               ></Form.Control>
             </Form.Group>
 
-            <Button type='submit' variant='primary'>
+            <Button type="submit" variant="primary">
               Update
             </Button>
           </Form>
