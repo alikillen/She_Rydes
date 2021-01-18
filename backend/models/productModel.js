@@ -34,7 +34,7 @@ const productSchema = Mongoose.Schema({
     required: true
   },
   image: {
-    type: String,
+    type: Buffer,
     required: false,
   },
   category:{

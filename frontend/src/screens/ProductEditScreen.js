@@ -1,4 +1,5 @@
 import axios from "axios";
+import dotenv from "dotenv";
 import React, { useState, useEffect, useRef, handleClick } from "react";
 import { Link } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
@@ -8,6 +9,7 @@ import Loader from "../components/Loader";
 import FormContainer from "../components/FormContainer";
 import { listProductDetails, updateProduct } from "../actions/productActions";
 import { PRODUCT_UPDATE_RESET } from "../constants/productConstants";
+// import Upload from "../components/Upload"
 import S3 from "react-aws-s3";
 
 const ProductEditScreen = ({ match, history }) => {
@@ -26,7 +28,7 @@ const ProductEditScreen = ({ match, history }) => {
   const [countInStock, setCountInStock] = useState(0);
   const [description, setDescription] = useState("");
   // const [uploading, setUploading] = useState(false);
-  const fileInput = useRef();
+  // const fileInput = useRef();
 
   const dispatch = useDispatch();
 
@@ -85,34 +87,11 @@ const ProductEditScreen = ({ match, history }) => {
   //   }
   // };
 
-  const Upload = () => {
-    const fileInput = useRef();
-    const handleClick = event => {
-      event.preventDefault();
-      let file = fileInput.current.files[0];
-      let newFileName = fileInput.current.files[0].name;
-
-      const config = {
-        bucketName: process.env.REACT_APP_BUCKET_NAME,
-        region: process.env.REACT_APP_REGION,
-        accessKeyId: process.env.REACT_APP_ACCESS_ID,
-        secrectAccessKey: process.env.REACT_APP_ACCESS_KEY,
-      };
-
-      const ReactS3Client = new S3(config);
-      ReactS3Client.uploadFile(file, newFileName).then((data) => {
-        console.log(data);
-        if (data.status === 204) {
-          console.log("success");
-        } else {
-          console.log("fail");
-        }
-      });
-    };
-  };
+  const fileInput = useRef();
 
   const submitHandler = (e) => {
     e.preventDefault();
+
     dispatch(
       updateProduct({
         _id: productId,
@@ -128,6 +107,45 @@ const ProductEditScreen = ({ match, history }) => {
         countInStock,
       })
     );
+
+    
+    let file = fileInput.current.files[0];
+    let newFileName = fileInput.current.files[0].name;
+
+    console.log(`new file name is-- ${newFileName}`)
+
+    const config = {
+      bucketName: process.env.REACT_APP_BUCKET_NAME,
+      region: process.env.REACT_APP_REGION,
+      accessKeyId: process.env.REACT_APP_ACCESS_ID,
+      secrectAccessKey: process.env.REACT_APP_ACCESS_KEY,
+    };
+
+    console.log(JSON.stringify(config))
+
+    const ReactS3Client = new S3(config);
+
+    console.log(JSON.stringify(ReactS3Client))
+
+    console.log("should START try/catch of upload")
+
+    try {
+      ReactS3Client.uploadFile(file, newFileName).then((data) => {
+        console.log(`data is-- ${data}`);
+        if (data.status === 204) {
+          console.log("success");
+        } else {
+          console.log("fail");
+        }
+      });
+    } catch (error) {
+      console.log(`error caught is-- ${error}`)
+      console.log(`error message is-- ${error.message}`)
+      console.log("react s3 client not working")
+    }
+
+    console.log("should have finished try/catch of upload")
+
   };
 
   return (
@@ -165,14 +183,18 @@ const ProductEditScreen = ({ match, history }) => {
               ></Form.Control>
             </Form.Group>
 
-            <Form.Group className="upload-steps" onSubmit={ handleClick }>
+            
+
+            <form className="upload-steps">
               <label>
                 Image Upload:
-                <input type="file" ref={ fileInput } />
-              </label>
+                <input type="file" ref={fileInput} />
+                </label>
               <br />
-              <button type="submit">Upload</button>
-            </Form.Group>
+                </form>
+
+
+            {/* <Upload /> */}
 
             {/* <Form.Group controlId="image">
               <Form.Label>Image</Form.Label>
@@ -265,6 +287,7 @@ const ProductEditScreen = ({ match, history }) => {
               Update
             </Button>
           </Form>
+
         )}
       </FormContainer>
     </>
