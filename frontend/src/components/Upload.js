@@ -1,63 +1,48 @@
-import React, { useRef } from "react";
+import React from "react";
 import S3 from "react-aws-s3";
 
+function Upload() {
+  const fileInput = React.useRef();
 
-
-const Upload = () => {
-  const fileInput = useRef();
-  const handleClick = (event) => {
-    event.preventDefault();
-    
-    let file = fileInput.current.files[0];
-    let newFileName = fileInput.current.files[0].name;
-
-    console.log(`new file name is-- ${newFileName}`)
-
-    const config = {
-      bucketName: process.env.REACT_APP_BUCKET_NAME,
-      region: process.env.REACT_APP_REGION,
-      accessKeyId: process.env.REACT_APP_ACCESS_ID,
-      secrectAccessKey: process.env.REACT_APP_ACCESS_KEY,
-    };
-
-    console.log(`config is-- ${config}`)
-
-    const ReactS3Client = new S3(config);
-
-    console.log(`ReactS3Client is-- ${ReactS3Client}`)
-
-    try {
-      ReactS3Client.uploadFile(file, newFileName).then((data) => {
-        console.log(`data is-- ${data}`);
-        if (data.status === 204) {
-          console.log("success");
-        } else {
-          console.log("fail");
-        }
-      });
-    } catch (error) {
-      console.log(`error caught is-- ${error}`)
-      console.log(`error message is-- ${error.message}`)
-      console.log("react s3 client not working")
-    }
-
-
+  const config = {
+    bucketName: process.env.REACT_APP_BUCKET_NAME,
+    // dirName: process.env.REACT_APP_DIR_NAME /* optional */,
+    region: process.env.REACT_APP_REGION,
+    accessKeyId: process.env.REACT_APP_ACCESS_ID,
+    secretAccessKey: process.env.REACT_APP_ACCESS_KEY,
   };
 
-  console.log("this will console log before returning - outside handleclick.")
+  const handleClick = (event) => {
+    event.preventDefault();
+    let newArr = fileInput.current.files;
+    for (let i = 0; i < newArr.length; i++) {
+      handleUpload(newArr[i]);
+    }
+  };
+
+  const handleUpload = (file) => {
+    let newFileName = file.name.replace(/\..+$/, "");
+    const ReactS3Client = new S3(config);
+    ReactS3Client.uploadFile(file, newFileName).then((data) => {
+      if (data.status === 204) {
+        console.log("success");
+      } else {
+        console.log("fail");
+      }
+    });
+  };
 
   return (
- 
-
-    <form className="upload-steps" onSubmit={handleClick + console.log("handleclick clicked")}>
-      <label>
-        Image Upload:
-        <input type="file" ref={fileInput} />
-      </label>
-      <br />
-      <button type="submit">Upload</button>
-    </form>
+    <>
+      <form className='upload-steps' onSubmit={handleClick}>
+        <label>
+          Upload file:
+          <input type='file' multiple ref={fileInput} />
+        </label>
+        <br />
+        <button type='submit'>Upload</button>
+      </form>
+    </>
   );
-};
-
+}
 export default Upload;
