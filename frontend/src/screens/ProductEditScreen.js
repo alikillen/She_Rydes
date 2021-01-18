@@ -101,13 +101,10 @@ const ProductEditScreen = ({ match, history }) => {
       secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
     };
 
-    console.log(JSON.stringify(config))
-
     let newFileName = file.name.replace(/\..+$/, "");
     console.log(`in handleupload - new file name is ${newFileName}`);
 
     const ReactS3Client = new S3(config);
-    console.log(JSON.stringify(ReactS3Client))
 
     console.log("about to try uploadfile");
 
