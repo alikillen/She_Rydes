@@ -1,48 +1,44 @@
-
 /* small and medium devices  */
 @media screen and (max-width: 768px) {
+  .custom-logo {
+    width: 200px;
+    height: 90px;
+  }
 
-    .custom-logo {
-        width: 200px;
-        height: 90px;
-    }
+  .footer-logo {
+    width: 200px;
+    height: 100px;
+  }
 
-    .footer-logo {
-        width: 200px;
-        height: 100px;
-    }
+  .custom-footer-headers {
+    font-size: 18px;
+  }
 
-    .custom-footer-headers {
-        font-size: 18px;
-    }
+  .fab {
+    padding: 10px;
+  }
 
-    .fab {
-        padding: 10px;
-    }
+  .custom-style-img {
+    margin: 0 auto;
+  }
 
-    .custom-style-img {
-        margin: 0 auto;
-         }
-
-    .about-img {
-        padding-bottom: 10px;
-
-           
-          }
+  #about-button {
+   background-color:#fca103;
+   color: #000;
+  }
 }
 
 /* Large devices */
 @media screen and (min-width: 769px) and (max-width: 1170px) {
-    .custom-carousel-caption {
-        margin: 20% auto 20% auto;
-        }
+  .custom-carousel-caption {
+    margin: 20% auto 20% auto;
+  }
 }
 
 /* Extra large devices */
 
 @media screen and (min-width: 1170px) {
-    .custom-carousel-caption {
-        margin: 10% auto 20% auto;
-        }
-
+  .custom-carousel-caption {
+    margin: 10% auto 20% auto;
+  }
 }

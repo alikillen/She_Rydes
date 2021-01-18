@@ -33,7 +33,7 @@ const AboutScreen = () => {
         </div>
 
           <div id="about-button-container">
-            <Button size="lg" id="about-button" >
+            <Button size="lg" id="about-button" to ="/AllProducts">
               Shop the range now
             </Button>{' '}
           </div>

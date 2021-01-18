@@ -18,22 +18,22 @@ export default class Footer extends Component {
               <h3 className='custom-footer-headers'>Important Links</h3>
               <div className='important-links'>
               <Row>
-                <Link to={"/login"}>Login / Sign Up</Link>
+                <Link id="footer-text" to={"/login"}>Login / Sign Up</Link>
               </Row>
               <Row>
-                <Link to={"/Contact"}>Contact</Link>
+                <Link id="footer-text" to={"/Contact"}>Contact</Link>
               </Row>
               <Row>
-                <Link to={"/SizingCharts"}>Sizing Charts</Link>
+                <Link id="footer-text" to={"/SizingCharts"}>Sizing Charts</Link>
               </Row>
               <Row>
-                <Link to={"/Contact"}>Shipping and Returns</Link>
+                <Link id="footer-text" to={"/Contact"}>Shipping and Returns</Link>
               </Row>
               <Row>
-                <Link to={"/TermsandConditions"}>Terms and Conditions</Link>
+                <Link id="footer-text" to={"/TermsandConditions"}>Terms and Conditions</Link>
               </Row>
               <Row>
-                <Link to={"/PrivacyPolicy"}>Privacy Policy</Link>
+                <Link id="footer-text" to={"/PrivacyPolicy"}>Privacy Policy</Link>
               </Row>
               </div>
             </Col>

@@ -18,6 +18,20 @@
 .custom-nav {
   font-size: 16px;
   font-weight: 600;
+  
+}
+
+#basic-nav-dropdown{
+  background-color: #000;
+}
+
+#basic-nav-dropdown {
+  background-color: #000;
+
+}
+
+#footer-text {
+  color: white
 }
 
 

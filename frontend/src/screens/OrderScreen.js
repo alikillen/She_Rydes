@@ -41,6 +41,7 @@ const OrderScreen = ({ match, history }) => {
       return (Math.round(num * 100) / 100).toFixed(2)
     }
 
+    // possible bug here? order items of undefined?
     order.itemsPrice = addDecimals(
       order.orderItems.reduce((acc, item) => acc + item.price * item.qty, 0)
     )

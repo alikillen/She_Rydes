@@ -21,6 +21,7 @@ const reviewSchema = Mongoose.Schema(
     collection: 'products', // the name of our collection
   };
 
+// enum all names to validate? when adding new product will need to edit db for size and color stuff
 
 const productSchema = Mongoose.Schema({
   user: {
@@ -33,12 +34,12 @@ const productSchema = Mongoose.Schema({
     required: true
   },
   image: {
-    type: String,
+    type: Buffer,
     required: false,
   },
   category:{
     type: String,
-    enum: ["Jacket", "Pants", "Gloves", "Sticker", "Patch", "Accessories"],
+    enum: ["Jacket", "Pants", "Gloves", "Accessories"],
     required: true,
   },
   description:{
@@ -66,8 +67,10 @@ const productSchema = Mongoose.Schema({
     required: true,
     default: 0
   },
+  
   SKU: {
     type: String,
+    enum: ["OBOF", "NRLJ", "BBLJ", "ITHD", "FDD", "FTLOG", "PANTS", "SRPS", "BWPS", "SSPS", "IHPS", "RDPS", "CCPS"],
     required: true,
   }
 }, productOptions,
@@ -78,28 +81,28 @@ const productSchema = Mongoose.Schema({
 const Product = Mongoose.model("Product", productSchema)
 
 const Jacket = Product.discriminator('Jacket', new Mongoose.Schema({
-  size: { type: Number, required: true },
-  color: { type: String, required: true },
+  size: { type: String, enum:["8", "10", "12", "14", "16"], required: true },
+  color: { type: String, enum:["Pink Sunset", "Camel Back Brown", "Default"], required: true },
 }, productOptions),
 );
 
 const Pants = Product.discriminator('Pants', new Mongoose.Schema({
-  size: { type: Number, required: true },
-  color: { type: String, required: true },
+  size: { type: String, enum:["8", "10", "12", "14", "16"], required: true },
+  color: { type: String, enum:["Default"], required: true },
 }, productOptions),
 );
 
 const Gloves = Product.discriminator('Gloves', new Mongoose.Schema({
-  size: { type: String, required: true },
-  color: { type: String, required: true },
+  size: { type: String, enum:["Small", "Medium", "Large"], required: true },
+  color: { type: String, enum:["Black", "Brown"], required: true },
 }, productOptions),
 );
 
+// need to be either sticker or patch
 const Accessories = Product.discriminator("Accessories", new Mongoose.Schema({
-  size: { type: String, required: false }
+  size: { type: String, enum:["Default"], required: false },
+  accessorytype: { type: String, enum: ["Sticker", "Patch"], required: true },
 }, productOptions))
-
-
 
 
 export default Product
@@ -112,10 +115,29 @@ export { Jacket }
 export { Pants }
 export { Gloves }
 export { Accessories }
+
+// const accessoryProduct = productType.discriminator(
+//   'accessoryProduct',
+//   new mongoose.Schema({
+//     availableSizes: {
+//       os: { type: Number, required: true, default: 0 },
+//     },
+//   })
+// )
+
+// const sampleJacket = Jacket.discriminator("Jacket", new Mongoose.Schema({ name: 'sample jacket', image: 'jacket', category: 'Jacket', description: 'good jacket', rating: 5, numReviews: 1, price: 100, countInStock: 5, SKU: "sample", size: 12, color:"brown"}));
+// // sampleJacket.save();
+// console.log(sampleJacket)
+
+// const sampleAcc = new Accessories({ name: 'sample sticker', image: 'sticker', category: 'Accessories', description: 'good sticker', rating: 5, numReviews: 1, price: 10, countInStock: 5, SKU: "sticker00", accessoryType:"Sticker"});
+// // sampleJacket.save();
+// console.log(sampleAcc)
+
+
 // module.exports = mongoose.model(Jacket);
 // module.exports = mongoose.model(Pants);
 // module.exports = mongoose.model(Gloves);
-// module.exports = mongoose.model(Accessories)
+// module.exports = -+-+-+-+-+-+mongoose.model(Accessories)
 
 // maybe dont use discriminators - basically every product needs options for size, only gloves and 1 jacket need color options, lara wants different codes anyway
 
