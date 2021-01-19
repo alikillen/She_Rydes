@@ -23,6 +23,8 @@ const productOptions = {
 
 // enum all names to validate? when adding new product will need to edit db for size and color stuff
 
+// note i am setting specific enum values for additional validation. a lot of this needs to be refined after submission though
+
 const productSchema = Mongoose.Schema(
   {
     user: {
@@ -93,6 +95,9 @@ const productSchema = Mongoose.Schema(
     timestamps: true,
   }
 );
+
+// these mongoose discriminators are meant to add extra attributes like size and color to the base products. but we are yet to integrate this with database - even on frontend when an admin user edits a product,
+// the size color attributes are not yet added into db which will need some debugging. so the discriminators are here but not really functioning yet as they wont go into db.
 
 const Product = Mongoose.model("Product", productSchema);
 
@@ -171,6 +176,9 @@ export { Jacket };
 export { Pants };
 export { Gloves };
 export { Accessories };
+
+
+// IGNORE NOTES BELOW - just from testing etc
 
 // const accessoryProduct = productType.discriminator(
 //   'accessoryProduct',

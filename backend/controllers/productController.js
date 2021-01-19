@@ -35,6 +35,8 @@ const getProductById = asyncHandler(async (req, res) => {
 // get products by SKU
 // route - Get /api/products/SKU
 // access - public
+
+// again this SKU methods are not relevant for now - will want to use them later to make sure we are only listing products by SKU not ID. not working the way we want at the moment
 const getProductsbySKU = asyncHandler(async (req, res) => {
   const products = await Product.find({ sku: req.params.sku });
 
@@ -64,6 +66,7 @@ const getProductsbyCategory = asyncHandler(async (req, res) => {
 // route GET api/products/top
 // public access
 
+// top products to be listed in top carousel
 const getTopProducts = asyncHandler(async (req, res) => {
   const products = await Product.find({}).sort({ rating: -1 }).limit(3);
 

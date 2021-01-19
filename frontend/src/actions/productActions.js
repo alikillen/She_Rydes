@@ -61,12 +61,12 @@ export const listProducts = () => async (dispatch) => {
   }
 }
 
+// this method is not being used for now - in future we would like to use it to make sure items on the homescreen only render by SKU, not by id. as there will be multiple products of same SKU with different sizes/colors etc
 export const listProductsbySKU = (sku) => async (dispatch) => {
   // let category = req.params.id
   try {
     dispatch({ type: PRODUCT_LIST_SKU_REQUEST })
     const { data } = await axios.get(`api/products/sku/${sku}`)
-    // this is where dispatch is erroring - category is undefined
 
     dispatch({
       type: PRODUCT_LIST_SKU_SUCCESS,
@@ -107,7 +107,7 @@ export const listProductsByCategory = (category) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_CATEGORY_REQUEST })
     const { data } = await axios.get(`api/products/category/${category}`)
-    // this is where dispatch is erroring - category is undefined
+    // this is where dispatch was erroring - category is undefined
 
     dispatch({
       type: PRODUCT_CATEGORY_SUCCESS,
@@ -124,6 +124,8 @@ export const listProductsByCategory = (category) => async (dispatch) => {
 
 }
 // changes made - not passing in category and interpolating string
+
+// using this to get top reviewed products to pass into the top products carousel
 
 export const listTopProducts = () => async (dispatch) => {
   try {
@@ -281,6 +283,7 @@ export const createProductReview = (productId, review) => async (
         Authorization: `Bearer ${userInfo.token}`,
       },
     }
+    // making sure the bearer token is set as auth so that when logged in they can post a review
 
     await axios.post(`/api/products/${productId}/reviews`, review, config)
 

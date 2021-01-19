@@ -37,10 +37,12 @@ app.use("/api/products", productRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/orders", orderRoutes);
 
+// paypal details stored in env and retrieved with process.env
 app.get("/api/config/paypal", (req, res) =>
   res.send(process.env.PAYPAL_CLIENT_ID)
 );
 
+// some code leftover from our original upload method here - it was just to local. now we upload images to amazon s3 whcih works, but we cannot return them to frontend at the moment
 const __dirname = path.resolve();
 // app.use('/uploads', express.static(path.join(__dirname, '/uploads')))
 

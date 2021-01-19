@@ -1,0 +1,270 @@
+{
+	"info": {
+		"_postman_id": "80d1e265-d22f-4244-99b9-1f36f7d519c5",
+		"name": "She Rydes",
+		"description": "She Rydes MERN eCommerce site API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "GET /",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						},
+						"description": "testing server"
+					},
+					"response": []
+				},
+				{
+					"name": "GET /server/products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/products",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						},
+						"description": "Route to Get all products"
+					},
+					"response": []
+				},
+				{
+					"name": "Get /server/products/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/products/5fd8584769d3e40c2abbcdd3",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"5fd8584769d3e40c2abbcdd3"
+							]
+						},
+						"description": "Route to Get a specific product"
+					},
+					"response": []
+				},
+				{
+					"name": "GET /server/products/SKU",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						},
+						"description": "get products by SKU\r\n\r\nnot currently functional or being used in submitted app\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "GET server/products/category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						},
+						"description": "gets products by category"
+					},
+					"response": []
+				},
+				{
+					"name": "POST /api/products/:id/reviews",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rating\": \"5\",\r\n    \"comment\": \"Love this jacket! Sturdy and stylish!\"\r\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/api/products/5ff99823ba5d3dd5baaa9481/reviews",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"5ff99823ba5d3dd5baaa9481",
+								"reviews"
+							]
+						},
+						"description": "Add new product review"
+					},
+					"response": []
+				}
+			],
+			"description": "All product routes"
+		},
+		{
+			"name": "Users and Auth",
+			"item": [
+				{
+					"name": "POST /api/users/login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"TOKEN\", pm.response.json().token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZGZlNzIzMjE1ZWNlMWVmNmU3OWRhZiIsImlhdCI6MTYwODUzMDMwNywiZXhwIjoxNjExMTIyMzA3fQ._uaj71BoSHJW_v1vZE7m1PZ0rhdIo02OWrtcSDMdRnU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"john@example.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/users/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"login"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZGZlNzIzMjE1ZWNlMWVmNmU3OWRhZiIsImlhdCI6MTYwODUzMDMwNywiZXhwIjoxNjExMTIyMzA3fQ._uaj71BoSHJW_v1vZE7m1PZ0rhdIo02OWrtcSDMdRnU",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						},
+						"description": "authenticate user and get token"
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/users/profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "AUthorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZGZlNzIzMjE1ZWNlMWVmNmU3OWRhZiIsImlhdCI6MTYwODUyMDM5NSwiZXhwIjoxNjExMTEyMzk1fQ.jSAu74cBMyytxjqtr-t98BbZuRBXa-itg4ffBykFTDY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/users/profile",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"profile"
+							]
+						},
+						"description": "return logged in user"
+					},
+					"response": []
+				},
+				{
+					"name": "POST /api/users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						},
+						"description": "create new user"
+					},
+					"response": []
+				},
+				{
+					"name": "PUT /api/users/profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						},
+						"description": "Update user profile"
+					},
+					"response": []
+				}
+			],
+			"description": "Routes that have to do with managing users and authentication"
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "POST /api/orders/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						},
+						"description": "POST request to orders\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "GET /api/orders/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						},
+						"description": "Get a specific order"
+					},
+					"response": []
+				}
+			],
+			"description": "all routes for orders"
+		}
+	]
+}

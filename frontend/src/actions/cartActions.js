@@ -1,3 +1,6 @@
+// you can see from actions and reducers that we are using redux - each function dispatches a const with a payload, and sets things into localstorage
+
+
 import axios from "axios";
 import {
   CART_ADD_ITEM,
@@ -29,7 +32,7 @@ export const addToCart = (id, qty) => async (dispatch, getState) => {
 
     console.log(data);
 
-    // this is why cart items are still there when we logout
+    // this is why cart items are still there when we logout? bug to fix
     localStorage.setItem(
       "cartItems",
       JSON.stringify(getState().cart.cartItems)

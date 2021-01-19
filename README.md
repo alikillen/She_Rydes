@@ -43,6 +43,8 @@ She Rydes is a real world project and the client aims to bring a convenient and 
 [Click here for link to manual testing spreadsheet in production and development](https://docs.google.com/spreadsheets/d/1rdUnXINtrriQLqQlkxIt77qA8kmUj6QIqNEQ5IBBz7Y/edit?usp=sharing)
 
 
+Link to public postman API (see our routes here): https://www.getpostman.com/collections/3b3ab6ca1ad2392745db
+
 ## Running the app currently 
 
 tests can be run with "npm run test"
