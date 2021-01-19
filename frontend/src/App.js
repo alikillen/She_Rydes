@@ -40,7 +40,7 @@ import SizingChartsScreen from "./screens/SizingChartsScreen"
 import Upload from "./components/Upload.js"
 
 
-
+require('dotenv').config()
 
 
 function App() {

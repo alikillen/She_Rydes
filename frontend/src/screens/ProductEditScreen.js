@@ -1,6 +1,6 @@
 import axios from "axios";
-import dotenv from "dotenv";
-import React, { useState, useEffect, useRef, handleClick } from "react";
+import dotenv from "dotenv"
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,8 +9,8 @@ import Loader from "../components/Loader";
 import FormContainer from "../components/FormContainer";
 import { listProductDetails, updateProduct } from "../actions/productActions";
 import { PRODUCT_UPDATE_RESET } from "../constants/productConstants";
-// import Upload from "../components/Upload"
 import S3 from "react-aws-s3";
+// import config from "../config/awsConfig"
 
 const ProductEditScreen = ({ match, history }) => {
   const productId = match.params.id;
@@ -28,7 +28,6 @@ const ProductEditScreen = ({ match, history }) => {
   const [countInStock, setCountInStock] = useState(0);
   const [description, setDescription] = useState("");
   // const [uploading, setUploading] = useState(false);
-  // const fileInput = useRef();
 
   const dispatch = useDispatch();
 
@@ -64,6 +63,10 @@ const ProductEditScreen = ({ match, history }) => {
     }
   }, [dispatch, history, productId, product, successUpdate]);
 
+  // use old code to set image into state?
+  // check AWS policies + CORS config
+  // chew AWS credential variables
+
   // const uploadFileHandler = async (e) => {
   //   const file = e.target.files[0];
   //   const formData = new FormData();
@@ -87,7 +90,33 @@ const ProductEditScreen = ({ match, history }) => {
   //   }
   // };
 
-  const fileInput = useRef();
+  const fileInput = React.useRef();
+
+  const handleUpload = (file) => {
+
+    const config = {
+      bucketName: process.env.REACT_APP_AWS_BUCKET_NAME,
+      region: process.env.REACT_APP_AWS_REGION,
+      accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID,
+      secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
+    };
+
+    let newFileName = file.name.replace(/\..+$/, "");
+    console.log(`in handleupload - new file name is ${newFileName}`);
+
+    const ReactS3Client = new S3(config);
+
+    console.log("about to try uploadfile");
+
+    ReactS3Client.uploadFile(file, newFileName).then((data) => {
+      if (data.status === 204) {
+        console.log("success");
+      } else {
+        console.log("fail");
+      }
+    });
+  };
+
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -108,45 +137,14 @@ const ProductEditScreen = ({ match, history }) => {
       })
     );
 
-    
-    let file = fileInput.current.files[0];
-    let newFileName = fileInput.current.files[0].name;
+    let newArr = fileInput.current.files;
+    console.log(`this is newArr of files -- ${newArr}`)
 
-    console.log(`new file name is-- ${newFileName}`)
-
-    const config = {
-      bucketName: process.env.REACT_APP_BUCKET_NAME,
-      region: process.env.REACT_APP_REGION,
-      accessKeyId: process.env.REACT_APP_ACCESS_ID,
-      secrectAccessKey: process.env.REACT_APP_ACCESS_KEY,
-    };
-
-    console.log(JSON.stringify(config))
-
-    const ReactS3Client = new S3(config);
-
-    console.log(JSON.stringify(ReactS3Client))
-
-    console.log("should START try/catch of upload")
-
-    try {
-      ReactS3Client.uploadFile(file, newFileName).then((data) => {
-        console.log(`data is-- ${data}`);
-        if (data.status === 204) {
-          console.log("success");
-        } else {
-          console.log("fail");
-        }
-      });
-    } catch (error) {
-      console.log(`error caught is-- ${error}`)
-      console.log(`error message is-- ${error.message}`)
-      console.log("react s3 client not working")
+    for (let i = 0; i < newArr.length; i++) {
+      handleUpload(newArr[i]);
     }
+  }
 
-    console.log("should have finished try/catch of upload")
-
-  };
 
   return (
     <>
@@ -163,7 +161,8 @@ const ProductEditScreen = ({ match, history }) => {
           <Message variant="danger">{error}</Message>
         ) : (
           <Form onSubmit={submitHandler}>
-            <Form.Group controlId="name">
+
+            <Form.Group controlId='name'>
               <Form.Label>Name</Form.Label>
               <Form.Control
                 type="name"
@@ -213,7 +212,24 @@ const ProductEditScreen = ({ match, history }) => {
               {uploading && <Loader />}
             </Form.Group> */}
 
-            <Form.Group controlId="countInStock">
+            {/* <Form.Group controlId='image'>
+              <Form.Label>Image</Form.Label>
+              <Form.Control
+                type='text'
+                placeholder='Enter image'
+                value={image}
+                onChange={(e) => setImage(e.target.value)}
+              ></Form.Control>
+            </Form.Group> */}
+
+            <form className='upload-steps'>
+              <label>
+                Upload image file:
+                <input type='file' multiple ref={fileInput} />
+              </label>
+            </form>
+
+            <Form.Group controlId='countInStock'>
               <Form.Label>Count In Stock</Form.Label>
               <Form.Control
                 type="number"
