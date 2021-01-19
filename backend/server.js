@@ -1,3 +1,17 @@
+// const path = require("path")
+// const express = require("express")
+// const dotenv = require("dotenv")
+// const colors = require("colors")
+// const morgan = require("morgan")
+// const notFound = require("./middleware/errorMiddleware.js")
+// const errorHandler = require("./middleware/errorMiddleware.js")
+// const connectDB = require("./config/db.js")
+// const productRoutes = require("./Routes/productRoutes.js")
+// const userRoutes = require("./Routes/userRoutes.js")
+// const orderRoutes = require("./Routes/productRoutes.js")
+
+
+
 import path from 'path'
 import express from "express"
 import dotenv from "dotenv"
@@ -55,4 +69,10 @@ app.use(errorHandler)
 app.listen(process.env.PORT || 5000)
 // (PORT, console.log(`server running in ${process.env.NODE_ENV} mode on port ${PORT}`.yellow.bold))
 
-// export default app
+// export default server
+
+// module.exports = {
+//   server
+// }
+
+// module.exports = { app, server };
