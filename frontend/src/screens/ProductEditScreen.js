@@ -1,5 +1,5 @@
 import axios from "axios";
-import dotenv from "dotenv"
+import dotenv from "dotenv";
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
@@ -63,37 +63,9 @@ const ProductEditScreen = ({ match, history }) => {
     }
   }, [dispatch, history, productId, product, successUpdate]);
 
-  // use old code to set image into state?
-  // check AWS policies + CORS config
-  // chew AWS credential variables
-
-  // const uploadFileHandler = async (e) => {
-  //   const file = e.target.files[0];
-  //   const formData = new FormData();
-  //   formData.append("image", file);
-  //   setUploading(true);
-
-  //   try {
-  //     const config = {
-  //       headers: {
-  //         "Content-Type": "multipart/form-data",
-  //       },
-  //     };
-
-  //     const { data } = await axios.post("/api/upload", formData, config);
-
-  //     setImage(data);
-  //     setUploading(false);
-  //   } catch (error) {
-  //     console.error(error);
-  //     setUploading(false);
-  //   }
-  // };
-
   const fileInput = React.useRef();
 
   const handleUpload = (file) => {
-
     const config = {
       bucketName: process.env.REACT_APP_AWS_BUCKET_NAME,
       region: process.env.REACT_APP_AWS_REGION,
@@ -117,7 +89,6 @@ const ProductEditScreen = ({ match, history }) => {
     });
   };
 
-
   const submitHandler = (e) => {
     e.preventDefault();
 
@@ -138,13 +109,12 @@ const ProductEditScreen = ({ match, history }) => {
     );
 
     let newArr = fileInput.current.files;
-    console.log(`this is newArr of files -- ${newArr}`)
+    console.log(`this is newArr of files -- ${newArr}`);
 
     for (let i = 0; i < newArr.length; i++) {
       handleUpload(newArr[i]);
     }
-  }
-
+  };
 
   return (
     <>
@@ -161,7 +131,6 @@ const ProductEditScreen = ({ match, history }) => {
           <Message variant="danger">{error}</Message>
         ) : (
           <Form onSubmit={submitHandler}>
-
             <Form.Group controlId='name'>
               <Form.Label>Name</Form.Label>
               <Form.Control
@@ -184,44 +153,7 @@ const ProductEditScreen = ({ match, history }) => {
 
             
 
-            <form className="upload-steps">
-              <label>
-                Image Upload:
-                <input type="file" ref={fileInput} />
-                </label>
-              <br />
-                </form>
-
-
-            {/* <Upload /> */}
-
-            {/* <Form.Group controlId="image">
-              <Form.Label>Image</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter image url"
-                value={image}
-                onChange={(e) => setImage(e.target.value)}
-              ></Form.Control>
-              <Form.File
-                id="image-file"
-                label="Choose File"
-                custom
-                onChange={uploadFileHandler}
-              ></Form.File>
-              {uploading && <Loader />}
-            </Form.Group> */}
-
-            {/* <Form.Group controlId='image'>
-              <Form.Label>Image</Form.Label>
-              <Form.Control
-                type='text'
-                placeholder='Enter image'
-                value={image}
-                onChange={(e) => setImage(e.target.value)}
-              ></Form.Control>
-            </Form.Group> */}
-
+           
             <form className='upload-steps'>
               <label>
                 Upload image file:
