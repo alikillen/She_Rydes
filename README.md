@@ -1,5 +1,14 @@
+
+
+
 # She_Rydes
 A fullstack MERN eCommerce website, developed by [Alison Killen](https://github.com/alikillen) and [Sevda Amini](https://github.com/Sevicode). Last project at Coder Academy.
+
+[Github URL](https://github.com/alikillen/She_Rydes)
+[Deployed Website](www.sherydesapp.herokuapp.com)
+### Admin Login details: 
+#### Username: admin@example.com
+#### Password: 123456
 
 ## Project Description
 This project is a MERN full-stack web application which we developed as a part of our final Coder Academy Bootcamp assignment. Throughout this project we worked as a team of two junior developers and developed an e-commerce store where users (customers) can sign in, browse and view products, and learn about the brand She Rydes. The seller (client) is also an admin on the site and has full authorization to manage the website and make changes in the listings.
@@ -15,3 +24,24 @@ She Rydes is a real world project and the client aims to bring a convenient and 
 [Project](https://github.com/alikillen/She_Rydes)
 
 [Project trello](https://trello.com/b/6XIHjcSJ/sevlimern-partb)
+
+## Project Management
+
+<details>
+
+![](/frontend/public/images/2021-01-06.png)
+![](/frontend/public/images/2021-01-10.png)
+![](/frontend/public/images/2021-01-19.png)
+
+</details>
+
+
+
+## Development and Production Testing
+
+[Click here to see videos and images of both Development and Production testing](https://drive.google.com/drive/folders/1ZlZ2aqZsYC0DSGZzt0oUDi21hL40TNtY?usp=sharing)
+
+#
+ 
+
+-----------------------------------------
