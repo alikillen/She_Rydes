@@ -39,7 +39,7 @@ import TermsandConditionsScreen from "./screens/TermsandConditionsScreen"
 import SizingChartsScreen from "./screens/SizingChartsScreen"
 import Upload from "./components/Upload"
 
-
+require('dotenv').config()
 
 
 function App() {
