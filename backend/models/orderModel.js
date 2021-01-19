@@ -15,7 +15,7 @@ const orderSchema = Mongoose.Schema({
     product: {
       type: Mongoose.Schema.Types.ObjectId,
       required: true,
-      ref: "product"
+      ref: "product" 
     }
     }
 ],
