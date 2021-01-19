@@ -34,12 +34,13 @@ const AboutScreen = () => {
           </p>
         </div>
 
-        <div id='about-button-container'>
-          <Button size='lg' id='about-button'>
-            Shop the range now
-          </Button>{" "}
-        </div>
-      </Container>
+          <div id="about-button-container">
+            <Button size="lg" id="about-button" to ="/AllProducts">
+              Shop the range now
+            </Button>{' '}
+          </div>
+     
+    </Container>
     </>
   );
 };

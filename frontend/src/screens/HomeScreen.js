@@ -34,11 +34,7 @@ const HomeScreen = () => {
             Explore the range now...
           </p>
           <div>
-            <Button
-              size='lg'
-              id='explore-range-button'
-              className='animate__animated animate__fadeInLeft'
-            >
+            <Button size="lg" id="explore-range-button" className="animate__animated animate__fadeInLeft" to ="/AllProducts">
               Shop Products
             </Button>{" "}
           </div>
