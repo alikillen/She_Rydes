@@ -76,3 +76,5 @@ app.listen(process.env.PORT || 5000)
 // }
 
 // module.exports = { app, server };
+
+export default app
