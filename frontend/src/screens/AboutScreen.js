@@ -4,19 +4,21 @@ import { Row, Col, Container, Image, Button } from "react-bootstrap";
 const AboutScreen = () => {
   return (
     <>
-    <Container style={{
-      backgroundImage: `url(${process.env.PUBLIC_URL + '/images/AboutScreenImg/opacity-fifty.png'})`,
-      backgroundRepeat: 'no-repeat',
-      zIndex: '-1',
-      backgroundSize: 'cover',
-    }}>
+      <Container
+        style={{
+          backgroundImage: `url(${
+            process.env.PUBLIC_URL + "/images/AboutScreenImg/opacity-fifty.png"
+          })`,
+          backgroundRepeat: "no-repeat",
+          zIndex: "-1",
+          backgroundSize: "cover",
+        }}
+      >
+        <div>
+          <h1 id='about-header'>About She Rydes</h1>
+        </div>
 
-          <div>
-          <h1 id='about-header'>About She Rydes</h1> 
-          </div>
-      
-        <div sm className="about-content">
-
+        <div sm className='about-content'>
           <p>
             She Rydes is an Australian owned, Gold Coast based company dedicated
             to providing women riders with quality protective gear. Our vision
@@ -32,13 +34,12 @@ const AboutScreen = () => {
           </p>
         </div>
 
-          <div id="about-button-container">
-            <Button size="lg" id="about-button" >
-              Shop the range now
-            </Button>{' '}
-          </div>
-     
-    </Container>
+        <div id='about-button-container'>
+          <Button size='lg' id='about-button'>
+            Shop the range now
+          </Button>{" "}
+        </div>
+      </Container>
     </>
   );
 };

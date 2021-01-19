@@ -1,6 +1,6 @@
-import app from "../backend/server.js"
-import chai from "chai"
-import chaiHttp from "chai-http"
+import app from "../backend/server.js";
+import chai from "chai";
+import chaiHttp from "chai-http";
 
 // chai modules in {}
 
@@ -11,7 +11,7 @@ import chaiHttp from "chai-http"
 const { expect } = chai;
 chai.use(chaiHttp);
 describe("Server works!", () => {
-  it("confirms api is running", done => {
+  it("confirms api is running", (done) => {
     chai
       .request(app)
       .get("/")
@@ -23,7 +23,7 @@ describe("Server works!", () => {
       });
   });
 
-  it("adds 2 numbers", done => {
+  it("adds 2 numbers", (done) => {
     chai
       .request(app)
       .post("/add")

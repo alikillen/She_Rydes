@@ -1,5 +1,5 @@
 import axios from "axios";
-import dotenv from "dotenv"
+import dotenv from "dotenv";
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
@@ -93,7 +93,6 @@ const ProductEditScreen = ({ match, history }) => {
   const fileInput = React.useRef();
 
   const handleUpload = (file) => {
-
     const config = {
       bucketName: process.env.REACT_APP_AWS_BUCKET_NAME,
       region: process.env.REACT_APP_AWS_REGION,
@@ -117,7 +116,6 @@ const ProductEditScreen = ({ match, history }) => {
     });
   };
 
-
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(
@@ -137,13 +135,12 @@ const ProductEditScreen = ({ match, history }) => {
     );
 
     let newArr = fileInput.current.files;
-    console.log(`this is newArr of files -- ${newArr}`)
+    console.log(`this is newArr of files -- ${newArr}`);
 
     for (let i = 0; i < newArr.length; i++) {
       handleUpload(newArr[i]);
     }
-  }
-
+  };
 
   return (
     <>
@@ -160,7 +157,6 @@ const ProductEditScreen = ({ match, history }) => {
           <Message variant='danger'>{error}</Message>
         ) : (
           <Form onSubmit={submitHandler}>
-
             <Form.Group controlId='name'>
               <Form.Label>Name</Form.Label>
               <Form.Control
