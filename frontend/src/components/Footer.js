@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import Image from "react-bootstrap/Image";
 
+// meaningless comment here to test git
+
 export default class Footer extends Component {
   render() {
     return (
